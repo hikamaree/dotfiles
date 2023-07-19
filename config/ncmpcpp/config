@@ -1,0 +1,38 @@
+lyrics_directory = ~/.local/share/lyrics
+mpd_music_dir = ~/Music/
+
+visualizer_data_source = /tmp/mpd.fifo
+visualizer_output_name = visualizer
+visualizer_in_stereo = yes
+visualizer_type = spectrum
+visualizer_fps = 144
+visualizer_autoscale = yes
+visualizer_look = ●▮
+visualizer_color = green
+visualizer_spectrum_smooth_look = yes
+
+current_item_prefix = $(green)$r
+current_item_inactive_column_prefix = $(blue)$r
+
+song_columns_list_format = (20)[blue]{a} (50)[blue]{t|f:Title} (20)[blue]{b} (7f)[blue]{l}
+
+mouse_support = yes
+enable_window_title = no
+
+colors_enabled = yes
+empty_tag_color = blue
+header_window_color = blue
+volume_color = blue:b
+state_line_color = green
+state_flags_color = green:b
+main_window_color = white
+color1 = blue
+color2 = green
+progressbar_color = black:b
+progressbar_elapsed_color = green:b
+statusbar_color = white
+statusbar_time_color = default:b
+player_state_color = default:b
+alternative_ui_separator_color = black:b
+window_border_color = green
+active_window_border = blue

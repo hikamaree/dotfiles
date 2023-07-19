@@ -1,0 +1,11 @@
+#!/bin/sh
+
+xrdb -merge $HOME/.config/x/xresources
+
+xset r rate 200 50 &
+brillo -S 30.2 &
+feh --bg-fill --no-fehbg $HOME/.config/wallpapers/w.png &
+picom -b &
+dwmblocks &
+
+exec dwm
