@@ -1,12 +1,12 @@
 @-moz-document url("about:newtab") {  
-	body {
-		background-color: #000 !important;
-	}
+    body {
+        background-color: #000 !important;
+    }
 }
 
 @-moz-document url("about:home") {  
-	body {
-		background: #000 !important;
-	}
+    body {
+        background: #000 !important;
+    }
 }
 

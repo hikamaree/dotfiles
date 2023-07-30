@@ -1,16 +1,16 @@
 :root {
-	--sfwindow: #0005;
-	--sfsecondary: #0000;
-	--toolbar-bgcolor: var(--sfsecondary) !important;
-	--tabs-border-color: var(--sfsecondary) !important;
-	--lwt-sidebar-background-color: var(--sfwindow) !important;
-	--lwt-toolbar-field-focus: var(--sfsecondary) !important;
-	--toolbar-field-focus-border-color: transparent !important;
-	background: var(--sfwindow) !important;
+    --sfwindow: #0005;
+    --sfsecondary: #0000;
+    --toolbar-bgcolor: var(--sfsecondary) !important;
+    --tabs-border-color: var(--sfsecondary) !important;
+    --lwt-sidebar-background-color: var(--sfwindow) !important;
+    --lwt-toolbar-field-focus: var(--sfsecondary) !important;
+    --toolbar-field-focus-border-color: transparent !important;
+    background: var(--sfwindow) !important;
 }
 
 .urlbarView {
-	display: none !important;
+    display: none !important;
 }
 
 /* Tabs colors  */
@@ -24,41 +24,40 @@
 > .tabbrowser-tab
 > .tab-stack
 > .tab-background[selected='true'] {
-	background-image: none !important;
-	box-shadow: none !important;
-	background: #80c0d040 !important;
-	/*--lwt-tab-line-color: #80c0d0 !important;*/
+    background-image: none !important;
+    box-shadow: none !important;
+    background: #80c0d040 !important;
 }
 /* Inactive tabs color */
 #navigator-toolbox {
-	background: var(--sfwindow) !important;
+    background: var(--sfwindow) !important;
 }
 
 /* Sidebar color  */
 #sidebar-box,
 .sidebar-placesTree {
-	background-color: var(--sfwindow) !important;
+    background-color: var(--sfwindow) !important;
 }
 
 /* Tabs elements  */
 .tabbrowser-tab:not([pinned]) .tab-icon-image {
-	display: none !important;
+    display: none !important;
 }
 
 #nav-bar:not([tabs-hidden='true']) {
-	box-shadow: none;
+    box-shadow: none;
 }
 
 /* Url Bar  */
 #urlbar > #urlbar-background {
-	background: var(--sfsecondary) !important;
-	box-shadow: none !important;
+    background: var(--sfsecondary) !important;
+    box-shadow: none !important;
 }
 
 #unified-extensions-button  .toolbarbutton-icon {
-	display: none !important;	
+    display: none !important;	
 }
 
 #identity-icon-label {
-	display: none !important;
+    display: none !important;
 }
