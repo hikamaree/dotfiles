@@ -24,7 +24,7 @@ fi
 
 git clone https:/github.com/hikamaree/suckless.git
 
-yay -S --noconfirm xorg-xinit xorg-xserver xorg-xset libxft libx11 libxinerama webkit2gtk vim git zsh htop neofetch lf ueberzugpp ncmpcpp mpd mpv feh picom ttf-sourcecodepro-nerd ttf-exo-2 fluent-icon-theme-git orchis-theme firefox discord steam pinta
+yay -S --noconfirm xorg-xinit xorg-xserver xorg-xset libxft libx11 libxinerama webkit2gtk vim git zsh htop neofetch lf ueberzugpp ncmpcpp mpd mpv feh picom ttf-sourcecodepro-nerd ttf-exo-2 fluent-icon-theme-git orchis-theme firefox discord steam pinta minecraft-launcher
 
 yay --noconfirm -Yc
 
