@@ -31,8 +31,9 @@ yay --noconfirm -Yc
 if [ ! -d "/home/$USER/.local/share/icons/default" ]
 then
      mkdir -p /home/$USER/.local/share/icons/default
-fi  
+fi
+cp -r Future-dark-cursors /home/$USER/.local/share/icons/Future-dark-cursors
 echo "Inherits=Future-dark-cursors" >> /home/$USER/.local/share/icons/default/index.theme
 
 chsh -s /bin/zsh
-sudo ./install.sh $USER
+sudo ./system.sh $USER
