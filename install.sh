@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rm -rf ~/.config
+mv ~/.config ~/old_config
 cp -r config ~/.config
 
 echo "Is this laptop? (Y/N): "
