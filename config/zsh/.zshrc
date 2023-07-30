@@ -2,7 +2,7 @@
 
 [[ $- != *i* ]] && return
 
-HISTFILE=~/.config/zsh/histfile
+HISTFILE=$ZDOTDIR/histfile
 HISTSIZE=1000000
 SAVEHIST=1000000
 setopt appendhistory
@@ -28,13 +28,23 @@ export XINITRC=/home/marko/.config/x/xinitrc
 export _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
-function zsh_add_file(){
+function add_file(){
 	[ -f "$ZDOTDIR/$1" ] && source "$ZDOTDIR/$1"
 }
 
-zsh_add_file "plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
-zsh_add_file "plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+add_file "plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+add_file "plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 PROMPT='%B%F{green}%1~%f > %b'
+
+zle-line-init() {
+    zle -K viins
+    echo -ne "\e[3 q"
+}
+
+zle -N zle-line-init
+
+echo -ne '\e[3 q'
+preexec() { echo -ne '\e[3 q' ;}
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx "$XINITRC"
