@@ -24,7 +24,7 @@ fi
 
 git clone https:/github.com/hikamaree/suckless.git
 
-yay -S --noconfirm xorg-xinit xorg-xserver xorg-xset libxft libx11 libxinerama webkit2gtk vim git zsh htop neofetch lf ueberzugpp ncmpcpp mpd mpv feh picom ttf-sourcecodepro-nerd ttf-exo-2 fluent-icon-theme-git orchis-theme firefox discord steam pinta minecraft-launcher
+yay -S --noconfirm xorg-xinit xorg-xserver xorg-xset libxft libx11 libxinerama webkit2gtk vim zsh htop neofetch lf ueberzugpp maim xclip ncmpcpp mpd mpv feh picom ttf-sourcecodepro-nerd ttf-exo-2 fluent-icon-theme-git orchis-theme firefox discord steam pinta minecraft-launcher
 
 yay --noconfirm -Yc
 
@@ -32,7 +32,7 @@ if [ ! -d "/home/$USER/.local/share/icons/default" ]
 then
      mkdir -p /home/$USER/.local/share/icons/default
 fi
-cp -r Future-dark-cursors /home/$USER/.local/share/icons/Future-dark-cursors
+cp -r res/Future-dark-cursors /home/$USER/.local/share/icons/Future-dark-cursors
 echo "Inherits=Future-dark-cursors" >> /home/$USER/.local/share/icons/default/index.theme
 
 chsh -s /bin/zsh

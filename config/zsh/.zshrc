@@ -16,7 +16,6 @@ alias grep='grep --color=auto'
 alias wgcc='x86_64-w64-mingw32-gcc'
 alias wmake='x86_64-w64-mingw32-make'
 alias makedwm='rm -rf config.h; sudo make clean install'
-alias logisim='GDK_SCALE=2 logisim'
 
 export HISTFILE="$ZDOTDIR/zsh_history"
 export EDITOR="vim"
