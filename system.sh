@@ -8,7 +8,7 @@ cd ../dmenu
 make clean install
 
 cd ../st
-make clean insatll
+make clean install
 
 cd ../..
 

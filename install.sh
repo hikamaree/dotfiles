@@ -6,10 +6,11 @@ cp -r config ~/.config
 echo "Is this laptop? (Y/N): "
 read LAPTOP
 
-git clone https:/aur.archlinux.org/yay.git
+git clone https://aur.archlinux.org/yay.git
 
 cd yay
 makepkg -si
+cd ..
 yay -Syu
 
 if [[ $LAPTOP == 'y' || $LAPTOP == 'Y' ]]
@@ -22,9 +23,9 @@ then
     sudo systemctl enable auto-cpufreq
 fi
 
-git clone https:/github.com/hikamaree/suckless.git
+git clone https://github.com/hikamaree/suckless.git
 
-yay -S --noconfirm xorg-xinit xorg-xserver xorg-xset libxft libx11 libxinerama webkit2gtk vim zsh htop neofetch lf ueberzugpp maim xclip ncmpcpp mpd mpv feh picom ttf-sourcecodepro-nerd ttf-exo-2 fluent-icon-theme-git orchis-theme firefox discord steam pinta minecraft-launcher
+yay -S --noconfirm xorg-xinit xorg-server xorg-xset libxft libx11 libxinerama webkit2gtk vim zsh htop neofetch lf ueberzugpp maim xclip ncmpcpp mpd mpv feh picom ttf-sourcecodepro-nerd ttf-exo-2 fluent-icon-theme-git orchis-theme firefox discord steam pinta minecraft-launcher
 
 yay --noconfirm -Yc
 
