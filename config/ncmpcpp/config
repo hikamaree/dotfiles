@@ -1,23 +1,66 @@
-lyrics_directory = ~/.local/share/lyrics
-mpd_music_dir = ~/Music/
-
 visualizer_data_source = /tmp/mpd.fifo
 visualizer_output_name = visualizer
 visualizer_in_stereo = yes
 visualizer_type = spectrum
 visualizer_fps = 144
 visualizer_autoscale = yes
-visualizer_look = ●▮
 visualizer_color = green
 visualizer_spectrum_smooth_look = yes
 
-current_item_prefix = $(green)$r
-current_item_inactive_column_prefix = $(blue)$r
+system_encoding = "UTF-8"
+playlist_disable_highlight_delay = 5
+message_delay_time = 5
+song_list_format = {%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
+song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
+song_library_format = {%n - }{%t}|{%f}
+alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
+alternative_header_second_line_format = {{$4$b%a$/b$9}{ - $7%b$9}{ ($4%y$9)}}|{%D}
+song_window_title_format = {%a - }{%t}|{%f}
 
-song_columns_list_format = (20)[blue]{a} (50)[blue]{t|f:Title} (20)[blue]{b} (7f)[blue]{l}
 
+progressbar_look = "▃▃▃"
+progressbar_color = black:b
+progressbar_elapsed_color = green:b
+
+now_playing_prefix = "$b$5➥ "
+now_playing_suffix = "$5$/b"
+
+browser_sort_mode = name
+browser_sort_format = {%a - }{%t}|{%f} {(%l)}
+song_columns_list_format = (40)[blue]{a} (55)[blue]{t|f:Title} (5f)[blue]{l}
+playlist_show_mpd_host = no
+#playlist_show_remaining_time = yes
+playlist_shorten_total_times = no
+playlist_separate_albums = no
+playlist_display_mode = columns
+browser_display_mode = classic
+search_engine_display_mode = classic
+playlist_editor_display_mode = classic
+incremental_seeking = yes
+seek_time = 1
+volume_change_step = 5
+autocenter_mode = yes
+centered_cursor = yes
+default_place_to_search_in = database
+user_interface = alternative
+media_library_primary_tag = genre
+default_find_mode = wrapped
+header_visibility = no
+statusbar_visibility = yes
+titles_visibility = yes
+header_text_scrolling = yes
+cyclic_scrolling = no
+lines_scrolled = 2
+follow_now_playing_lyrics = yes
+screen_switcher_mode = browser, media_library, visualizer
+startup_screen = playlist
+startup_slave_screen = "visualizer"
+startup_slave_screen_focus = no
+locked_screen_width_part = 50
+jump_to_now_playing_song_at_start = yes
+display_bitrate = no
+ignore_leading_the = no
 mouse_support = yes
-enable_window_title = no
 
 colors_enabled = yes
 empty_tag_color = blue
@@ -28,8 +71,6 @@ state_flags_color = green:b
 main_window_color = white
 color1 = blue
 color2 = green
-progressbar_color = black:b
-progressbar_elapsed_color = green:b
 statusbar_color = white
 statusbar_time_color = default:b
 player_state_color = default:b
