@@ -23,7 +23,7 @@ export TERMINAL="st"
 export BROWSER="firefox"
 export WINEPREFIX=$HOME/.local/wine
 export OPENER="xdg-open"
-export XINITRC=/home/marko/.config/x/xinitrc
+export XINITRC=$HOME/.config/x/xinitrc
 export _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 
