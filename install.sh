@@ -40,11 +40,11 @@ chsh -s /bin/zsh
 sudo ./system.sh $USER
 
 if [[ $(grep '\[Profile[^0]\]' ~/.mozilla/firefox/profiles.ini) ]]
-then PROFPATH=$(grep -E '^\[Profile|^Path|^Default' profiles.ini | grep -1 '^Default=1' | grep '^Path' | cut -c6-)
+then PROFPATH=$(grep -E '^\[Profile|^Path|^Default' ~/.mozilla/firefox/profiles.ini | grep -1 '^Default=1' | grep '^Path' | cut -c6-)
 else PROFPATH=$(grep 'Path=' ~/.mozilla/firefox/profiles.ini | sed 's/^Path=//')
 fi
 mkdir -p ~/.mozilla/firefox/$PROFPATH/chrome
-ln -s /home/hikamare/.config/firefox/userChrome.css /home/hikamare/.mozilla/firefox/marko/chrome/userChrome.css
-ln -s /home/hikamare/.config/firefox/userContent.css /home/hikamare/.mozilla/firefox/marko/chrome/userContent.css
+ln -s $HOME/.config/firefox/userChrome.css $HOME/.mozilla/firefox/$PROFPATH/chrome/userChrome.css
+ln -s $HOME/.config/firefox/userContent.css $HOME/.mozilla/firefox/$PROFPATH/chrome/userContent.css
 
-echo -e "user_pref(\"toolkit.legacyUserProfileCustomizations.stylesheets\", true);\nuser_pref(\"browser.compactmode.show\", true);" >> ~/.mozilla/firefox/$PROFPATH/prefs.js
+echo -e "user_pref(\"toolkit.legacyUserProfileCustomizations.stylesheets\", true);\nuser_pref(\"browser.compactmode.show\", true);" >> $HOME/.mozilla/firefox/$PROFPATH/prefs.js
