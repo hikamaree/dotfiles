@@ -13,6 +13,7 @@ makepkg -si
 cd ..
 yay -Syu
 
+# laptop
 if [[ $LAPTOP == 'y' || $LAPTOP == 'Y' ]]
 then 
     git clone https://github.com/CameronNemo/brillo.git
@@ -23,12 +24,14 @@ then
     sudo systemctl enable auto-cpufreq
 fi
 
+# packages
 git clone https://github.com/hikamaree/suckless.git
 
 yay -S --noconfirm xorg-xinit xorg-server xorg-xset libxft libx11 libxinerama webkit2gtk vim zsh htop neofetch lf ueberzugpp maim xclip ncmpcpp mpd mpv feh picom ttf-sourcecodepro-nerd ttf-exo-2 fluent-icon-theme-git orchis-theme firefox discord steam pinta minecraft-launcher
 
 yay --noconfirm -Yc
 
+#theme
 if [ ! -d "/home/$USER/.local/share/icons/default" ]
 then
      mkdir -p /home/$USER/.local/share/icons/default
@@ -36,15 +39,20 @@ fi
 cp -r res/Future-dark-cursors /home/$USER/.local/share/icons/Future-dark-cursors
 echo "Inherits=Future-dark-cursors" >> /home/$USER/.local/share/icons/default/index.theme
 
-chsh -s /bin/zsh
-sudo ./system.sh $USER
+# firefox
+firefox --headless &
+sleep 10
+pkill firefox
 
-if [[ $(grep '\[Profile[^0]\]' ~/.mozilla/firefox/profiles.ini) ]]
-then PROFPATH=$(grep -E '^\[Profile|^Path|^Default' ~/.mozilla/firefox/profiles.ini | grep -1 '^Default=1' | grep '^Path' | cut -c6-)
-else PROFPATH=$(grep 'Path=' ~/.mozilla/firefox/profiles.ini | sed 's/^Path=//')
-fi
+PROFPATH=$(grep "Default=.*\.default*" "$HOME/.mozilla/firefox/profiles.ini" | cut -d"=" -f2)
 mkdir -p ~/.mozilla/firefox/$PROFPATH/chrome
+
 ln -s $HOME/.config/firefox/userChrome.css $HOME/.mozilla/firefox/$PROFPATH/chrome/userChrome.css
 ln -s $HOME/.config/firefox/userContent.css $HOME/.mozilla/firefox/$PROFPATH/chrome/userContent.css
 
-echo -e "user_pref(\"toolkit.legacyUserProfileCustomizations.stylesheets\", true);\nuser_pref(\"browser.compactmode.show\", true);" >> $HOME/.mozilla/firefox/$PROFPATH/prefs.js
+echo -e "user_pref(\"toolkit.legacyUserProfileCustomizations.stylesheets\", true);" >> $HOME/.mozilla/firefox/$PROFPATH/prefs.js
+
+# system
+chsh -s /bin/zsh
+sudo ./system.sh $USER
+
