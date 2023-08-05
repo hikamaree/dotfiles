@@ -30,7 +30,7 @@ now_playing_suffix = "$5$/b"
 
 browser_sort_mode = name
 browser_sort_format = {%a - }{%t}|{%f} {(%l)}
-song_columns_list_format = (40)[blue]{a} (55)[blue]{t|f:Title} (5f)[blue]{l}
+song_columns_list_format = (35)[blue]{a} (60)[blue]{t|f:Title} (5f)[blue]{l}
 playlist_show_mpd_host = no
 #playlist_show_remaining_time = yes
 playlist_shorten_total_times = no
@@ -76,6 +76,6 @@ color2 = green
 statusbar_color = white
 statusbar_time_color = default:b
 player_state_color = default:b
-alternative_ui_separator_color = black:b
+alternative_ui_separator_color = white
 window_border_color = green
 active_window_border = blue

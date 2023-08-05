@@ -1,0 +1,394 @@
+sudo rm -rf /usr/bin/lfrun
+git clone https://github.com/hikamaree/dotfiles
+cd dotfiles
+ls
+./install.sh
+exit
+sudo virt-manager
+lf
+lf
+sudo lf
+exit
+lf
+cd suckless/dwmblocks
+LL
+ll
+makedwm
+cd ../dwm
+makedwm
+cd suckless/dwmblocks
+vim blocks.def.h
+makedwm
+cd suckless/dwmblocks
+rm -rf blocks.h
+makedwm
+lf
+cd Documents
+rm -rf dotfiles
+git clone https://github.com/hikamaree/dotfiles
+lf
+locate lfrun
+lf
+htop
+yay -Rns virt-manager qemu-base
+neofetch
+yay -Yc
+lf
+yay -Qtt
+yay -Rns dnsmasq
+yay -Rns dosfstools
+yay -Rns python-pip
+neofetch
+htop\\
+
+systemctl --type=service
+sudo systemctl disable virtlogd.service 
+yay -S qemu-base
+sudo systemctl disable virtlogd.service 
+yay -S virt-manager
+sudo systemctl disable virtlogd.service 
+yay -Rns virt-manager qemu-base
+lf
+htop
+systemctl --type=service
+sudo systemctl disable getty@tty2.service
+sudo systemctl disable lvm2-monitor.service
+sudo systemctl disable ldconfig.service
+sudo systemctl disable kmod-static-nodes.service
+sudo systemctl disable alsa-restore.service
+\
+fetch
+neofetch
+systemctl --type=service
+sudo systemctl disable alsa-restore.service
+sudo systemctl disable ldconfig.service
+systemd-analyze
+htop
+neofetch\\
+
+neofetch\\
+
+neofetch\\
+
+neofetch\\
+
+neofetch\\
+
+neofetch\\
+
+neofetch\\
+
+neofetch\\
+
+neofetch\\
+
+neofetch\\
+
+neofetch\\
+
+neofetch\\
+
+neofetch\\
+
+yay -S w3m
+w3m
+neofetch\\
+
+neofetch\\
+
+yay
+neofetch
+lf
+lf
+cd .config/neofetch
+ll
+vim config.conf
+neofetch
+yay -S adb
+adb devices
+yay -Rns adb
+yay -Rns android-sdk-platform-tools
+yay -S android-tools
+adb devices
+adb shell
+adb shell
+adb shell
+adb shell
+adb shell
+adb shell
+adb devices
+adb shell
+adb shell
+adb shell
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+exit
+lf
+exit
+\:q
+exit
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+vim /usr/bin/neofetch
+sudo vim /usr/bin/neofetch
+sudo vim /usr/bin/neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+vim .config/vim/vimrc
+lf
+neofetch
+lf
+htop
+lf
+yay -Rns w3m
+neofetch
+lf
+lf
+neofetch
+lf
+neofetch
+lf
+neofetch
+lf
+lf
+neofetch
+lf
+lf
+neofetch
+lf
+neofetch
+lf
+neofetch
+lf
+neofetch
+lf
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+lf
+yay -S ueberzugpp
+lf
+cd suckless/dwm
+makedwm
+pkill mpd
+mpd
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+ncmpcpp
+lf
+ncmpcpp
+lf
+ncmpcpp
+ncmpcpp --version
+ncmpcpp
+systemctl status mpd
+pkill mpd
+systemctl --user start mpd
+mpd
+pkill mpd
+mpd
+yay -S wildmidi
+mpd
+pkill mpd
+mpd
+vim /etc/timidity/timidity.cfg
+sudo vim /etc/timidity/timidity.cfg
+pkill mpd
+mpd
+lf
+mpd --kill
+pkill mpd
+mpc update
+mpd
+mpd
+ncmpcpp
+lf
+ncmpcpp
+lf
+lf
+cd  Documents/dotfiles
+ll
+git add *
+git commit -m "update"
+lf
+git commit -m "update"
+git add *
+git commit -m "update"
+lf
+pkill mpd
+mpd
+mpc update ~/Music/
+mpc update ~/.config/mpd/mpd.db
+mpc update
+mpc update
+mpc update
+mpc update
+mpc update
+pkill mpd
+lf
+lf
+lf
+lf
+neofetch
+lf
+lf
+yay
+yay
+yay -Rns wildmidi
+lf
+lf
+lf
+neofetch
+lf
+lf
+lf
+yay -S prismlauncher
+yay -S prismlauncher-bin
+yay -S jre8-openjdk
+prismlauncher
+yay -S prismlauncher-qt5-bin
+prismlauncher
+lf
+neofetch
+usermod -l hikamare marko
+usermod -l hikamare marko
+vim /etc/sudoers
+lf
+exit
+lf
+exit
+lf
+cd ..
+sudo chown hikamare -R *
+htop
+neofetch
+lf
+cd ~/Documents/dotfiles
+git add *
+git commit -m "update"
+lf
+lf
+git add *
+git commit -m "update"
+git push origin
+cd ~/Documents/dotfiles
+git add *
+git commit -m "update"
+git push origin
+git push origin -f
+vim
+yay
+htopp
+lf
+yay -S mutt
+mutt
+lf
+cd .config
+mkdir mutt
+cd mutt
+vim mutrc
+vim muttrc
+mutt
+vim muttrc
+mutt
+mutt
+vim muttrc
+mutt
+mutt
+vim muttrc
+mutt
+yay -Rns mutt
+lf
+ncmpcpp
+lf
+vim -v
+lf
+lf

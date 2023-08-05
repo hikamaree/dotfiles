@@ -18,6 +18,9 @@ let &t_EI .= "\<Esc>[3 q"
 let &t_SI .= "\<Esc>[3 q"
 let &t_SR .= "\<Esc>[3 q"
 
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 set number
 set laststatus=2
 
@@ -26,6 +29,8 @@ set t_Co=256
 hi Visual ctermbg=8
 hi LineNr cterm=bold ctermfg=7 ctermbg=8
 hi StatusLine ctermfg=8 ctermbg=7
+hi Pmenu ctermfg=7 ctermbg=8
+hi PmenuSel ctermfg=8 ctermbg=7
 
 syntax on
 
@@ -45,6 +50,7 @@ map <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
 map <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
 map <C-a> ggVG
 
+source $HOME/.config/vim/plugins/supertab.vim
 
 autocmd TerminalWinOpen *
   \  if &buftype == 'terminal' |
