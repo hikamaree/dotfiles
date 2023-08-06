@@ -27,11 +27,11 @@ fi
 # packages
 git clone https://github.com/hikamaree/suckless.git
 
-yay -S --noconfirm xorg-xinit xorg-server xorg-xset libxft libx11 libxinerama webkit2gtk vim zsh htop neofetch lf ueberzugpp maim xclip ncmpcpp mpd mpv feh picom ttf-sourcecodepro-nerd ttf-exo-2 fluent-icon-theme-git orchis-theme firefox discord steam pinta minecraft-launcher
+yay -S --noconfirm xorg-xinit xorg-server xorg-xset libxft libx11 libxinerama webkit2gtk vim zsh htop neofetch lf ueberzugpp maim xclip ncmpcpp mpd mpv feh picom ttf-sourcecodepro-nerd ttf-exo-2 fluent-icon-theme-git orchis-theme librewolf-bin discord steam pinta minecraft-launcher
 
 yay --noconfirm -Yc
 
-#theme
+# theme
 if [ ! -d "/home/$USER/.local/share/icons/default" ]
 then
      mkdir -p /home/$USER/.local/share/icons/default
@@ -39,18 +39,17 @@ fi
 cp -r res/Future-dark-cursors /home/$USER/.local/share/icons/Future-dark-cursors
 echo "Inherits=Future-dark-cursors" >> /home/$USER/.local/share/icons/default/index.theme
 
-# firefox
-firefox --headless &
+# librewolf
+librewolf --headless &
 sleep 10
-pkill firefox
+pkill librewolf
 
-PROFPATH=$(grep "Default=.*\.default*" "$HOME/.mozilla/firefox/profiles.ini" | cut -d"=" -f2)
-mkdir -p ~/.mozilla/firefox/$PROFPATH/chrome
+PROFPATH=$(grep "Default=.*\.default*" "$HOME/.librewolf/profiles.ini" | cut -d"=" -f2)
+mkdir -p ~/.librewolf/$PROFPATH/chrome
 
-ln -s $HOME/.config/firefox/userChrome.css $HOME/.mozilla/firefox/$PROFPATH/chrome/userChrome.css
-ln -s $HOME/.config/firefox/userContent.css $HOME/.mozilla/firefox/$PROFPATH/chrome/userContent.css
+cp -r res/chrome $HOME/.librewolf/$PROFPATH/
 
-echo -e "user_pref(\"toolkit.legacyUserProfileCustomizations.stylesheets\", true);" >> $HOME/.mozilla/firefox/$PROFPATH/prefs.js
+echo -e "user_pref(\"toolkit.legacyUserProfileCustomizations.stylesheets\", true);" >> $HOME/.librewolf/$PROFPATH/prefs.js
 
 # system
 chsh -s /bin/zsh
