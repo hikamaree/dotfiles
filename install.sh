@@ -2,6 +2,8 @@
 
 mv ~/.config ~/old_config
 cp -r config ~/.config
+mv ~/.local ~/.old_local
+cp -r local ~/.local
 
 echo "Is this laptop? (Y/N): "
 read LAPTOP
@@ -27,14 +29,9 @@ fi
 # packages
 git clone https://github.com/hikamaree/suckless.git
 
-yay -S --noconfirm xorg-xinit xorg-server xorg-xset libxft libx11 libxinerama webkit2gtk vim zsh htop neofetch lf ueberzugpp maim xclip ncmpcpp mpd mpv feh picom ttf-sourcecodepro-nerd ttf-exo-2 orchis-theme librewolf-bin discord steam pinta minecraft-launcher
+yay -S --noconfirm xorg-xinit xorg-server xorg-xset libxft libx11 libxinerama webkit2gtk vim zsh htop neofetch lf ueberzugpp maim xclip ncmpcpp mpd mpv feh picom orchis-theme librewolf-bin discord steam pinta minecraft-launcher
 
 yay --noconfirm -Yc
-
-# theme
-mkdir -p /home/$USER/.local/share/icons/default
-cp -r res/Future-dark-cursors /home/$USER/.local/share/icons/Future-dark-cursors
-echo "Inherits=Future-dark-cursors" >> /home/$USER/.local/share/icons/default/index.theme
 
 # librewolf
 librewolf --headless &
@@ -50,5 +47,10 @@ echo -e "user_pref(\"toolkit.legacyUserProfileCustomizations.stylesheets\", true
 
 # system
 chsh -s /bin/zsh
+mkdir -p ~/Documents
+mkdir -p ~/Downloads
+mkdir -p ~/Music
+mkdir -p ~/Pictures/screenshots
 sudo ./system.sh $USER
 
+reboot

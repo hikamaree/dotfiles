@@ -12,7 +12,6 @@ make clean install
 
 cd ../..
 
-cp res/lfrun /usr/bin/lfrun
 cp res/20-amdgpu.conf /etc/X11/xorg.conf.d/20-amdgpu.conf
 
 echo "ZDOTDIR=/home/$1/.config/zsh" >> /etc/environment
