@@ -5,15 +5,11 @@ set previewer ~/.config/lf/preview
 set hidden true
 set ignorecase true
 set icons true
-
 set shell zsh
-
 set shellopts '-eu'
-
 set ifs "\n"
-
+set mouse true
 set scrolloff 10
-
 set cursorpreviewfmt "\033[7;2m"
 
 map <enter> shell
@@ -72,5 +68,5 @@ cmd zip ${{
 map c zip
 map u extract
 
-map <f-12> $ncmpcpp
 map <f-11> $htop
+map <f-12> $ncmpcpp

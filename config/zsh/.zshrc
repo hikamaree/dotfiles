@@ -18,6 +18,10 @@ alias wmake='x86_64-w64-mingw32-make'
 alias makedwm='rm -rf config.h; sudo make clean install'
 
 export HISTFILE="$ZDOTDIR/zsh_history"
+export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
 export EDITOR="vim"
 export TERMINAL="st"
 export BROWSER="firefox"
