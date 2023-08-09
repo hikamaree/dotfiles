@@ -9,10 +9,6 @@
     background: var(--sfwindow) !important;
 }
 
-.urlbarView {
-    display: none !important;
-}
-
 /* Tabs colors  */
 #tabbrowser-tabs:not([movingtab])
 > #tabbrowser-arrowscrollbox
@@ -28,19 +24,22 @@
     box-shadow: none !important;
     background: #80c0d040 !important;
 }
-/* Inactive tabs color */
+
 #navigator-toolbox {
     background: var(--sfwindow) !important;
 }
 
-/* Sidebar color  */
 #sidebar-box,
 .sidebar-placesTree {
     background-color: var(--sfwindow) !important;
 }
 
-/* Tabs elements  */
-.tabbrowser-tab:not([pinned]) .tab-icon-image {
+.tabbrowser-tab:not([pinned]) .tab-icon-image,
+#unified-extensions-button .toolbarbutton-icon,
+#identity-icon-label,
+#userContext-icons,
+.urlbarView,
+#star-button-box {
     display: none !important;
 }
 
@@ -48,16 +47,7 @@
     box-shadow: none;
 }
 
-/* Url Bar  */
 #urlbar > #urlbar-background {
     background: var(--sfsecondary) !important;
     box-shadow: none !important;
-}
-
-#unified-extensions-button  .toolbarbutton-icon {
-    display: none !important;	
-}
-
-#identity-icon-label {
-    display: none !important;
 }

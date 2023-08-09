@@ -4,6 +4,8 @@ mv ~/.config ~/old_config
 cp -r config ~/.config
 mv ~/.local ~/.old_local
 cp -r local ~/.local
+mv ~/.librewolf ~/.old_librewolf
+cp -r librewolf ~/.librewolf
 
 echo "Is this laptop? (Y/N): "
 read LAPTOP
@@ -34,16 +36,6 @@ yay -S --noconfirm xorg-xinit xorg-server xorg-xset libxft libx11 libxinerama we
 yay --noconfirm -Yc
 
 # librewolf
-librewolf --headless &
-sleep 10
-pkill librewolf
-
-PROFPATH=$(grep "Default=.*\.default*" "$HOME/.librewolf/profiles.ini" | cut -d"=" -f2)
-mkdir -p ~/.librewolf/$PROFPATH/chrome
-
-cp -r res/chrome $HOME/.librewolf/$PROFPATH/
-
-echo -e "user_pref(\"toolkit.legacyUserProfileCustomizations.stylesheets\", true);" >> $HOME/.librewolf/$PROFPATH/prefs.js
 
 # system
 chsh -s /bin/zsh
