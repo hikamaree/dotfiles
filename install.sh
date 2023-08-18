@@ -24,7 +24,7 @@ cd ..
 yay --noconfirm -Syu
 
 # packages
-yay -S --noconfirm xorg-xinit xorg-server xorg-xset libxft libx11 libxinerama webkit2gtk vim zsh htop neofetch lf ueberzugpp maim xclip wine-staging mingw-w64-make ncmpcpp mpd mpv feh picom orchis-theme librewolf discord steam pinta minecraft-launcher
+yay -S --noconfirm xorg-xinit xorg-server xorg-xset libxft libx11 libxinerama webkit2gtk hyprland foot vim zsh htop lf ueberzugpp maim grim slurp xclip wl-clipboard wine-staging mingw-w64-make ncmpcpp mpd mpv feh picom orchis-theme librewolf discord pinta
 
 git clone https://github.com/hikamaree/suckless.git
 cd suckless/dwm
@@ -43,11 +43,13 @@ sudo systemctl --global enable mpd
 
 # laptop
 if [[ $LAPTOP == 'y' || $LAPTOP == 'Y' ]]
-then 
+then
+    yay -S --noconfirm go-md2man
     git clone https://github.com/CameronNemo/brillo.git
     cd brillo
     sudo make install.setgid
     cd ..
+    yay -Rns --noconfirm go-md2man
     yay -S --noconfirm auto-cpufreq
     sudo systemctl enable auto-cpufreq
     sudo cp res/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf

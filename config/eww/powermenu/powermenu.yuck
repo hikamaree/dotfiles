@@ -1,0 +1,45 @@
+(defwidget powermenu []
+  (box :class "powermenu"
+       :orientation "h"
+       :space-evenly true
+       :spacing 5
+    (button :class "shutdown"
+            :onclick "poweroff"
+      (label :text "󰐥" :class "content")
+    )
+    (button :class "reboot"
+            :onclick "reboot"
+      (label :text "󰜉" :class "content")
+    )
+    (button :class "logout"
+            :onclick "hyprctl dispatch exit"
+      (label :text "󰍃" :class "content")
+    )
+  )
+)
+
+(defwidget powermenu-clickhandler []
+  (button :class "powermenu-clickhandler"
+          :onclick "eww -c ~/.config/dk/eww close powermenu powermenu-clickhandler"
+    ""
+  )
+)
+
+(defwindow powermenu-clickhandler
+  :geometry (geometry :x "10px"
+                      :y "10px"
+                      :width "100%"
+                      :height "100%"
+                      :anchor "top right")
+  :wm-ignore true
+(powermenu-clickhandler))
+
+(defwindow powermenu
+  :monitor 0
+  :geometry (geometry :x "10px"
+                      :y "10px"
+                      :width "200px"
+                      :height "60px"
+                      :anchor "top right")
+  :wm-ignore true
+(powermenu))

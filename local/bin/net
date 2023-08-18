@@ -1,0 +1,44 @@
+#!/bin/sh
+
+connected=$(nmcli general status | awk '{if (NR!=1) {print $1}}')
+power=$(nmcli radio wifi)
+if [[ $connected == *"connected"* ]] && [[ $power == *"enabled"* ]];
+then
+	case $BUTTON in
+		1) st nmtui & ;;
+	esac
+	update() {
+		sum=0
+		for arg; do
+			read -r i < "$arg"
+			sum=$(( sum + i ))
+		done
+		cache=${XDG_CACHE_HOME:-$HOME/.cache}/${1##*/}
+		[ -f "$cache" ] && read -r old < "$cache" || old=0
+		printf %d\\n "$sum" > "$cache"
+		printf %d\\n $(( sum - old ))
+	}
+
+	rx=$(update /sys/class/net/[ew]*/statistics/rx_bytes)
+
+	signal=$(cat /proc/net/wireless | awk '{if(NR == 3){print substr($3,1,2)}}')
+	if (($signal < 14));
+	then
+		printf "󰤯 "
+	elif (($signal < 28));
+	then
+		printf "󰤟 "
+	elif (($signal < 42));
+	then
+		printf "󰤢 "
+	elif (($signal < 56));
+	then
+		printf "󰤥 "
+	else
+		printf "󰤨 "
+	fi
+	printf "%1sB/s" $(numfmt --to=iec $rx)
+
+else
+	printf "󰤭 "
+fi

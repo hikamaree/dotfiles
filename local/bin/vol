@@ -1,0 +1,28 @@
+#!/bin/sh
+case "$1" in
+	"down")
+		pactl set-sink-volume @DEFAULT_SINK@ -5%
+		kill -44 $(pidof dwmblocks);;
+	"up")
+		vol=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1)
+		if (( $vol <= 95 )); then
+			pactl set-sink-volume @DEFAULT_SINK@ +5%
+		else
+			pactl set-sink-volume @DEFAULT_SINK@ 100%
+		fi
+		kill -44 $(pidof dwmblocks);;
+
+	"mute")
+		pactl set-sink-mute @DEFAULT_SINK@ toggle
+		kill -44 $(pidof dwmblocks);;
+	*)
+		vol=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1)
+		mute=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
+		if [[ $mute == *"yes"* ]];
+		then
+			printf " "
+		else 
+			printf " "
+			printf $vol
+		fi
+esac
