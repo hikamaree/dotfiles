@@ -1,0 +1,21 @@
+#!/bin/sh
+
+programi="󰖟 librewolf\n󰙯 discord\n󰓓 steam\n󰍳 minecraft\n st\n lf\n ncmpcpp\n htop\n󱇧 paint\n󰿅 logout\n󰑓 reboot\n󰤆 poweroff"
+
+program=$(echo -e "$programi" | tofi)
+
+case "$program" in 
+    "󰖟 librewolf") librewolf;;
+    "󰙯 discord") discord;;
+    "󰓓 steam") steam;;
+    "󰍳 minecraft") minecraft-launcher;;
+    " foot") foot;;
+    " lf") foot lf;;
+    " ncmpcpp") foot ncmpcpp;;
+    " htop") foot htop;;
+    "󱇧 paint") pinta;;
+    "󰿅 logout") hyprctl dispatch exit;;
+    "󰑓 reboot") reboot;;
+    "󰤆 poweroff") poweroff;;
+    *) $program;;
+esac
