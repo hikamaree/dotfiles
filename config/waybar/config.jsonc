@@ -1,0 +1,61 @@
+{
+        "layer": "top",
+        "height": 32,
+
+        "modules-left": ["hyprland/workspaces"],
+        "modules-center": ["clock"],
+        "modules-right": ["network", "battery", "backlight","pulseaudio", "tray"],
+
+        "wlr/workspaces": {
+            "disable-scroll": true,
+            "on-click": "activate"
+        },
+
+        "clock": {
+            "format": "<span> </span>{:%b %d %H:%M}",
+            "interval": 10
+        },
+
+        "network": {
+            "tooltip": false,
+            "format-wifi": "<span color=\"#61afef\">{icon} </span>{essid}",
+            "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+            "format-disconnected": "<span color=\"#61afef\">󰤮 </span>",
+            "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+        },
+
+        "battery": {
+            "tooltip": false,
+            "states": {
+                // "good": 95,
+                "warning": 30,
+                "critical": 15
+            },
+            "format":"<span color=\"#61afef\">{icon} </span>{capacity}%",
+            "format-charging": "<span color=\"#e06c75\"> </span>{capacity}%",
+            "format-plugged": "<span color=\"#e06c75\"> </span>{capacity}%",
+            "format-alt": "<span color=\"#61afef\">{icon} </span>{time}",
+            "format-icons": [" ", " ", " ", " ", " "],
+            "interval": 2
+        },
+
+        "backlight": {
+            "tooltip": false,
+            "format": "<span color=\"#61afef\">{icon} </span>{percent}%",
+            "format-icons": ["", "", "", "", "", "", "", "", ""]
+        },
+
+        "pulseaudio": {
+            "tooltip": false,
+            "scroll-step": 1, // %, can be a float
+            "format": "<span color=\"#e06c75\">{icon} </span>{volume}%",
+            "format-muted": "<span color=\"#f7768e\">󰖁 </span>Muted",
+            "format-icons": ["󰕿", "󰖀", "󰕾"]
+        },
+
+        "tray": {
+            "tooltip": false,
+            "icon-size": 18,
+            "spacing": 8
+        }
+}

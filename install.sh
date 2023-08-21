@@ -24,7 +24,10 @@ cd ..
 yay --noconfirm -Syu
 
 # packages
-yay -S --noconfirm xorg-xinit xorg-server xorg-xset libxft libx11 libxinerama webkit2gtk hyprland foot vim zsh htop lf ueberzugpp maim grim slurp xclip wl-clipboard wine-staging mingw-w64-make ncmpcpp mpd mpv feh picom orchis-theme librewolf discord pinta
+
+yay -S --noconfirm xorg-xinit xorg-server xorg-xset libxft libx11 libxinerama webkit2gtk ueberzugpp maim xclip picom
+yay -S --noconfirm hyprland foot grim slurp waybar-hyprland-git tofi wl-clipboard
+yay -S --noconfirm vim zsh htop lf wine-staging mingw-w64-make ncmpcpp mpd mpv feh orchis-theme librewolf discord
 
 git clone https://github.com/hikamaree/suckless.git
 cd suckless/dwm

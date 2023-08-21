@@ -1,0 +1,34 @@
+* {
+    font-family: SauceCodePro Nerd Font, feather;
+    font-size: 18px;
+    color: #80c0d0;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#workspaces button {
+    border-radius: 0;
+    padding: 0px 5px 0px 5px;
+}
+
+#workspaces button.active {
+    border-bottom: 4px solid #61afef;
+}
+
+#workspaces button.urgent,
+#workspaces button:hover {
+    background: rgba(128, 192, 208, 0.25);
+}
+
+#workspaces,
+#clock,
+#network,
+#battery,
+#backlight,
+#pulseaudio,
+#tray {
+    background: transparent;
+    padding: 0 10px;
+}
