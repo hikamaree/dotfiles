@@ -1,23 +1,22 @@
 #!/bin/bash
 bat=$(cat /sys/class/power_supply/BAT0/capacity)
 ac=$(cat /sys/class/power_supply/AC0/online)
+
 if (($ac == 1));
 then 
-	printf " "
+	echo " $bat"
 elif (($bat < 20));
 then
-	printf "  "
+	echo "  $bat"
 elif (($bat < 40));
 then
-	printf "  "
+	echo "  $bat"
 elif (($bat < 60));
 then
-	printf "  "
+	echo "  $bat"
 elif (($bat < 80));
 then
-	printf "  "
+	echo "  $bat"
 else
-	printf "  "
+	echo "  $bat"
 fi
-
-printf $bat

@@ -14,37 +14,45 @@ mkdir -p ~/Pictures/screenshots
 
 sudo ./system.sh $USER
 
-echo "Is this laptop? (Y/N): "
-read LAPTOP
-
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
 cd ..
 yay --noconfirm -Syu
 
-# packages
+#wayland
+echo "Install wayland (y/n): "
+read WAYLAND
+if [[ $WAYLAND == 'y' || $WAYLAND == 'Y' ]]
+then
+    yay -S --noconfirm hyprland foot grim slurp waybar-hyprland-git wl-clipboard swayimg bemenu-wayland
+fi
 
-yay -S --noconfirm xorg-xinit xorg-server xorg-xset libxft libx11 libxinerama webkit2gtk ueberzugpp maim xclip picom
-yay -S --noconfirm hyprland foot grim slurp waybar-hyprland-git tofi wl-clipboard
-yay -S --noconfirm vim zsh htop lf wine-staging mingw-w64-make ncmpcpp mpd mpv feh orchis-theme librewolf discord
+#x11
+echo "Install X11 (y/n): "
+read X11
+if [[ $X11 == 'y' || $X11 == 'Y' ]]
+then
+    yay -S --noconfirm xorg-xinit xorg-server xorg-xset libxft libx11 libxinerama webkit2gtk ueberzugpp maim xclip picom feh
 
-git clone https://github.com/hikamaree/suckless.git
-cd suckless/dwm
-sudo make clean install
-cd ../dwmblocks
-sudo make clean install
-cd ../dmenu
-sudo make clean install
-cd ../st
-sudo make clean install
-cd ../..
+    git clone https://github.com/hikamaree/suckless.git
 
-sudo cp res/20-amdgpu.conf /etc/X11/xorg.conf.d/20-amdgpu.conf
+    cd suckless/dwm
+    sudo make clean install
+    cd ../dwmblocks
+    sudo make clean install
+    cd ../dmenu
+    sudo make clean install
+    cd ../st
+    sudo make clean install
+    cd ../..
 
-sudo systemctl --global enable mpd
+    sudo cp res/20-amdgpu.conf /etc/X11/xorg.conf.d/20-amdgpu.conf
+fi
 
 # laptop
+echo "Install laptop utilities (y/n): "
+read LAPTOP
 if [[ $LAPTOP == 'y' || $LAPTOP == 'Y' ]]
 then
     yay -S --noconfirm go-md2man
@@ -57,6 +65,13 @@ then
     sudo systemctl enable auto-cpufreq
     sudo cp res/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 fi
+
+yay -S --noconfirm vim zsh htop lf wine-staging mingw-w64-make ncmpcpp mpd mpv libva-mesa-driver librewolf-bin webcord
+
+gsettings set org.gnome.desktop.interface gtk-theme "HyprGTK"
+gsettings set org.gnome.desktop.interface icon-theme "Fluent-dark"
+gsettings set org.gnome.desktop.interface cursor-theme "Future-dark-cursors"
+gsettings set org.gnome.desktop.interface font-name "Exo 2 12"
 
 yay --noconfirm -Yc
 

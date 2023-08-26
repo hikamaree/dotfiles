@@ -1,26 +1,19 @@
 set ratios 1:2:3
-set cleaner ~/.config/lf/cleaner
-set previewer ~/.config/lf/preview
-
+set drawbox true
 set hidden true
 set ignorecase true
 set icons true
 set shell zsh
-set shellopts '-eu'
-set ifs "\n"
 set mouse true
 set scrolloff 10
 set cursorpreviewfmt "\033[7;2m"
 
 map <enter> shell
-
-map ` !true
+map a :push %mkdir<space>
+map <delete> delete
 
 map x $$f
 map X !$f
-
-map o &mimeopen $f
-map O $mimeopen --ask $f
 
 cmd open &{{
     case $(file --mime-type -Lb $f) in
@@ -28,14 +21,6 @@ cmd open &{{
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
-
-map a :push %mkdir<space>
-
-# %mkdir -p ~/.trash
-#cmd trash %set -f; mv $fx ~/.trash
-# map <delete> trash
-
-map <delete> delete
 
 cmd extract ${{
     set -f
@@ -64,6 +49,8 @@ cmd zip ${{
     zip -r $1.zip $1
     rm -rf $1
 }}
+
+map o open
 
 map c zip
 map u extract

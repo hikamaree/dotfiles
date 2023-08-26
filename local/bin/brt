@@ -11,12 +11,11 @@ case "$1" in
 		b=${B%.*}
 		if (( b < 30 )); 
 		then
-			printf "󰃞 "
+			echo "󰃞 $b"
 		elif (( b < 70 ));
 		then
-			printf "󰃟 "
+			echo "󰃟 $b"
 		else
-			printf "󰃠 "
+			echo "󰃠 $b"
 		fi
-		printf $b 
 esac

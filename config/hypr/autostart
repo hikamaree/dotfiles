@@ -1,0 +1,6 @@
+monitor= eDP-1,2880x1800@90,0x0,1.5
+
+exec-once = brillo -S 30.2
+exec-once = sudo cpuset powersave
+exec-once = waybar
+exec-once = mpd

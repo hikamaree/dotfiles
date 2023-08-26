@@ -4,15 +4,18 @@
 
         "modules-left": ["hyprland/workspaces"],
         "modules-center": ["clock"],
-        "modules-right": ["network", "battery", "backlight","pulseaudio", "tray"],
+        "modules-right": ["network", "battery", "backlight","pulseaudio", "custom/guvernor", "tray"],
 
         "wlr/workspaces": {
             "disable-scroll": true,
-            "on-click": "activate"
+            "on-click": "activate",
+            "format-icons": {
+                "urgent": ""
+            }
         },
 
         "clock": {
-            "format": "<span> </span>{:%b %d %H:%M}",
+            "format": "<span> </span>{:%b   %d   %H : %M}",
             "interval": 10
         },
 
@@ -20,8 +23,8 @@
             "tooltip": false,
             "format-wifi": "<span color=\"#61afef\">{icon} </span>{essid}",
             "format-ethernet": "󰈀 {ipaddr}/{cidr}",
-            "format-disconnected": "<span color=\"#61afef\">󰤮 </span>",
-            "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+            "format-disconnected": "<span color=\"#e06c75\">󰤮 </span>",
+            "format-icons": ["󰤯  ", "󰤟  ", "󰤢  ", "󰤥  ", "󰤨  "]
         },
 
         "battery": {
@@ -33,24 +36,36 @@
             },
             "format":"<span color=\"#61afef\">{icon} </span>{capacity}%",
             "format-charging": "<span color=\"#e06c75\"> </span>{capacity}%",
-            "format-plugged": "<span color=\"#e06c75\"> </span>{capacity}%",
-            "format-alt": "<span color=\"#61afef\">{icon} </span>{time}",
-            "format-icons": [" ", " ", " ", " ", " "],
+            "format-icons": ["   ", "   ", "   ", "   ", "   "],
             "interval": 2
         },
 
         "backlight": {
             "tooltip": false,
             "format": "<span color=\"#61afef\">{icon} </span>{percent}%",
-            "format-icons": ["", "", "", "", "", "", "", "", ""]
+            "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
         },
 
         "pulseaudio": {
             "tooltip": false,
-            "scroll-step": 1, // %, can be a float
-            "format": "<span color=\"#e06c75\">{icon} </span>{volume}%",
-            "format-muted": "<span color=\"#f7768e\">󰖁 </span>Muted",
-            "format-icons": ["󰕿", "󰖀", "󰕾"]
+            "format": "<span color=\"#61afef\">   </span>{volume}%",
+            "format-muted": "<span color=\"#e06c75\"> </span>",
+            "on-click": "vol mute"
+        },
+
+        "custom/guvernor": {
+            "tooltip": false,
+            "format": "{icon} ",
+            "return-type": "json",
+            "exec": "~/.config/waybar/modules/cpuget",
+            "on-click": "sudo cpuset; kill -RTMIN+1 $(pidof waybar)",
+            "exec-on-event": true,
+            "signal": 1,
+            "interval": "once",
+            "format-icons": {
+                "powersave": "<span color=\"#61afef\">󰾆</span>", 
+                "performance": "<span color=\"#e06c75\">󰓅</span>"
+            }
         },
 
         "tray": {

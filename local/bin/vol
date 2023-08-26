@@ -20,9 +20,8 @@ case "$1" in
 		mute=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
 		if [[ $mute == *"yes"* ]];
 		then
-			printf " "
+			echo " "
 		else 
-			printf " "
-			printf $vol
+			echo " $vol"
 		fi
 esac

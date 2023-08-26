@@ -4,7 +4,6 @@ alias ls='ls --color=auto'
 alias ll='ls -al --group-directories-first'
 alias grep='grep --color=auto'
 alias diff="diff --color=auto"
-alias lf='lfrun'
 alias cp='cp -rfv'
 alias mv='mv -fv'
 alias rm='rm -rfv'

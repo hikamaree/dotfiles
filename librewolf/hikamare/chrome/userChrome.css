@@ -1,12 +1,16 @@
 :root {
-    --sfwindow: #0005;
-    --sfsecondary: #0000;
+    --sfwindow: transparent; /*rgba(0, 0, 0, 0.5);*/
+    --sfsecondary: transparent;
     --toolbar-bgcolor: var(--sfsecondary) !important;
     --tabs-border-color: var(--sfsecondary) !important;
     --lwt-sidebar-background-color: var(--sfwindow) !important;
     --lwt-toolbar-field-focus: var(--sfsecondary) !important;
-    --toolbar-field-focus-border-color: transparent !important;
-    background: var(--sfwindow) !important;
+    --toolbar-field-focus-border-color: var(--sfsecondary) !important;
+    --arrowpanel-background: rgba(0, 0, 0, 0.5) !important;
+}
+
+menupopup {
+    --panel-background: rgba(0, 0, 0, 0.75) !important;
 }
 
 /* Tabs colors  */
@@ -25,22 +29,21 @@
     background: #80c0d040 !important;
 }
 
-#navigator-toolbox {
-    background: var(--sfwindow) !important;
-}
-
-#sidebar-box,
-.sidebar-placesTree {
-    background-color: var(--sfwindow) !important;
-}
-
 .tabbrowser-tab:not([pinned]) .tab-icon-image,
+.titlebar-buttonbox-container,
 #unified-extensions-button .toolbarbutton-icon,
 #identity-icon-label,
 #userContext-icons,
 .urlbarView,
-#star-button-box {
+#star-button-box,
+#alltabs-button {
     display: none !important;
+}
+
+#navigator-toolbox,
+#sidebar-box,
+.sidebar-placesTree {
+    background: var(--sfwindow) !important;
 }
 
 #nav-bar:not([tabs-hidden='true']) {

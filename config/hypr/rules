@@ -1,0 +1,7 @@
+layerrule = blur, waybar
+layerrule = blur, menu
+layerrule = blur, gtk-layer-shell
+
+windowrule = center, discord
+windowrule = center, wine
+

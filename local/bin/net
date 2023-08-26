@@ -37,8 +37,8 @@ then
 	else
 		printf "󰤨 "
 	fi
-	printf "%1sB/s" $(numfmt --to=iec $rx)
+	printf "%1sB/s\n" $(numfmt --to=iec $rx)
 
 else
-	printf "󰤭 "
+	echo "󰤭 "
 fi

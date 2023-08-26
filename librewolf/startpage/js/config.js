@@ -7,15 +7,15 @@ const CONFIG = {
    * Update line 11 and 13 if you prefer using Google.
    */
   commands: [{
-      name: 'Brave',
+      name: 'Google',
       key: '*',
-      url: 'https://search.brave.com/',
-      search: '/?q={}'
+      url: 'https://www.google.com/',
+      search: '/search?q={}'
     },
     {
       category: 'General',
       name: 'Mail',
-      key: 'm',
+      key: '',
       url: 'https://gmail.com',
       search: '/#search/text={}',
       icon: 'mail',
@@ -24,7 +24,7 @@ const CONFIG = {
     {
       category: 'General',
       name: 'WhatsApp',
-      key: 'w',
+      key: '󰖣',
       url: 'https://web.whatsapp.com',
       icon: 'whatsapp',
       quickLaunch: false,
@@ -32,7 +32,7 @@ const CONFIG = {
     {
       category: 'General',
       name: 'Discord',
-      key: 'd',
+      key: '󰙯',
       url: 'https://discord.com/app',
       icon: 'discord',
       quickLaunch: false,
@@ -42,7 +42,7 @@ const CONFIG = {
     {
       category: 'Programming',
       name: 'GitHub',
-      key: 'g',
+      key: '',
       url: 'https://github.com',
       search: '/search?q={}',
       icon: 'github',
@@ -51,7 +51,7 @@ const CONFIG = {
     {
       category: 'Programming',
       name: 'StackOverflow',
-      key: 's',
+      key: '',
       url: 'https://stackoverflow.com',
       search: '/search?q={}',
       icon: 'stackoverflow',
@@ -60,7 +60,7 @@ const CONFIG = {
     {
       category: 'Programming',
       name: 'ArchWiki',
-      key: 'a',
+      key: '󰣇',
       url: 'https://archlinux.org/',
       icon: 'arch',
       quickLaunch: true,
@@ -70,7 +70,7 @@ const CONFIG = {
     {
       category: 'Fun',
       name: 'YouTube',
-      key: 'y',
+      key: '󰗃',
       url: 'https://youtube.com',
       search: '/results?search_query={}',
       icon: 'youtube',
@@ -79,7 +79,7 @@ const CONFIG = {
     {
       category: 'Fun',
       name: 'Chess',
-      key: 'c',
+      key: '󰡗',
       url: 'https://chess.com',
       icon: 'chess',
       quickLaunch: false,
@@ -87,7 +87,7 @@ const CONFIG = {
     {
       category: 'Fun',
       name: 'Reddit',
-      key: 'r',
+      key: '',
       url: 'https://reddit.com',
       search: '/search?q={}',
       icon: 'reddit',
@@ -98,7 +98,7 @@ const CONFIG = {
     {
       category: 'Other',
       name: 'Office',
-      key: 'o',
+      key: '󰏆',
       url: 'https://office.com',
       icon: 'office',
       quickLaunch: false,
@@ -106,7 +106,7 @@ const CONFIG = {
     {
       category: 'Other',
       name: 'CMC',
-      key: 'cmc',
+      key: '',
       url: 'https://coinmarketcap.com',
       icon: 'cmc',
       quickLaunch: false,
@@ -114,7 +114,7 @@ const CONFIG = {
     {
       category: 'Other',
       name: 'Moodle',
-      key: 'mo',
+      key: '󱆀',
       url: 'https://elearning.rcub.bg.ac.rs/moodle/',
       icon: 'moodle',
       quickLaunch: false,
@@ -186,7 +186,7 @@ const CONFIG = {
   /**
    * Show keys instead of icons
    */
-  showKeys: false,
+  showKeys: true,
 
   /**
    * The delimiter between a command key and your search query. For example,
@@ -213,5 +213,5 @@ const CONFIG = {
   /**
    * File extension for icon images
    */
-  iconExtension: 'png'
+  iconExtension: ''
 };

@@ -1,0 +1,79 @@
+input {
+    kb_layout = us
+    kb_variant =
+    kb_model =
+    kb_options =
+    kb_rules =
+
+    follow_mouse = 1
+
+    touchpad {
+        natural_scroll = no
+    }
+
+    repeat_rate = 50
+    repeat_delay = 200
+
+    sensitivity = 0
+}
+
+general {
+    gaps_in = 5
+    gaps_out = 10
+    border_size = 2
+    col.active_border = rgba(80c0d0ee)
+    col.inactive_border = rgba(595959aa)
+
+    #max_fps=360
+
+    layout = dwindle
+}
+
+decoration {
+    rounding = 5
+    
+    blur {
+        enabled = true
+        size = 3
+        passes = 4
+        new_optimizations = true
+    }
+
+    drop_shadow = no
+}
+
+animations {
+    enabled = true
+
+    bezier = myBezier, 0.05, 0.9, 0.1, 1.05
+
+    animation = windows, 1, 7, myBezier
+    animation = windowsOut, 1, 7, default, popin 80%
+    animation = border, 1, 10, default
+    animation = borderangle, 1, 8, default
+    animation = fade, 1, 7, default
+    animation = workspaces, 1, 6, default
+}
+
+dwindle {
+    pseudotile = yes
+    preserve_split = yes
+}
+
+master {
+    new_is_master = true
+}
+
+gestures {
+    workspace_swipe = true
+    workspace_swipe_distance = 200
+}
+
+misc {
+    disable_splash_rendering = true
+    vrr = 1
+}
+
+xwayland {
+    force_zero_scaling = true
+}

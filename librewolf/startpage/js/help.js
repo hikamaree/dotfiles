@@ -107,7 +107,7 @@ class Help {
           }
         })
         .join('');
-  
+
       const commandListWithKeys = this._commands
         .map(({ category, name, key, url }, i) => {
           if (category === currentCategory) {
@@ -116,9 +116,9 @@ class Help {
                 <a href="${url}" target="${this._newTab ? '_blank' : '_self'}">
                       <style>
                         .command-key-${i} {
-                          color: ${fgcolor}; 
+                          color: ${fgcolor};
                           background-color:${bgcolor};
-                          border: 4px solid ${fgcolor}; 
+                          /*border: 4px solid ${fgcolor}; */
                         }   
                       </style>
                   <span class="command-key command-key-${i}">${key}</span>

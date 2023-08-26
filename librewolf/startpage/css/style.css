@@ -10,7 +10,7 @@ main {
   display: block;
 }
 h1 {
-  font-size: 2em;
+  font-size: 24px;
   margin: 0.67em 0;
 }
 hr {
@@ -20,7 +20,7 @@ hr {
 }
 pre {
   font-family: Exo 2; /* 1 */
-  font-size: 1em; /* 2 */
+  font-size: 24px; /* 2 */
 }
 a {
   background-color: transparent;
@@ -38,7 +38,7 @@ code,
 kbd,
 samp {
   font-family: exo 2; /* 1 */
-  font-size: 1em; /* 2 */
+  font-size: 24px; /* 2 */
 }
 small {
   font-size: 80%;
@@ -67,7 +67,7 @@ optgroup,
 select,
 textarea {
   font-family: exo 2; /* 1 */
-  font-size: 100%; /* 1 */
+  font-size: 24px; /* 1 */
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
 }
@@ -157,8 +157,8 @@ template {
   --foreground: #80c0d0;
 
   /* fonts */
-  --base-font-size: 18px;
-  --font-weight-normal: 500;
+  --base-font-size: 20px;
+  --font-weight-normal: 800;
   --font-weight-bold: 900;
 }
 
@@ -346,8 +346,9 @@ body.suggestions .search-suggestions {
 }
 
 .category-name {
+  display: none;
   margin-bottom: 1.5rem;
-  font-size: 0.75rem;
+  font-size: 24px;
   letter-spacing: 0.15rem;
   text-transform: uppercase;
 }
@@ -358,6 +359,7 @@ body.suggestions .search-suggestions {
   margin: 1rem 0;
   line-height: 2rem;
   text-decoration: none;
+  border: none;
 }
 
 .command:last-of-type a {
@@ -369,10 +371,10 @@ body.suggestions .search-suggestions {
   width: 2rem;
   height: 2rem;
   margin-right: 1rem;
-  font-size: 0.75rem;
-  font-weight: 800;
+  font-size: 32px;
+  font-weight: 900;
   line-height: 1.5rem;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .command-name {

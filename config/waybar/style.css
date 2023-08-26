@@ -1,6 +1,7 @@
 * {
-    font-family: SauceCodePro Nerd Font, feather;
+    font-family: "Exo 2", feather;
     font-size: 18px;
+    font-weight: bold;
     color: #80c0d0;
 }
 
@@ -9,17 +10,14 @@ window#waybar {
 }
 
 #workspaces button {
-    border-radius: 0;
-    padding: 0px 5px 0px 5px;
+    border-radius: 5px;
+    padding: 0px 4px;
+    margin: 2px 1px;
 }
 
 #workspaces button.active {
-    border-bottom: 4px solid #61afef;
-}
-
-#workspaces button.urgent,
-#workspaces button:hover {
     background: rgba(128, 192, 208, 0.25);
+    color: #61afef;
 }
 
 #workspaces,
@@ -28,7 +26,10 @@ window#waybar {
 #battery,
 #backlight,
 #pulseaudio,
-#tray {
-    background: transparent;
+#custom-guvernor {
     padding: 0 10px;
+}
+
+#tray {
+    padding-right: 10px;
 }
