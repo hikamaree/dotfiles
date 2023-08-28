@@ -2,21 +2,25 @@
     font-family: "Exo 2", feather;
     font-size: 18px;
     font-weight: bold;
-    color: #80c0d0;
+    color: #c0caf5;
 }
 
 window#waybar {
-    background: rgba(0, 0, 0, 0.5);
+    background: #1a1b26;
+}
+
+#workspaces {
+    margin-left: -4px;
 }
 
 #workspaces button {
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 0px 4px;
     margin: 2px 1px;
 }
 
 #workspaces button.active {
-    background: rgba(128, 192, 208, 0.25);
+    background: #414868;
     color: #61afef;
 }
 

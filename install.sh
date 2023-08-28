@@ -63,10 +63,10 @@ then
     yay -Rns --noconfirm go-md2man
     yay -S --noconfirm auto-cpufreq
     sudo systemctl enable auto-cpufreq
-    sudo cp res/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+    [[ $X11 == 'y' || $X11 == 'Y' ]] && sudo cp res/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 fi
 
-yay -S --noconfirm vim zsh htop lf wine-staging mingw-w64-make ncmpcpp mpd mpv libva-mesa-driver librewolf-bin webcord
+yay -S --noconfirm nvim zsh htop lf wine-staging mingw-w64-make ncmpcpp mpd mpv libva-mesa-driver librewolf-bin webcord
 
 gsettings set org.gnome.desktop.interface gtk-theme "HyprGTK"
 gsettings set org.gnome.desktop.interface icon-theme "Fluent-dark"

@@ -1,0 +1,79 @@
+let skip_defaults_vim=1
+
+set viminfo=""
+
+set autoindent
+set expandtab
+set shiftwidth=4
+set smarttab
+set tabstop=4
+
+set hlsearch
+set ignorecase
+set incsearch
+
+set mouse=a
+set scrolloff=5
+"set mousescroll=1
+let &t_EI .= "\<Esc>[3 q"
+let &t_SI .= "\<Esc>[3 q"
+let &t_SR .= "\<Esc>[3 q"
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
+set number
+set laststatus=2
+
+set background=dark
+set t_Co=256
+hi Visual ctermbg=8
+hi LineNr cterm=bold
+hi StatusLine ctermfg=8 ctermbg=7
+hi Pmenu ctermfg=7 ctermbg=8
+hi PmenuSel ctermfg=8 ctermbg=7
+
+syntax on
+
+set statusline=
+set statusline+=\ 
+set statusline+=\ %f
+set statusline+=\ %m
+set statusline+=%=
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\ 
+
+map <C-c> y: call system("xclip -i -selection clipboard", getreg("\""))<CR>
+map <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
+map <C-a> ggVG
+
+autocmd TerminalWinOpen *
+  \  if &buftype == 'terminal' |
+  \    resize 10 |
+  \    setlocal termwinsize=0x140 |
+  \    setlocal nowrap |
+  \  endif
+
+let s:term_buf_nr = -1
+function! s:ToggleTerminal() abort
+    if s:term_buf_nr == -1
+        execute "botright terminal"
+        let s:term_buf_nr = bufnr("$")
+    else
+        try
+            execute "bdelete! " . s:term_buf_nr
+        catch
+            let s:term_buf_nr = -1
+            call <SID>ToggleTerminal()
+            return
+        endtry
+        let s:term_buf_nr = -1
+    endif
+endfunction
+
+nnoremap ` :call <SID>ToggleTerminal()<CR>
+tnoremap ` <C-w>N:call <SID>ToggleTerminal()<CR>

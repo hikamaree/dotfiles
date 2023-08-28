@@ -2,7 +2,7 @@
 
 programi="󰖟   librewolf\n󰙯   discord\n   foot\n   lf\n   ncmpcpp\n   htop\n󱇧   xournalpp\n󰿅   logout\n󰤆   poweroff"
 
-program=$(echo -e "$programi" | bemenu -i -H 28 -l 20 -c -W 0.2 -B 1 -R 10 -n --fn "Exo 2 16" -p '' --tb '#00000080' --fb '#00000080' --fbb '#00000080' --sb '#80c0d080' --nb '#00000080' --ab '#00000080' --sb '#80c0d040' --hb '#80c0d040' --bdr '#80c0d0' --ff '#80c0d0' --nf '#80c0d0' --af '#80c0d0' --fbf '#80c0d0' --hf '#80c0d0' --cw 2)
+program=$(echo -e "$programi" | bemenu -i -H 28 -l 20 -c -W 0.2 -B 1 -R 10 -n --fn "Exo 2 16" -p '' --tb '#1a1b26' --fb '#1a1b26' --fbb '#1a1b26' --sb '#1a1b26' --nb '#1a1b26' --ab '#1a1b26' --sb '#16161e' --hb '#16161e' --bdr '#16161e' --ff '#80c0d0' --nf '#80c0d0' --af '#80c0d0' --fbf '#80c0d0' --hf '#7aa2f7' --cw 2)
 
 case "$program" in 
 	"󰖟   librewolf") librewolf;;

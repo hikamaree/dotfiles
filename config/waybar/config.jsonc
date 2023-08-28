@@ -1,7 +1,6 @@
 {
         "layer": "top",
         "height": 32,
-
         "modules-left": ["hyprland/workspaces"],
         "modules-center": ["clock"],
         "modules-right": ["network", "battery", "backlight","pulseaudio", "custom/guvernor", "tray"],
@@ -21,9 +20,9 @@
 
         "network": {
             "tooltip": false,
-            "format-wifi": "<span color=\"#61afef\">{icon} </span>{essid}",
+            "format-wifi": "<span color=\"#7aa2f7\">{icon} </span>{essid}",
             "format-ethernet": "󰈀 {ipaddr}/{cidr}",
-            "format-disconnected": "<span color=\"#e06c75\">󰤮 </span>",
+            "format-disconnected": "<span color=\"#f7768e\">󰤮 </span>",
             "format-icons": ["󰤯  ", "󰤟  ", "󰤢  ", "󰤥  ", "󰤨  "]
         },
 
@@ -34,22 +33,22 @@
                 "warning": 30,
                 "critical": 15
             },
-            "format":"<span color=\"#61afef\">{icon} </span>{capacity}%",
-            "format-charging": "<span color=\"#e06c75\"> </span>{capacity}%",
+            "format":"<span color=\"#7aa2f7\">{icon} </span>{capacity}%",
+            "format-charging": "<span color=\"#f7768e\"> </span>{capacity}%",
             "format-icons": ["   ", "   ", "   ", "   ", "   "],
             "interval": 2
         },
 
         "backlight": {
             "tooltip": false,
-            "format": "<span color=\"#61afef\">{icon} </span>{percent}%",
+            "format": "<span color=\"#7aa2f7\">{icon} </span>{percent}%",
             "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
         },
 
         "pulseaudio": {
             "tooltip": false,
-            "format": "<span color=\"#61afef\">   </span>{volume}%",
-            "format-muted": "<span color=\"#e06c75\"> </span>",
+            "format": "<span color=\"#7aa2f7\">   </span>{volume}%",
+            "format-muted": "<span color=\"#f7768e\"> </span>",
             "on-click": "vol mute"
         },
 
@@ -63,8 +62,8 @@
             "signal": 1,
             "interval": "once",
             "format-icons": {
-                "powersave": "<span color=\"#61afef\">󰾆</span>", 
-                "performance": "<span color=\"#e06c75\">󰓅</span>"
+                "powersave": "<span color=\"#7aa2f7\">󰾆</span>",
+                "performance": "<span color=\"#f7768e\">󰓅</span>"
             }
         },
 
