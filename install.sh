@@ -68,7 +68,7 @@ fi
 
 yay -S --noconfirm nvim zsh htop lf wine-staging mingw-w64-make ncmpcpp mpd mpv libva-mesa-driver librewolf-bin webcord
 
-gsettings set org.gnome.desktop.interface gtk-theme "HyprGTK"
+gsettings set org.gnome.desktop.interface gtk-theme "Tokyonight-Dark"
 gsettings set org.gnome.desktop.interface icon-theme "Fluent-dark"
 gsettings set org.gnome.desktop.interface cursor-theme "Future-dark-cursors"
 gsettings set org.gnome.desktop.interface font-name "Exo 2 12"
