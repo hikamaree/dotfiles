@@ -9,7 +9,8 @@ HISTFILE=$ZDOTDIR/histfile
 HISTSIZE=1000000
 SAVEHIST=1000000
 setopt appendhistory
-
+autoload -Uz compinit
+compinit
 unsetopt PROMPT_SP
 
 stty stop undef
@@ -27,10 +28,42 @@ zle-line-init() {
     zle -K viins
     echo -ne "\e[3 q"
 }
-
 zle -N zle-line-init
+
+lfShow() {
+    lf <$TTY
+    zle redisplay
+}
+zle -N lfShow
+bindkey '^[1' lfShow
+
+htopShow() {
+    htop <$TTY
+    zle redisplay
+}
+zle -N htopShow
+bindkey '^[2' htopShow
+
+ncmpcppShow() {
+    ncmpcpp --quiet<$TTY
+    zle redisplay
+}
+zle -N ncmpcppShow
+bindkey '^[3' ncmpcppShow
 
 echo -ne '\e[3 q'
 preexec() { echo -ne '\e[3 q' ;}
+
+function clear-screen-and-scrollback() {
+    echoti civis >"$TTY"
+    printf '%b' '\e[H\e[2J' >"$TTY"
+    zle .reset-prompt
+    zle -R
+    printf '%b' '\e[3J' >"$TTY"
+    echoti cnorm >"$TTY"
+}
+
+zle -N clear-screen-and-scrollback
+bindkey '^L' clear-screen-and-scrollback
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland

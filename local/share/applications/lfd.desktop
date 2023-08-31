@@ -1,5 +1,6 @@
 [Desktop Entry]
 Type=Application
+Icon=system-file-manager
 Name=lf
 Exec=foot lf
 MimeType=inode/directory;

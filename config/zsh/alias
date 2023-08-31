@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+alias sudo='nocorrect sudo'
 alias ls='ls --color=auto'
 alias ll='ls -al --group-directories-first'
 alias grep='grep --color=auto'
@@ -12,4 +13,4 @@ alias wgcc='x86_64-w64-mingw32-gcc'
 alias wmake='x86_64-w64-mingw32-make'
 alias cmd='wine cmd'
 alias makedwm='rm -rf config.h; rm -rf blocks.h; sudo make clean install'
-#alias vim='nvim'
+alias nv='nvim'

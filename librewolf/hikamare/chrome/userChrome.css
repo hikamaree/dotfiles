@@ -1,16 +1,21 @@
+/* chrome://browser/content/browser.xhtml */
 :root {
-    --sfwindow: transparent; /*rgba(0, 0, 0, 0.5);*/
-    --sfsecondary: transparent;
+    --sfwindow: #16161e;
+    --sfsecondary: #1a1b26;
     --toolbar-bgcolor: var(--sfsecondary) !important;
     --tabs-border-color: var(--sfsecondary) !important;
     --lwt-sidebar-background-color: var(--sfwindow) !important;
     --lwt-toolbar-field-focus: var(--sfsecondary) !important;
     --toolbar-field-focus-border-color: var(--sfsecondary) !important;
-    --arrowpanel-background: rgba(0, 0, 0, 0.5) !important;
+    --arrowpanel-background: var(--sfwindow) !important;
+}
+
+browser {
+    background-color: var(--sfsecondary) !important;
 }
 
 menupopup {
-    --panel-background: rgba(0, 0, 0, 0.75) !important;
+    --panel-background: var(--sfwindow) !important;
 }
 
 /* Tabs colors  */
@@ -24,9 +29,8 @@ menupopup {
 > .tabbrowser-tab
 > .tab-stack
 > .tab-background[selected='true'] {
-    background-image: none !important;
+    background: var(--sfsecondary) !important;
     box-shadow: none !important;
-    background: #80c0d040 !important;
 }
 
 .tabbrowser-tab:not([pinned]) .tab-icon-image,
@@ -36,7 +40,8 @@ menupopup {
 #userContext-icons,
 .urlbarView,
 #star-button-box,
-#alltabs-button {
+#alltabs-button,
+#statuspanel[type="overLink"] {
     display: none !important;
 }
 
@@ -46,11 +51,22 @@ menupopup {
     background: var(--sfwindow) !important;
 }
 
-#nav-bar:not([tabs-hidden='true']) {
-    box-shadow: none;
+#urlbar > #urlbar-background {
+    border-radius: 8px !important;
+    background: var(--sfwindow) !important;
+    box-shadow: none !important;
+    border: none !important;
+    margin: -2px !important;
 }
 
-#urlbar > #urlbar-background {
-    background: var(--sfsecondary) !important;
-    box-shadow: none !important;
+.tab-background,
+.tab-loading-burst {
+    border: none !important;
+    border-radius: 8px !important;
+    margin: 3px -1px 3px 1px !important;
+}
+
+#tabs-newtab-button:hover > .toolbarbutton-icon {
+    background-color: var(--sfsecondary) !important;
+    border-radius: 8px !important;
 }
