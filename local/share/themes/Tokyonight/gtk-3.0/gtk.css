@@ -6623,20 +6623,6 @@ popover.emoji-completion .emoji:hover {
   background-color: #292e42;
 }
 
-.path-bar-box
-  .linked.nautilus-path-bar
-  button:not(.suggested-action):not(.destructive-action):last-child:dir(
-    ltr
-  ):disabled,
-.path-bar-box
-  .linked.nautilus-path-bar
-  button:not(.suggested-action):not(.destructive-action):first-child:dir(
-    rtl
-  ):disabled {
-  color: #0db9d7;
-  background-color: #292e42;
-}
-
 .windowhandle .linked.nautilus-path-bar {
   background-color: #292e42;
   border-radius: 6px;

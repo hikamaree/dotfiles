@@ -3,7 +3,7 @@ set drawbox true
 set hidden true
 set ignorecase true
 set icons true
-set shell sh
+set shell zsh
 set mouse true
 set scrolloff 10
 set cursorpreviewfmt "\033[7;2m"

@@ -28,11 +28,6 @@
 
         "battery": {
             "tooltip": false,
-            "states": {
-                // "good": 95,
-                "warning": 30,
-                "critical": 15
-            },
             "format":"<span color=\"#7aa2f7\">{icon} </span>{capacity}%",
             "format-charging": "<span color=\"#f7768e\"> </span>{capacity}%",
             "format-icons": ["   ", "   ", "   ", "   ", "   "],

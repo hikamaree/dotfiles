@@ -2,10 +2,8 @@
 case "$1" in
 	"down")
 		brillo -U 9.8
-		kill -40 $(pidof dwmblocks);;
 	"up")
 		brillo -A 10.201
-		kill -40 $(pidof dwmblocks);;
 	*)
 		B=$(brillo)
 		b=${B%.*}
