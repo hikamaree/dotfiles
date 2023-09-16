@@ -1,0 +1,16 @@
+#!/bin/sh
+brt=$(cat /sys/class/backlight/amdgpu_bl1/brightness)
+case "$1" in
+    "down")
+        b=$(echo $brt 5 | awk '{print $1 - $2}')
+        (( b < 0 )) && b=0
+        echo $b > /sys/class/backlight/amdgpu_bl1/brightness;;
+    "up")
+        b=$(echo $brt 5 | awk '{print $1 + $2}')
+        (( b > 255 )) && b=255
+        echo $b > /sys/class/backlight/amdgpu_bl1/brightness;;
+    "set")
+        (( $2 <= 255 && $2 >= 0 )) && echo $2 > /sys/class/backlight/amdgpu_bl1/brightness;;
+    *)
+        echo $brt
+esac

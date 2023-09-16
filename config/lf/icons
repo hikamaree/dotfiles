@@ -130,8 +130,8 @@ fi             # FILE
 *.fsx           
 *.fs            
 *.fsi           
-*.rs            
-*.rlib          
+*.rs            
+*.rlib          
 *.d             
 *.erl           
 *.hrl           

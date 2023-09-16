@@ -25,12 +25,12 @@ progressbar_look = "▃▃▃"
 progressbar_color = black:b
 progressbar_elapsed_color = green:b
 
-now_playing_prefix = "$b$5➥ "
+now_playing_prefix = "$b$3  "
 now_playing_suffix = "$5$/b"
 
 browser_sort_mode = name
 browser_sort_format = {%a - }{%t}|{%f} {(%l)}
-song_columns_list_format = (35)[blue]{a} (60)[blue]{t|f:Title} (5f)[blue]{l}
+song_columns_list_format = (40)[blue]{a} (55)[blue]{t|f:Title} (5f)[blue]{l}
 playlist_show_mpd_host = no
 #playlist_show_remaining_time = yes
 playlist_shorten_total_times = no

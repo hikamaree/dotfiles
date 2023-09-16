@@ -52,7 +52,7 @@ menupopup {
 }
 
 #urlbar > #urlbar-background {
-    border-radius: 8px !important;
+    border-radius: 5px !important;
     background: var(--sfwindow) !important;
     box-shadow: none !important;
     border: none !important;
@@ -62,11 +62,11 @@ menupopup {
 .tab-background,
 .tab-loading-burst {
     border: none !important;
-    border-radius: 8px !important;
+    border-radius: 5px !important;
     margin: 3px -1px 3px 1px !important;
 }
 
 #tabs-newtab-button:hover > .toolbarbutton-icon {
     background-color: var(--sfsecondary) !important;
-    border-radius: 8px !important;
+    border-radius: 5px !important;
 }

@@ -1,70 +1,84 @@
 {
-        "layer": "top",
-        "height": 32,
-        "modules-left": ["hyprland/workspaces"],
-        "modules-center": ["clock"],
-        "modules-right": ["network", "battery", "backlight","pulseaudio", "custom/guvernor", "tray"],
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["mpd"],
+    "modules-right": ["tray", "custom/guvernor", "network", "battery", "backlight","pulseaudio", "clock"],
 
-        "wlr/workspaces": {
-            "disable-scroll": true,
-            "on-click": "activate",
-            "format-icons": {
-                "urgent": ""
-            }
-        },
-
-        "clock": {
-            "format": "<span> </span>{:%b   %d   %H : %M}",
-            "interval": 10
-        },
-
-        "network": {
-            "tooltip": false,
-            "format-wifi": "<span color=\"#7aa2f7\">{icon} </span>{essid}",
-            "format-ethernet": "󰈀 {ipaddr}/{cidr}",
-            "format-disconnected": "<span color=\"#f7768e\">󰤮 </span>",
-            "format-icons": ["󰤯  ", "󰤟  ", "󰤢  ", "󰤥  ", "󰤨  "]
-        },
-
-        "battery": {
-            "tooltip": false,
-            "format":"<span color=\"#7aa2f7\">{icon} </span>{capacity}%",
-            "format-charging": "<span color=\"#f7768e\"> </span>{capacity}%",
-            "format-icons": ["   ", "   ", "   ", "   ", "   "],
-            "interval": 2
-        },
-
-        "backlight": {
-            "tooltip": false,
-            "format": "<span color=\"#7aa2f7\">{icon} </span>{percent}%",
-            "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-        },
-
-        "pulseaudio": {
-            "tooltip": false,
-            "format": "<span color=\"#7aa2f7\">   </span>{volume}%",
-            "format-muted": "<span color=\"#f7768e\"> </span>",
-            "on-click": "vol mute"
-        },
-
-        "custom/guvernor": {
-            "tooltip": false,
-            "format": "{icon} ",
-            "return-type": "json",
-            "exec": "~/.config/waybar/modules/cpuget",
-            "on-click": "sudo cpuset; kill -RTMIN+1 $(pidof waybar)",
-            "exec-on-event": true,
-            "signal": 1,
-            "interval": "once",
-            "format-icons": {
-                "powersave": "<span color=\"#7aa2f7\">󰾆</span>",
-                "performance": "<span color=\"#f7768e\">󰓅</span>"
-            }
-        },
-
-        "tray": {
-            "tooltip": false,
-            "icon-size": 18,
-            "spacing": 8
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "on-click": "activate",
+        "format-icons": {
+            "urgent": ""
         }
+    },
+
+    "hyprland/window": {
+        "format": "{class}"
+    },
+
+    "mpd": {
+        "tooltip": false,
+        "format": "<span color=\"#7aa2f7\">  </span> {artist} - {title}",
+        "format-disconnected": "",
+        "format-stopped": "",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "on-click": "mpc toggle",
+    },
+
+    "clock": {
+        "format": "<span color=\"#7aa2f7\">󱑍  </span>{:%H:%M}",
+        "format-alt": "<span color=\"#7aa2f7\">󰃭  </span>{:%A, %d %B}",
+        "interval": 10
+    },
+
+    "network": {
+        "tooltip": false,
+        "format-wifi": "<span color=\"#7aa2f7\">{icon} </span>{essid}",
+        "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+        "format-disconnected": "<span color=\"#f7768e\">󰤮 </span>",
+        "format-icons": ["󰤯  ", "󰤟  ", "󰤢  ", "󰤥  ", "󰤨  "]
+    },
+
+    "battery": {
+        "tooltip": false,
+        "format":"<span color=\"#7aa2f7\">{icon} </span>{capacity}",
+        "format-charging": "<span color=\"#f7768e\"> </span>{capacity}",
+        "format-icons": ["   ", "   ", "   ", "   ", "   "],
+        "interval": 2
+    },
+
+    "backlight": {
+        "tooltip": false,
+        "format": "<span color=\"#7aa2f7\">{icon} </span>{percent}",
+        "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+    },
+
+    "pulseaudio": {
+        "tooltip": false,
+        "format": "<span color=\"#7aa2f7\">   </span>{volume}",
+        "format-muted": "<span color=\"#f7768e\"> </span>",
+        "on-click": "volume mute"
+    },
+
+    "custom/guvernor": {
+        "tooltip": false,
+        "format": "{icon}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/cpuget",
+        "on-click": "sudo cpuset; kill -RTMIN+1 $(pidof waybar)",
+        "exec-on-event": true,
+        "signal": 1,
+        "interval": 2,
+        "format-icons": {
+            "power": "<span color=\"#7aa2f7\">󰾆 </span> eco",
+            "performance": "<span color=\"#f7768e\">󰓅 </span> perf"
+        }
+    },
+
+    "tray": {
+        "tooltip": false,
+        "icon-size": 18,
+        "spacing": 8
+    }
 }

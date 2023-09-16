@@ -1,39 +1,39 @@
 * {
     font-family: "Exo 2", feather;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
-    color: #c0caf5;
 }
 
 window#waybar {
-    background: rgba(26, 27, 38, 0.75);
+    background: #1a1b26;
 }
 
 #workspaces {
-    margin-left: -4px;
+    padding: 0px 2px;
+    margin: 0px 2px;
 }
 
 #workspaces button {
-    border-radius: 8px;
+    color: #80c0d0;
     padding: 0px 4px;
     margin: 2px 1px;
 }
 
 #workspaces button.active {
-    background: #414868;
     color: #61afef;
+    background: #16161e;
 }
 
-#workspaces,
+#window,
+#mpd,
 #clock,
+#custom-guvernor,
 #network,
 #battery,
 #backlight,
 #pulseaudio,
-#custom-guvernor {
-    padding: 0 10px;
-}
-
 #tray {
-    padding-right: 10px;
+    color: #80c0d0;
+    padding: 0px 8px;
+    margin: 0px 2px;
 }

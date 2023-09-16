@@ -1,6 +1,6 @@
 scale = optimal
 fullscreen = no
-background = none
+background = #1a1b26
 window = #1a1b26
 info = no
 font = Exo 2

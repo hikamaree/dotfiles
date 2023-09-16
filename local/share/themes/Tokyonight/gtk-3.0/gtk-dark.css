@@ -2431,7 +2431,7 @@ button.destructive-action.flat:disabled {
 }
 
 button.destructive-action.flat:checked {
-  background-color: rgba(247, 118, 142, 0.3);
+  background-color: rgba(242, 139, 130, 0.3);
 }
 
 .stack-switcher > button > label {
@@ -3015,10 +3015,6 @@ headerbar
   color: rgba(192, 202, 245, 0.5);
 }
 
-.titlebar stackswitcher {
-  border: 2px solid #a9b1d6;
-}
-
 .titlebar
   stackswitcher.linked:not(.vertical)
   > button.text-button:not(.suggested-action):not(.destructive-action):active {
@@ -3553,7 +3549,7 @@ menu,
   background-color: #1f2231;
   background-clip: border-box;
   border-radius: 12px;
-  border: 2px solid #27a1b9;
+  border: 1px solid #414868;
 }
 
 .csd menu,
@@ -3712,8 +3708,18 @@ popover.background {
 
 popover.background,
 .csd popover.background {
-  border: 2px solid #27a1b9;
-  box-shadow: none;
+  border: 1px solid rgba(192, 202, 245, 0.2);
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.05),
+    0 4px 6px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(0, 0, 0, 0.75);
+  background-clip: border-box;
+}
+
+popover.background:backdrop,
+.csd popover.background:backdrop {
+  box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.05),
+    0 2px 3px -1px rgba(0, 0, 0, 0.06), 0 1px 4px 0 rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(0, 0, 0, 0.75);
 }
 
 popover.background > stack {
@@ -3852,7 +3858,7 @@ notebook > header {
   background-color: rgba(192, 202, 245, 0.03);
   padding: 3px;
   margin: 3px;
-  border-radius: 6px;
+  border-radius: 9px;
 }
 
 notebook > header.top > tabs > arrow {
@@ -4051,22 +4057,22 @@ scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
   min-width: 4px;
   min-height: 4px;
   margin: 3px;
-  border: 1px solid rgba(26, 27, 38, 0.3);
+  border: 1px solid rgba(44, 44, 44, 0.3);
 }
 
 scrollbar.overlay-indicator:not(.dragging):not(.hovering) button {
   min-width: 4px;
   min-height: 4px;
   margin: 3px;
-  border: 1px solid rgba(26, 27, 38, 0.3);
+  border: 1px solid rgba(44, 44, 44, 0.3);
   border-radius: 9999px;
-  background-color: rgba(191, 202, 245, 0.12);
+  background-color: rgba(192, 202, 245, 0.5);
   background-clip: padding-box;
   -gtk-icon-source: none;
 }
 
 scrollbar.overlay-indicator:not(.dragging):not(.hovering) button:disabled {
-  background-color: rgba(191, 202, 245, 0.12);
+  background-color: rgba(192, 202, 245, 0.3);
 }
 
 scrollbar.overlay-indicator.horizontal:not(.dragging):not(.hovering) slider {
@@ -5783,7 +5789,7 @@ infobar.question:backdrop > revealer > box *:link {
 
 infobar.action:hover > revealer > box,
 infobar.question:hover > revealer > box {
-  background-color: #c0caf5;
+  background-color: #a9b1d6;
   border-radius: 12px 12px 0 0;
 }
 
@@ -5814,7 +5820,7 @@ infobar.warning:backdrop > revealer > box *:link {
 }
 
 infobar.warning:hover > revealer > box {
-  background-color: #e0af68;
+  background-color: #fdd11a;
 }
 
 infobar.error > revealer > box,
@@ -6001,21 +6007,17 @@ colorchooser .popover.osd:backdrop {
  **********************/
 decoration {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
-  border-radius: 14px;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2),
-    0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12),
-    0 0 0 50px transparent;
-  border: 2px solid #27a1b9;
-  background-clip: border-box;
+  border-radius: 12px;
+  box-shadow: 0 8px 6px -5px rgba(0, 0, 0, 0.2),
+    0 16px 14.4px 2px rgba(0, 0, 0, 0.14), 0 6px 18px 5px rgba(0, 0, 0, 0.12),
+    0 0 0 100px transparent;
   margin: 8px;
 }
 
 decoration:backdrop {
-  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.3),
-    0 1px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 2px -0.6px rgba(0, 0, 0, 0.17),
-    0 0 0 50px transparent;
-  border: 2px solid #414868;
-  background-clip: border-box;
+  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2),
+    0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12),
+    0 0 0 100px transparent;
 }
 
 .maximized decoration,
@@ -6033,39 +6035,22 @@ decoration:backdrop {
 }
 
 .ssd decoration {
-  background-color: #1a1b26;
   margin: 0;
-  padding: 4px;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 0 0 2px #27a1b9;
-  border: none;
-  border-radius: 12px 12px 0 0;
-}
-
-.ssd decoration:backdrop {
   background-color: #1a1b26;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 0 0 2px #414868;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
 }
 
 .csd decoration {
+  border: 1px solid rgba(192, 202, 245, 0.2);
   background-color: #1a1b26;
   background-clip: border-box;
   padding: 2.5px;
-  border: 2px solid #27a1b9;
-  border-radius: 14px;
-}
-
-.csd decoration:backdrop {
-  background-color: #1a1b26;
-  background-clip: border-box;
-  padding: 2.5px;
-  border: 2px solid #414868;
-  border-radius: 14px;
 }
 
 .csd.popup decoration {
-  border-radius: 14px;
-  border: 2px solid #27a1b9;
-  background-clip: border-box;
+  border-radius: 12px;
+  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2),
+    0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
 }
 
 tooltip.csd decoration {
@@ -6074,13 +6059,20 @@ tooltip.csd decoration {
   border: none;
 }
 
+messagedialog.background.csd decoration {
+  border-radius: 12px;
+  border: 1px solid rgba(192, 202, 245, 0.2);
+  background-color: #1f2231;
+  background-clip: border-box;
+}
+
 .solid-csd decoration {
   margin: 0;
   padding: 2px;
   border-radius: 0;
   box-shadow: none;
   background-color: #1a1b26;
-  border: 2px solid #27a1b9;
+  border: 1px solid #414868;
 }
 
 .solid-csd decoration:backdrop {
@@ -6162,10 +6154,8 @@ cursor-handle.insertion-cursor:dir(rtl) {
 stackswitcher {
   min-height: 0;
   border-radius: 9999px;
-  padding: 2px;
-  margin: 6px 0;
-  background-color: transparent;
-  border: 2px solid #a9b1d6;
+  padding: 0;
+  background-color: alpha(currentColor, 0.05);
 }
 
 stackswitcher.linked:not(.vertical)
@@ -6173,8 +6163,6 @@ stackswitcher.linked:not(.vertical)
   margin: 0 0;
   border-radius: 9999px;
   background-color: transparent;
-  min-height: 20px;
-  padding: 5px 10px;
 }
 
 stackswitcher.linked:not(.vertical)
@@ -6623,8 +6611,22 @@ popover.emoji-completion .emoji:hover {
   background-color: #292e42;
 }
 
-.windowhandle .linked.nautilus-path-bar {
+.path-bar-box
+  .linked.nautilus-path-bar
+  button:not(.suggested-action):not(.destructive-action):last-child:dir(
+    ltr
+  ):disabled,
+.path-bar-box
+  .linked.nautilus-path-bar
+  button:not(.suggested-action):not(.destructive-action):first-child:dir(
+    rtl
+  ):disabled {
+  color: #0db9d7;
   background-color: #292e42;
+}
+
+.windowhandle .linked.nautilus-path-bar {
+  background-color: rgba(192, 202, 245, 0.04);
   border-radius: 6px;
   margin: 6px 0;
 }
@@ -9274,7 +9276,7 @@ window.background.csd
  * Dialogs *
  ***********/
 dialog.background.csd > headerbar.titlebar {
-  box-shadow: inset 0 -1px rgba(192, 202, 245, 0.12);
+  box-shadow: none;
 }
 
 dialog.background.csd
@@ -9366,26 +9368,14 @@ window.background.csd.unified headerbar {
   box-shadow: none;
 }
 
-window.background.csd.unified headerbar.selection-mode {
-  box-shadow: none;
+window.background.csd.unified > decoration-overlay {
+  box-shadow: inset 0 0 0 1px rgba(41, 46, 66, 1);
 }
 
 window.background.csd.unified,
 window.background.csd.unified > decoration,
 window.background.csd.unified > decoration-overlay {
   border-radius: 12px;
-  border: none;
-  box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2),
-    0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12),
-    0 0 0 2px #27a1b9, 0 0 16px transparent;
-}
-
-window.background.csd.unified:backdrop,
-window.background.csd.unified > decoration:backdrop,
-window.background.csd.unified > decoration-overlay:backdrop {
-  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.3),
-    0 1px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 2px -0.6px rgba(0, 0, 0, 0.17),
-    0 0 0 2px #414868, 0 0 16px transparent;
 }
 
 window.background.csd.unified.tiled > decoration-overlay,
@@ -9847,8 +9837,8 @@ window.background.csd
 #gnc-id-main-window gnc-id-sheet-list > scrolledwindow {
   box-shadow: 0 2px 2.4px -1px rgba(0, 0, 0, 0.2),
     0 4px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
-  margin-top: -2px;
-  border: 2px solid #a9b1d6;
+  margin-top: -1px;
+  border: 1px solid #414868;
 }
 
 #gnc-id-main-window treeview.view {

@@ -1,16 +1,17 @@
 #!/bin/sh
 case "$1" in
 	"down")
-		pactl set-sink-volume @DEFAULT_SINK@ -5%
+		pactl set-sink-volume @DEFAULT_SINK@ -5%;;
+
 	"up")
 		vol=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1)
 		if (( $vol <= 95 )); then
 			pactl set-sink-volume @DEFAULT_SINK@ +5%
 		else
 			pactl set-sink-volume @DEFAULT_SINK@ 100%
-		fi
+		fi;;
 	"mute")
-		pactl set-sink-mute @DEFAULT_SINK@ toggle
+		pactl set-sink-mute @DEFAULT_SINK@ toggle;;
 	*)
 		vol=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1)
 		mute=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{print $2}')
@@ -19,5 +20,5 @@ case "$1" in
 			echo " "
 		else 
 			echo " $vol"
-		fi
+		fi;;
 esac

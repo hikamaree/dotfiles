@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Icon=org.gnome.Music
-Name=Ncmpcpp
-Exec=ncmpcpp
-Terminal=true
-MimeType=inode/directory;

@@ -37,19 +37,26 @@ lfShow() {
 zle -N lfShow
 bindkey '^[1' lfShow
 
+nvimShow() {
+    nvim <$TTY
+    zle redisplay
+}
+zle -N nvimShow
+bindkey '^[2' nvimShow
+
 htopShow() {
     htop <$TTY
     zle redisplay
 }
 zle -N htopShow
-bindkey '^[2' htopShow
+bindkey '^[3' htopShow
 
 ncmpcppShow() {
     ncmpcpp --quiet<$TTY
     zle redisplay
 }
 zle -N ncmpcppShow
-bindkey '^[3' ncmpcppShow
+bindkey '^[4' ncmpcppShow
 
 echo -ne '\e[3 q'
 preexec() { echo -ne '\e[3 q' ;}

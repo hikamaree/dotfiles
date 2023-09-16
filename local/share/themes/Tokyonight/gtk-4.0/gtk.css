@@ -1173,23 +1173,23 @@ button.destructive-action:disabled {
 
 button.destructive-action:hover {
   box-shadow: inset 0 0 0 9999px transparent,
-    0 2px 2.4px -1px rgba(247, 118, 142, 0.2),
-    0 4px 3px 0 rgba(247, 118, 142, 0.14), 0 1px 6px 0 rgba(247, 118, 142, 0.12);
+    0 2px 2.4px -1px rgba(242, 139, 130, 0.2),
+    0 4px 3px 0 rgba(242, 139, 130, 0.14), 0 1px 6px 0 rgba(242, 139, 130, 0.12);
 }
 
 button.destructive-action:checked {
-  background-color: rgba(194, 93, 100, 0.961);
+  background-color: rgba(182, 105, 98, 0.961);
 }
 
 button.destructive-action:checked:hover {
   box-shadow: inset 0 0 0 9999px transparent,
-    0 3px 3px -3px rgba(247, 118, 142, 0.3),
-    0 2px 3px -1px rgba(247, 118, 142, 0.24),
-    0 2px 5px 0 rgba(247, 118, 142, 0.12);
+    0 3px 3px -3px rgba(242, 139, 130, 0.3),
+    0 2px 3px -1px rgba(242, 139, 130, 0.24),
+    0 2px 5px 0 rgba(242, 139, 130, 0.12);
 }
 
 button.destructive-action:focus {
-  box-shadow: 0 0 0 2px rgba(247, 118, 142, 0.35);
+  box-shadow: 0 0 0 2px rgba(242, 139, 130, 0.35);
 }
 
 button.destructive-action.flat {
@@ -1206,7 +1206,7 @@ button.destructive-action.flat:disabled {
 }
 
 button.destructive-action.flat:checked {
-  background-color: rgba(247, 118, 142, 0.3);
+  background-color: rgba(242, 139, 130, 0.3);
 }
 
 menubutton.pill > button,
@@ -2354,6 +2354,7 @@ headerbar {
   background-color: #1a1b26;
   color: #c0caf5;
   box-shadow: none;
+  border-radius: 12px 12px 0 0;
 }
 
 headerbar:disabled {
@@ -2470,7 +2471,6 @@ headerbar button.destructive-action:disabled {
 headerbar stackswitcher {
   margin: 6px 0;
   border-radius: 9999px;
-  border: 2px solid #a9b1d6;
 }
 
 headerbar
@@ -2543,6 +2543,15 @@ headerbar.default-decoration windowcontrols menubutton {
 .solid-csd headerbar:dir(ltr) {
   border-radius: 0;
   box-shadow: none;
+}
+
+leaflet > box:last-child > headerbar {
+  border-top-right-radius: 0;
+}
+
+leaflet > box:not(:last-child) > headerbar,
+leaflet > box > stack > widget > box > widget > headerbar {
+  border-top-left-radius: 0;
 }
 
 window.devel headerbar.titlebar {
@@ -2906,15 +2915,20 @@ popover.background > contents {
   transition: box-shadow 75ms cubic-bezier(0, 0, 0.2, 1);
   padding: 6px;
   background-color: #1f2231;
-  background-clip: border-box;
   border-radius: 12px;
-  color: #c0caf5;
-  border: 2px solid #27a1b9;
+  color: #a9b1d6;
+  border: 1px solid rgba(192, 202, 245, 0.2);
+  background-clip: border-box;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.05),
+    0 4px 6px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(0, 0, 0, 0.75);
 }
 
 popover.background:backdrop > arrow,
 popover.background:backdrop > contents {
-  border: 2px solid #27a1b9;
+  border: none;
+  box-shadow: 0 3px 2px -3px rgba(0, 0, 0, 0.3),
+    0 2px 2px -1px rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
 }
 
 popover.background modelbutton {
@@ -2923,7 +2937,7 @@ popover.background modelbutton {
   min-width: 56px;
   padding: 3px 9px;
   border-radius: 6px;
-  color: #c0caf5;
+  color: #a9b1d6;
   font: initial;
   text-shadow: none;
   box-shadow: none;
@@ -2941,7 +2955,7 @@ popover.background modelbutton:hover accelerator {
 }
 
 popover.background modelbutton:hover accelerator:disabled {
-  color: #c0caf5;
+  color: rgba(0, 0, 0, 0.26);
 }
 
 popover.background modelbutton:disabled {
@@ -3097,7 +3111,7 @@ notebook > header {
   background-color: rgba(192, 202, 245, 0.04);
   padding: 3px;
   margin: 3px;
-  border-radius: 6px;
+  border-radius: 9px;
 }
 
 notebook > header.top > tabs > arrow {
@@ -3249,7 +3263,7 @@ tabbar:not(.inline) .box {
 }
 
 tabbar:not(.inline):backdrop .box {
-  background-color: rgba(192, 202, 245, 0.02);
+  background-color: rgba(192, 202, 245, 0.04);
 }
 
 tabbar:not(.inline):backdrop .box > scrolledwindow,
@@ -3470,14 +3484,14 @@ scrollbar.overlay-indicator:not(.dragging):not(.hovering)
   min-width: 4px;
   min-height: 4px;
   margin: 3px;
-  border: 1px solid rgba(44, 44, 44, 0.3);
+  border: 1px solid rgba(26, 27, 38, 0.3);
 }
 
 scrollbar.overlay-indicator:not(.dragging):not(.hovering) button {
   min-width: 4px;
   min-height: 4px;
   margin: 3px;
-  border: 1px solid rgba(44, 44, 44, 0.3);
+  border: 1px solid rgba(26, 27, 38, 0.3);
   border-radius: 9999px;
   background-color: rgba(192, 202, 245, 0.5);
   background-clip: padding-box;
@@ -4965,7 +4979,7 @@ window.dialog.message box.dialog-vbox.vertical {
 window.dialog.message .titlebar {
   min-height: 24px;
   border-style: none;
-  box-shadow: inset 0 1px rgba(192, 202, 245, 0.2);
+  box-shadow: inset 0 1px rgba(192, 202, 245, 0.1);
   background-color: #3b4261;
   color: #c0caf5;
 }
@@ -5427,7 +5441,7 @@ infobar.warning:backdrop > revealer > box *:link {
 }
 
 infobar.warning:hover > revealer > box {
-  background-color: #e0af68;
+  background-color: #fdd11a;
 }
 
 infobar.error > revealer > box,
@@ -5603,15 +5617,16 @@ window.csd {
   transition: none;
   margin: 0;
   padding: 0;
+  outline: 1px solid rgba(192, 202, 245, 0.2);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2), 0 10px 18px rgba(0, 0, 0, 0.14),
-    0 8px 24px rgba(0, 0, 0, 0.12), 0 0 0 2px #27a1b9, 0 1px 2px transparent,
-    0 3px 4px transparent, 0 1px 6px transparent;
+    0 8px 24px rgba(0, 0, 0, 0.12), 0 1px 2px transparent, 0 3px 4px transparent,
+    0 1px 6px transparent;
 }
 
 window.csd:backdrop {
   transition: none;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.14),
-    0 1px 6px rgba(0, 0, 0, 0.12), 0 0 0 2px #414868, 0 3px 8px transparent,
+    0 1px 6px rgba(0, 0, 0, 0.12), 0 3px 8px transparent,
     0 10px 18px transparent, 0 8px 24px transparent;
 }
 
@@ -5639,7 +5654,7 @@ window.solid-csd {
   padding: 2px;
   border-radius: 0;
   background-color: #1a1b26;
-  border: 2px solid #27a1b9;
+  border: 1px solid #414868;
 }
 
 window.solid-csd:backdrop {
@@ -5762,17 +5777,13 @@ shortcut > .keycap {
 stackswitcher {
   min-height: 0;
   border-radius: 9999px;
-  padding: 2px;
-  margin: 6px 0;
-  background-color: transparent;
-  border: 2px solid #a9b1d6;
+  padding: 0;
+  background-color: alpha(currentColor, 0.05);
 }
 
 stackswitcher.linked:not(.vertical)
   > button:not(.suggested-action):not(.destructive-action) {
   margin: 0 0;
-  min-height: 20px;
-  padding: 5px 10px;
 }
 
 stackswitcher.linked:not(.vertical)
@@ -6158,7 +6169,7 @@ popover.entry-completion > contents {
 }
 
 #NautilusPathBar #NautilusPathButton {
-  margin: 0 3px;
+  margin: 1px 3px;
   border-radius: 6px;
 }
 
@@ -6328,7 +6339,7 @@ carousel.card {
 .context-tile-lozenge.red,
 .context-tile-lozenge.details-rating-18 {
   color: #eb4b3d;
-  background-color: rgba(247, 118, 142, 0.15);
+  background-color: rgba(242, 139, 130, 0.15);
 }
 
 screenshot-carousel box.frame.view {

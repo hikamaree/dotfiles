@@ -1,6 +1,7 @@
 [Default Applications]
 inode/directory=lfd.desktop
 text/plain=nvim.desktop
+application/pdf=firefox.desktop
 
 [Added Associations]
-text/x-lua=nvim.desktop;
+application/pdf=firefox.desktop;
