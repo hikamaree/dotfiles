@@ -16,6 +16,7 @@ browser {
 
 menupopup {
     --panel-background: var(--sfwindow) !important;
+    --panel-color: white !important;
 }
 
 /* Tabs colors  */

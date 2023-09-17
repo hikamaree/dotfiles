@@ -17,7 +17,7 @@ sudo pacman --noconfirm -Syu
 sudo pacman -S --noconfirm hyprland grim slurp wl-clipboard xdg-utils xdg-desktop-portal-gtk vulkan-radeon libva-mesa-driver
 
 # apps
-sudo pacman -S --noconfirm zsh foot neovim btop lf zip unzip rustup waybar swaybg swayimg ncmpcpp mpd mpc mpv fuzzel flatpak
+sudo pacman -S --noconfirm zsh foot neovim htop lf zip unzip rustup waybar swaybg swayimg ncmpcpp mpd mpc mpv fuzzel flatpak
 
 # flatpaks
 flatpak install --noninteractive org.mozilla.firefox
