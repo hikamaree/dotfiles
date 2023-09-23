@@ -1,14 +1,12 @@
 local cmd = vim.cmd
 local opt = vim.opt
 local g = vim.g
-local s = vim.s
 local indent = 4
 
 cmd("filetype plugin indent on")
 
 opt.backspace = {"eol", "start", "indent"}
 opt.clipboard = "unnamedplus"
-opt.fileencoding = "utf-8"
 opt.encoding = "utf-8"
 opt.matchpairs = {"(:)", "{:}", "[:]", "<:>"}
 opt.syntax = "enable"

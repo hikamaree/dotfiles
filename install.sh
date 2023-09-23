@@ -11,10 +11,12 @@ mkdir -p ~/Downloads
 mkdir -p ~/Music
 mkdir -p ~/Pictures/screenshots
 
+# system setting
+sudo ./system.sh $USER
 sudo pacman --noconfirm -Syu
 
 # hyprland
-sudo pacman -S --noconfirm hyprland grim slurp wl-clipboard xdg-utils xdg-desktop-portal-gtk vulkan-radeon libva-mesa-driver
+sudo pacman -S --noconfirm hyprland grim slurp wl-clipboard xdg-utils xdg-desktop-portal-gtk xdg-desktop-portal-wlr vulkan-radeon libva-mesa-driver
 
 # apps
 sudo pacman -S --noconfirm zsh foot neovim htop lf zip unzip rustup waybar swaybg swayimg ncmpcpp mpd mpc mpv fuzzel flatpak
@@ -22,6 +24,7 @@ sudo pacman -S --noconfirm zsh foot neovim htop lf zip unzip rustup waybar swayb
 # flatpaks
 flatpak install --noninteractive org.mozilla.firefox
 flatpak install --noninteractive com.discordapp.Discord
+flatpak install --noninteractive com.valvesoftware.Steam
 flatpak install --noninteractive com.mojang.Minecraft
 flatpak install --noninteractive org.winehq.Wine
 flatpak install --noninteractive com.github.xournalpp.xournalpp
@@ -32,8 +35,9 @@ sudo flatpak override --filesystem=xdg-data/themes
 mkdir -p ~/.var/app/org.mozilla.firefox/
 cp -rf mozilla ~/.var/app/org.mozilla.firefox/.mozilla
 
-# system setting
-sudo ./system.sh $USER
+sudo systemctl enable seatd.service
+sudo systemctl mask backlight@.service
+sudo systemctl mask --global at-spi-dbus-bus.service
 
 # shell
 chsh -s /bin/zsh

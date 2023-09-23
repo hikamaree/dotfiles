@@ -38,7 +38,7 @@ zle -N lfShow
 bindkey '^[1' lfShow
 
 nvimShow() {
-    nvim <$TTY
+    nvim . <$TTY
     zle redisplay
 }
 zle -N nvimShow
