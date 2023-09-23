@@ -13,9 +13,11 @@ return{{
             automatic_installation = true,
         }
 
-        for i in pairs(servers) do
-            require("lspconfig")[servers[i]].setup{}
+        for _, server in pairs(servers) do
+            local ok, _ = pcall(require, "servers."..server)
+            if not ok then
+                require("lspconfig")[server].setup{}
+            end
         end
-
     end
 }}
