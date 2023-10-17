@@ -7,7 +7,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_RUNTIME_DIR=/run/user/$UID
 export EDITOR=nvim
 export TERM=foot
-export BROWSER=firefox
 export OPENER=xdg-open
 export WINEPREFIX=$HOME/.local/wine
 export XINITRC=$HOME/.config/x/xinitrc

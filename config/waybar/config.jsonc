@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-left": ["hyprland/workspaces"],
     "modules-center": ["mpd"],
     "modules-right": ["tray", "custom/guvernor", "network", "battery", "backlight","pulseaudio", "clock"],
 
@@ -12,17 +12,12 @@
         }
     },
 
-    "hyprland/window": {
-        "format": "{class}"
-    },
-
     "mpd": {
         "tooltip": false,
         "format": "<span color=\"#7aa2f7\">  </span> {artist} - {title}",
         "format-disconnected": "",
         "format-stopped": "",
         "unknown-tag": "N/A",
-        "interval": 2,
         "on-click": "mpc toggle",
     },
 
@@ -72,8 +67,8 @@
         "signal": 1,
         "interval": 2,
         "format-icons": {
-            "power": "<span color=\"#7aa2f7\">󰾆 </span> eco",
-            "performance": "<span color=\"#f7768e\">󰓅 </span> perf"
+            "power": "<span color=\"#7aa2f7\">󰾆 </span> potato",
+            "performance": "<span color=\"#f7768e\">󰓅 </span> beast"
         }
     },
 

@@ -47,7 +47,6 @@ plus = zoom_in
 minus = zoom_out
 x = zoom_optimal
 z = zoom_fit
-Z = zoom_fill
 0 = zoom_real
 BackSpace = zoom_reset
 F5 = rotate_left

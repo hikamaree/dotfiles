@@ -1,12 +1,16 @@
--- Close all windows and exit from Neovim with <leader> and q
-vim.keymap.set("n", "<leader>q", ":wqa!<CR>", {})
+-- Close all windows
+vim.keymap.set("n", "<C-q>", ":wqa!<CR>", {})
 
--- Fast saving with <leader> and s
-vim.keymap.set("n", "<leader>s", ":w<CR>", {})
-
--- Reload configuration without restart nvim
-vim.keymap.set("n", "<leader>r", ":so %<CR>", {})
+-- Fast saving
+vim.keymap.set("n", "<C-s>", ":w<CR>", {})
 
 -- NvimTree
-vim.keymap.set("n", "<leader>n", ":NvimTreeToggle<CR>", {})
-vim.keymap.set("n", "<leader>m", ":NvimTreeFocus<CR>", {})
+vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", {})
+
+-- Terminal
+vim.keymap.set("n", "<C-`>", ":ToggleTerm<CR>", {})
+
+vim.keymap.set("n", "<C-Left>", "<C-w>h", {})
+vim.keymap.set("n", "<C-Right>", "<C-w>l", {})
+vim.keymap.set("n", "<C-Down>", "<C-w>j", {})
+vim.keymap.set("n", "<C-Up>", "<C-w>k", {})
