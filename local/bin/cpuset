@@ -3,9 +3,29 @@ guvernor=$( cat /sys/devices/system/cpu/cpu0/cpufreq/energy_performance_preferen
 if [ -n "$1" ];
 then
     echo $1 | tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference
+    if [[ $1 == *"power"* ]];
+    then
+        for (( i=8; i <= 16; i++ ))
+        do
+            echo 0 > /sys/devices/system/cpu/cpu$i/online
+        done
+    else
+        for (( i=8; i <= 16; i++ ))
+        do
+            echo 1 > /sys/devices/system/cpu/cpu$i/online
+        done
+    fi
 elif [[ $guvernor == *"power"* ]];
 then
     echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference
+    for (( i=8; i <= 16; i++ ))
+    do
+        echo 1 > /sys/devices/system/cpu/cpu$i/online
+    done
 else
     echo power | tee /sys/devices/system/cpu/cpu*/cpufreq/energy_performance_preference
+    for (( i=8; i <= 16; i++ ))
+    do
+        echo 0 > /sys/devices/system/cpu/cpu$i/online
+    done
 fi
