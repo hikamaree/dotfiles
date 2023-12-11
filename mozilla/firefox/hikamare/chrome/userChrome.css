@@ -2,6 +2,7 @@
 :root {
     --sfwindow: #16161e;
     --sfsecondary: #1a1b26;
+    --sftext: #c0caf5;
     --toolbar-bgcolor: var(--sfsecondary) !important;
     --tabs-border-color: var(--sfsecondary) !important;
     --lwt-sidebar-background-color: var(--sfwindow) !important;
@@ -16,7 +17,7 @@ browser {
 
 menupopup {
     --panel-background: var(--sfwindow) !important;
-    --panel-color: white !important;
+    --panel-color: var(--sftext) !important;
 }
 
 /* Tabs colors  */
@@ -52,22 +53,48 @@ menupopup {
     background: var(--sfwindow) !important;
 }
 
-#urlbar > #urlbar-background {
-    border-radius: 5px !important;
-    background: var(--sfwindow) !important;
-    box-shadow: none !important;
+.tab-background,
+.tab-loading-burst,
+#tabs-newtab-button {
     border: none !important;
-    margin: -2px !important;
+    margin: 3px 4px 3px -4px !important;
+}
+
+#nav-bar,
+#PersonalToolbar {
+    background-color: #0000 !important;
+    background-image: none !important;
+    box-shadow: none !important
 }
 
 .tab-background,
-.tab-loading-burst {
-    border: none !important;
-    border-radius: 5px !important;
-    margin: 3px -1px 3px 1px !important;
+.tab-stack {
+    min-height: calc(var(--TabsHeight) * 1px) !important
 }
 
-#tabs-newtab-button:hover > .toolbarbutton-icon {
-    background-color: var(--sfsecondary) !important;
-    border-radius: 5px !important;
+#PanelUI-menu-button,
+#unified-extensions-button {
+    padding: 2px !important
+}
+
+#urlbar-background{
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: var(--sfwindow) !important;
+}
+
+#navigator-toolbox {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    position: relative !important;
+    padding-left: var(--tab-block-margin);
+    border: none !important;
+}
+
+#titlebar {
+    width: 0;
+    flex-grow: 1;
+    overflow: hidden;
 }

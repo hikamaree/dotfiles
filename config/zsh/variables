@@ -10,8 +10,10 @@ export TERM=foot
 export OPENER=xdg-open
 export WINEPREFIX=$HOME/.local/wine
 export XINITRC=$HOME/.config/x/xinitrc
+export GTK_USE_PORTAL=1
 export NO_AT_BRIDGE=1
 export _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export GTK_A11Y=none

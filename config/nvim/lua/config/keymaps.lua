@@ -1,16 +1,16 @@
--- Close all windows
-vim.keymap.set("n", "<C-q>", ":wqa!<CR>", {})
+local keymap = vim.keymap
 
--- Fast saving
-vim.keymap.set("n", "<C-s>", ":w<CR>", {})
+keymap.set("n", "<C-q>", ":wqa!<CR>", {})
 
--- NvimTree
-vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", {})
+keymap.set("n", "<C-s>", ":w<CR>", {})
 
--- Terminal
-vim.keymap.set("n", "<C-`>", ":ToggleTerm<CR>", {})
+keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", {})
 
-vim.keymap.set("n", "<C-Left>", "<C-w>h", {})
-vim.keymap.set("n", "<C-Right>", "<C-w>l", {})
-vim.keymap.set("n", "<C-Down>", "<C-w>j", {})
-vim.keymap.set("n", "<C-Up>", "<C-w>k", {})
+keymap.set("n", "<C-`>", ":ToggleTerm<CR>", {})
+
+keymap.set("n", "<C-Left>", "<C-w>h", {})
+keymap.set("n", "<C-Right>", "<C-w>l", {})
+keymap.set("n", "<C-Down>", "<C-w>j", {})
+keymap.set("n", "<C-Up>", "<C-w>k", {})
+
+keymap.set("n", "<F5>", ":wa!<CR> :make run<CR>", {})

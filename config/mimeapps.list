@@ -2,6 +2,12 @@
 inode/directory=lfd.desktop
 text/plain=nvim.desktop
 application/pdf=firefox.desktop
+image/png=swayimg.desktop
+text/html=org.mozilla.firefox.desktop
+x-scheme-handler/http=org.mozilla.firefox.desktop
+x-scheme-handler/https=org.mozilla.firefox.desktop
+x-scheme-handler/about=org.mozilla.firefox.desktop
+x-scheme-handler/unknown=org.mozilla.firefox.desktop
 
 [Added Associations]
 application/pdf=firefox.desktop;

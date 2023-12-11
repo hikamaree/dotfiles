@@ -12,7 +12,7 @@ opt.matchpairs = {"(:)", "{:}", "[:]", "<:>"}
 opt.syntax = "enable"
 
 opt.autoindent = true
-opt.expandtab = true
+opt.expandtab = false
 opt.shiftwidth = indent
 opt.smartindent = true
 opt.softtabstop = indent

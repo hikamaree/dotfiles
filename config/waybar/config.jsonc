@@ -18,7 +18,7 @@
         "format-disconnected": "",
         "format-stopped": "",
         "unknown-tag": "N/A",
-        "on-click": "mpc toggle",
+        "on-click": "mpc toggle"
     },
 
     "clock": {
@@ -62,10 +62,9 @@
         "format": "{icon}",
         "return-type": "json",
         "exec": "~/.config/waybar/modules/cpuget",
-        "on-click": "sudo cpuset; kill -RTMIN+1 $(pidof waybar)",
+        "on-click": "sudo cpuset; pkill -RTMIN+1 waybar",
         "exec-on-event": true,
         "signal": 1,
-        "interval": 2,
         "format-icons": {
             "power": "<span color=\"#7aa2f7\">󰾆 </span> potato",
             "performance": "<span color=\"#f7768e\">󰓅 </span> beast"

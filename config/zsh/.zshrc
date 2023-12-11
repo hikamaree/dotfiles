@@ -73,4 +73,7 @@ function clear-screen-and-scrollback() {
 zle -N clear-screen-and-scrollback
 bindkey '^L' clear-screen-and-scrollback
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland &> $HOME/.cache/current_session
+
+export XINITRC=$HOME/.config/x/xinitrc
+[[ -z $DISPLAY && $XDG_VTNR -eq 2 ]] && exec startx $XINITRC
