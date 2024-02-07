@@ -32,6 +32,20 @@ sudo systemctl enable seatd.service
 sudo systemctl mask backlight@.service
 sudo systemctl mask --global at-spi-dbus-bus.service
 
+#aur
+git clone http://aur.archlinux.org/yay.git
+cd yay
+makepkg -si --noconfirm
+cd ..
+
+yay -S --noconfirm fluent-icon-theme-git tokyonight-gtk-theme-git ttf-exo-2
+
+#theme
+gsettings set org.gnome.desktop.interface gtk-theme 'Tokyonight-Dark-BL'
+gsettings set org.gnome.desktop.interface icon-theme 'Fluent-dark'
+gsettings set org.gnome.desktop.interface font-name 'Exo 2 11'
+gsettings set org.gnome.desktop.interface cursor-theme 'Future-dark-cursors'
+
 # shell
 chsh -s /bin/zsh
 
