@@ -1,61 +1,40 @@
-return{{
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-        "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/cmp-buffer",
-        "saadparwaiz1/cmp_luasnip",
-        "L3MON4D3/LuaSnip",
-    },
-    config = function()
-        local cmp_status_ok, cmp = pcall(require, "cmp")
-
-        if not cmp_status_ok then
-            return
-        end
-
-        local snip_status_ok, luasnip = pcall(require, "luasnip")
-        if not snip_status_ok then
-            return
-        end
-
-        cmp.setup {
-            snippet = {
-                expand = function(args)
-                    luasnip.lsp_expand(args.body)
-                end,
-            },
-
-            mapping = {
-                ["<CR>"] = cmp.mapping.confirm { select = true },
-
-                ["<Tab>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_next_item()
-                    elseif luasnip.expandable() then
-                        luasnip.expand()
-                    elseif luasnip.expand_or_jumpable() then
-                        luasnip.expand_or_jump()
-                    else
-                        fallback()
-                    end
-                end, { "i", "s" }),
-
-                ["<S-Tab>"] = cmp.mapping(function(fallback)
-                    if cmp.visible() then
-                        cmp.select_prev_item()
-                    elseif luasnip.jumpable(-1) then
-                        luasnip.jump(-1)
-                    else
-                        fallback()
-                    end
-                end, { "i", "s" }),
-            },
-
-            sources = {
-                { name = 'nvim_lsp' },
-                { name = 'luasnip' },
-                { name = 'buffer' },
-            },
-        }
-    end
-}}
+return {
+	'hrsh7th/nvim-cmp',
+	dependencies = {
+		'hrsh7th/cmp-nvim-lsp',
+		'hrsh7th/cmp-buffer',
+		'hrsh7th/cmp-path',
+		'L3MON4D3/LuaSnip',
+	},
+	config = function()
+		local cmp = require('cmp')
+		local luasnip = require('luasnip')
+		cmp.setup {
+			completion = {
+				completeopt = 'menu,menuone,noinsert',
+			},
+			snippet = {
+				expand = function(args)
+					luasnip.lsp_expand(args.body)
+				end
+			},
+			mapping = {
+				['<CR>'] = cmp.mapping.confirm { select = true },
+				['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+				['<Down>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
+				["<ESC>"] = cmp.mapping.close(),
+			},
+			sources = {
+				{ name = 'nvim_lsp' },
+				{ name = 'path' },
+				{ name = 'buffer' },
+			},
+			formatting = {
+				format = function(_, item)
+					item.abbr = string.sub(item.abbr, 1, 25)
+					return item
+				end
+			}
+		}
+	end
+}

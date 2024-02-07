@@ -1,7 +1,0 @@
-[Desktop Entry]
-Type=Application
-Icon=system-file-manager
-Name=Lf
-Exec=foot lf
-MimeType=inode/directory;
-NoDisplay=true

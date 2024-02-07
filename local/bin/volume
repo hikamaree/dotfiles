@@ -2,7 +2,6 @@
 case "$1" in
 	"down")
 		pactl set-sink-volume @DEFAULT_SINK@ -5%;;
-
 	"up")
 		vol=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1)
 		if (( $vol <= 95 )); then

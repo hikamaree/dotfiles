@@ -30,6 +30,7 @@
     "network": {
         "tooltip": false,
         "format-wifi": "<span color=\"#7aa2f7\">{icon} </span>{essid}",
+        "format-alt": "<span color=\"#7aa2f7\">{icon} </span>{bandwidthDownBits}",
         "format-ethernet": "<span color=\"#7aa2f7\">󰈀  </span> {bandwidthDownBits}",
         "format-disconnected": "<span color=\"#f7768e\">󰤮 </span>",
         "format-icons": ["󰤯  ", "󰤟  ", "󰤢  ", "󰤥  ", "󰤨  "],
@@ -73,7 +74,7 @@
 
     "tray": {
         "tooltip": false,
-        "icon-size": 18,
+        "icon-size": 20,
         "spacing": 8
     }
 }

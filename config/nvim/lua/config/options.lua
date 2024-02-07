@@ -1,16 +1,16 @@
+---@diagnostic disable
+local vim = vim
 local cmd = vim.cmd
 local opt = vim.opt
 local g = vim.g
+local fn = vim.fn
+---@diagnostic enable
+
+opt.backspace = {'eol', 'start', 'indent'}
+opt.clipboard = 'unnamedplus'
+opt.encoding = 'utf-8'
+opt.syntax = 'enable'
 local indent = 4
-
-cmd("filetype plugin indent on")
-
-opt.backspace = {"eol", "start", "indent"}
-opt.clipboard = "unnamedplus"
-opt.encoding = "utf-8"
-opt.matchpairs = {"(:)", "{:}", "[:]", "<:>"}
-opt.syntax = "enable"
-
 opt.autoindent = true
 opt.expandtab = false
 opt.shiftwidth = indent
@@ -18,66 +18,56 @@ opt.smartindent = true
 opt.softtabstop = indent
 opt.tabstop = indent
 opt.shiftround = true
-
 opt.hlsearch = true
 opt.ignorecase = true
 opt.smartcase = true
 opt.wildmenu = false
-
 opt.cursorline = true
 opt.laststatus = 2
 opt.lazyredraw = true
 opt.list = true
 opt.listchars = {
-    tab = "┊ ",
-    trail = "·",
-    extends = "»",
-    precedes = "«",
-    nbsp = "×"
+    tab = '│ ',
+    trail = '·',
+    extends = '»',
+    precedes = '«',
+    nbsp = '×'
 }
-
 opt.cmdheight = 0
 opt.pumheight = 10
-
-opt.mouse = "a"
+opt.mouse = 'a'
 opt.number = true
 opt.scrolloff = 8
 opt.sidescrolloff = 8
-opt.signcolumn = "yes"
+opt.signcolumn = 'yes'
 opt.splitbelow = true
 opt.splitright = true
 opt.wrap = false
-
 opt.backup = false
 opt.swapfile = false
 opt.writebackup = false
-
-opt.completeopt = {"menu", "menuone", "noselect"}
-
 opt.showmode = false
-
 opt.history = 100
 opt.redrawtime = 1500
 opt.timeoutlen = 250
 opt.ttimeoutlen = 10
 opt.updatetime = 100
-
 opt.termguicolors = true
-
-local undodir = vim.fn.stdpath("data") .. "/undo"
 opt.undofile = true
-opt.undodir = undodir
+opt.undodir = fn.stdpath('data') .. '/undo'
 opt.undolevels = 1000
 opt.undoreload = 10000
-
-opt.foldmethod = "marker"
+opt.foldmethod = 'marker'
 opt.foldlevel = 99
 
-local disabled_built_ins = {"2html_plugin", "getscript", "getscriptPlugin", "gzip", "logipat", "netrw", "netrwPlugin",
-                            "netrwSettings", "netrwFileHandlers", "matchit", "tar", "tarPlugin", "rrhelper",
-                            "spellfile_plugin", "vimball", "vimballPlugin", "zip", "zipPlugin", "tutor", "rplugin",
-                            "synmenu", "optwin", "compiler", "bugreport", "ftplugin"}
+cmd 'colorscheme tokyonight-night'
 
-for _, plugin in pairs(disabled_built_ins) do
-    g["loaded_" .. plugin] = 1
+vim.diagnostic.config {
+	virtual_text = {
+		prefix = require('config.icons').misc.error,
+	},
+}
+for type, icon in pairs(require('config.icons').diagnostics) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
 end

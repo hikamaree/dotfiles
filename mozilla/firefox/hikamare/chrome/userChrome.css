@@ -26,7 +26,7 @@ menupopup {
 }
 
 .tabbrowser-tab[fadein]:not([pinned]):not([style*="max-width"]) {
-    max-width: 200px !important;
+    max-width: 150px !important;
 }
 
 .tab-background,
@@ -44,6 +44,8 @@ menupopup {
 .urlbarView,
 #star-button-box,
 #alltabs-button,
+#forward-button,
+#back-button,
 #statuspanel[type="overLink"] {
     display: none !important;
 }
@@ -71,11 +73,14 @@ menupopup {
     padding: 2px !important
 }
 
-#urlbar-background{
+#urlbar-background {
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
-    background: var(--sfwindow) !important;
+    background: var(--sfsecondary) !important;
+}
+#urlbar {
+	color: var(--sftext) !important;
 }
 
 #navigator-toolbox {
@@ -91,4 +96,8 @@ menupopup {
     width: 0;
     flex-grow: 1;
     overflow: hidden;
+}
+
+.tab-content {
+	color: var(--sftext) !important;
 }

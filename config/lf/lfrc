@@ -1,3 +1,5 @@
+#! /bin/zsh
+
 set ratios 1:2:3
 set drawbox true
 set hidden true
@@ -8,49 +10,56 @@ set mouse true
 set scrolloff 10
 set cursorpreviewfmt "\033[7;2m"
 
-map <enter> shell
 map a :push %mkdir<space>
+map b :push %touch<space>
 map <delete> delete
-
+map <tab> shell
 map x $$f
 map X !$f
 
 cmd open &{{
-    case $(file --mime-type -Lb $f) in
-        text/*) lf -remote "send $id \$$EDITOR \$fx";;
-        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
-    esac
+	case $(file --mime-type -Lb $f) in
+		text/*) lf -remote "send $id \$$EDITOR \$fx";;
+		*) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+	esac
 }}
 
+cmd openf &{{
+	case $(file --mime-type -Lb $f) in
+		text/*) lf -remote "send $id \$$EDITOR \$fx";;
+		inode/directory) lf -remote "send $id \$$EDITOR \$fx";;
+		*) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+	esac
+}}
+
+map <enter> openf
+
 cmd extract ${{
-    set -f
-    case $f in
-        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
-        *.tar.gz|*.tgz) tar xzvf $f;;
-        *.tar.xz|*.txz) tar xJvf $f;;
-        *.zip) unzip $f;;
-        *.rar) unrar x $f;;
-        *.7z) 7z x $f;;
-    esac
+set -f
+case $f in
+	*.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+	*.tar.gz|*.tgz) tar xzvf $f;;
+	*.tar.xz|*.txz) tar xJvf $f;;
+	*.zip) unzip $f;;
+	*.rar) unrar x $f;;
+	*.7z) 7z x $f;;
+	esac
 }}
 
 cmd tar ${{
-    set -f
-    mkdir $1
-    cp -r $fx $1
-    tar czf $1.tar.gz $1
-    rm -rf $1
+	set -f
+	mkdir $1
+	cp -r $fx $1
+	tar czf $1.tar.gz $1
+	rm -rf $1
 }}
 
 cmd zip ${{
-    set -f
-    mkdir $1
-    cp -r $fx $1
-    zip -r $1.zip $1
-    rm -rf $1
+	mkdir zip;
+	cp -rf $fx zip
+	zip -r zip.zip zip
+	rm -rf zip
 }}
-
-map o open
 
 map c zip
 map u extract

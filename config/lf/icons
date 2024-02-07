@@ -33,7 +33,7 @@ cd      c       # CHR
 su      u       # SETUID
 sg      g       # SETGID
 ex             # EXEC
-fi             # FILE
+fi             # FILE
 
 # file extensions (vim-devicons)
 *.styl          
@@ -73,13 +73,6 @@ fi             # FILE
 *.toml          
 *.bat           
 *.mk            
-*.jpg           
-*.jpeg          
-*.bmp           
-*.png           
-*.webp          
-*.gif           
-*.ico           
 *.twig          
 *.cpp           
 *.c++           
@@ -97,14 +90,14 @@ fi             # FILE
 *.nix           
 *.lua           
 *.java          
-*.sh            
-*.fish          
-*.bash          
-*.zsh           
-*.ksh           
-*.csh           
-*.awk           
-*.ps1           
+*.sh            
+*.fish          
+*.bash          
+*.zsh           
+*.ksh           
+*.csh           
+*.awk           
+*.ps1           
 *.ml            λ
 *.mli           λ
 *.diff          
@@ -118,7 +111,7 @@ fi             # FILE
 *.scala         
 *.go            
 *.dart          
-*.xul           
+*.xul           󰈹
 *.sln           
 *.suo           
 *.pl            
@@ -213,17 +206,6 @@ fi             # FILE
 *Gemfile                
 *Makefile               
 *CMakeLists.txt         
-
-# file patterns (vim-devicons) (patterns not supported in lf)
-# .*jquery.*\.js$         
-# .*angular.*\.js$        
-# .*backbone.*\.js$       
-# .*require.*\.js$        
-# .*materialize.*\.js$    
-# .*materialize.*\.css$   
-# .*mootools.*\.js$       
-# .*vimrc.*               
-# Vagrantfile$            
 
 # file patterns (file name adaptations)
 *jquery.min.js          
