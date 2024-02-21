@@ -1,9 +1,9 @@
 ---@diagnostic disable
-local vim = vim
 local cmd = vim.cmd
 local opt = vim.opt
 local g = vim.g
 local fn = vim.fn
+local diagnostic = vim.diagnostic
 ---@diagnostic enable
 
 opt.backspace = {'eol', 'start', 'indent'}
@@ -59,15 +59,16 @@ opt.undolevels = 1000
 opt.undoreload = 10000
 opt.foldmethod = 'marker'
 opt.foldlevel = 99
+opt.guicursor = "n-v-i-c:iCursor,i:ver100-iCursor,n-v-c:hor20-iCursor"
 
 cmd 'colorscheme tokyonight-night'
 
-vim.diagnostic.config {
+diagnostic.config {
 	virtual_text = {
 		prefix = require('config.icons').misc.error,
 	},
 }
 for type, icon in pairs(require('config.icons').diagnostics) do
 	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
+	fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
 end

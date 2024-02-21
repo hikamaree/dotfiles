@@ -13,8 +13,10 @@ keymap('n', '<C-Right>', '<C-w>l', {})
 keymap('n', '<C-Down>', '<C-w>j', {})
 keymap('n', '<C-Up>', '<C-w>k', {})
 
-keymap('n', '<F6>', ':wa!<CR>:TermExec cmd=\"cargo run; exit\"<CR>', {})
-keymap('n', '<F5>', ':wa!<CR>:TermExec cmd=\"make run; exit\"<CR>', {})
+keymap('n', '<C-TAB>', ':bnext<CR>')
+
+keymap('n', '<F5>', ':wa!<CR>:TermExec cmd=\"make run; exit\"<CR><Esc><C-w>ji', {})
+keymap('n', '<F6>', ':wa!<CR>:TermExec cmd=\"cargo run; exit\"<CR><Esc><C-w>ji', {})
 
 keymap('v', '<A-Up>', ':m \'<-2<CR>gv=gv')
 keymap('v', '<A-Down>', ':m \'>+1<CR>gv=gv')

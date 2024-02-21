@@ -4,17 +4,17 @@ return {
 		error = "",
 	},
 	dap = {
-		Stopped             = { "󰁕 ", "DiagnosticWarn", "DapStoppedLine" },
-		Breakpoint          = " ",
+		Stopped = { "󰁕 ", "DiagnosticWarn", "DapStoppedLine" },
+		Breakpoint = " ",
 		BreakpointCondition = " ",
-		BreakpointRejected  = { " ", "DiagnosticError" },
-		LogPoint            = ".>",
+		BreakpointRejected = { " ", "DiagnosticError" },
+		LogPoint = ".>",
 	},
 	diagnostics = {
 		Error = "󰅚 ",
-		Warn  = "󰀪 ",
-		Hint  = " ",
-		Info  = " ",
+		Warn = "󰀪 ",
+		Hint = " ",
+		Info = " ",
 	},
 	tree = {
 		symlink_arrow = '  ',
@@ -46,5 +46,20 @@ return {
 		package_installed = '',
 		package_pending = '',
 		package_uninstalled = '',
+	},
+	lualine = {
+		symbols = {
+			modified = ' ●',
+			alternate_file = '',
+			directory =  ''
+		},
+		component_separators = {
+			left = '',
+			right = ''
+		},
+		section_separators = {
+			left = '',
+			right = ''
+		},
 	}
 }

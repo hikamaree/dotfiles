@@ -22,13 +22,13 @@ add_file "keymaps"
 add_plugin "zsh-users/zsh-autosuggestions"
 add_plugin "zsh-users/zsh-syntax-highlighting"
 
-zle-line-init() {
-	zle -K viins
-	echo -ne "\e[3 q"
-}
-zle -N zle-line-init
-
 setopt appendhistory
 stty stop undef
 
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+compinit -C -d $XDG_CACH_HOME/zsh/zcompdump
+
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland > /dev/null
+export XINITRC=$HOME/.config/x/xinitrc
+[[ -z $DISPLAY && $XDG_VTNR -eq 2 ]] && exec startx $XINITRC

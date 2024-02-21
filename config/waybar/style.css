@@ -1,5 +1,5 @@
 window#waybar {
-    font-family: "Exo 2", feather;
+    font-family: "Exo 2";
     font-size: 16px;
     background: rgba(26, 27, 38, 1);
 }
@@ -22,7 +22,6 @@ window#waybar {
 
 #mpd,
 #custom-guvernor,
-#custom-notifications,
 #network,
 #battery,
 #backlight,
