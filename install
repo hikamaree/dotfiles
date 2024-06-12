@@ -27,11 +27,6 @@ sudo pacman -S --noconfirm zsh alacritty neovim valgrind htop lf fzf zip unzip s
 #link config
 stow --no-folding --ignore="yay|Icons|Themes|rules|install|system" --adopt .
 
-# flatpaks
-sudo flatpak override --filesystem=xdg-data/themes
-sudo flatpak override --filesystem=xdg-data/icons
-sudo flatpak override --env=GTK_THEME=Tokyonight
-
 sudo systemctl enable seatd.service
 sudo systemctl mask backlight@.service
 sudo systemctl mask --global at-spi-dbus-bus.service
@@ -44,6 +39,12 @@ cd ..
 
 yay -S --noconfirm hyprshot ttf-exo-2 ttf-sourcecodepro-nerd
 
+# flatpaks
+flatpak override --user --filesystem=xdg-data/themes
+flatpak override --user --filesystem=xdg-data/icons
+flatpak override --user --env=GTK_THEME=Orchis-Dark
+flatpak override --user --socket=wayland
+
 #theme
 gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-Dark'
 gsettings set org.gnome.desktop.interface font-name 'Exo 2 11'
@@ -53,4 +54,4 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Future-dark-cursors'
 sudo ./system $USER
 chsh -s /bin/zsh
 
-reboot
+exit
