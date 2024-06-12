@@ -12,8 +12,8 @@ mkdir -p ~/Pictures/screenshots
 mkdir -p ~/.local/share/zsh
 mkdir -p ~/.local/share/mpd
 
-cp -rf ./Icons ~/.local/share/themes
-cp -rf ./Themes ~/.local/share/icons
+cp -rf ./Icons ~/.local/share/icons
+cp -rf ./Themes ~/.local/share/themes
 
 sudo pacman --noconfirm -Syu
 
