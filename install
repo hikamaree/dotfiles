@@ -12,8 +12,8 @@ mkdir -p ~/Pictures/screenshots
 mkdir -p ~/.local/share/zsh
 mkdir -p ~/.local/share/mpd
 
-cp -rf ./icons ~/.local/share/
-cp -rf ./themes ~/.local/share/
+cp -rf ./Icons ~/.local/share/themes
+cp -rf ./Themes ~/.local/share/icons
 
 sudo pacman --noconfirm -Syu
 
@@ -25,7 +25,7 @@ sudo pacman -S --noconfirm zsh alacritty neovim valgrind htop lf fzf zip unzip s
 	rustup waybar dunst swayimg ncmpcpp mpd mpc mpv man-db fuzzel flatpak firefox
 
 #link config
-stow --no-folding --ignore="icons|themes|rules|install|system" --adopt .
+stow --no-folding --ignore="yay|Icons|Themes|rules|install|system" --adopt .
 
 # flatpaks
 sudo flatpak override --filesystem=xdg-data/themes
@@ -50,7 +50,7 @@ gsettings set org.gnome.desktop.interface font-name 'Exo 2 11'
 gsettings set org.gnome.desktop.interface cursor-theme 'Future-dark-cursors'
 
 # shell
-sudo ./system.sh $USER
+sudo ./system $USER
 chsh -s /bin/zsh
 
 reboot

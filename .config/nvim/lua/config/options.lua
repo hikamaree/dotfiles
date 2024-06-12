@@ -65,10 +65,10 @@ cmd "colorscheme tokyonight-night"
 
 diagnostic.config {
 	virtual_text = {
-		prefix = require("config.icon").misc.error,
+		prefix = require("config.icons").misc.error,
 	},
 }
-for type, icon in pairs(require("config.icon").diagnostics) do
+for type, icon in pairs(require("config.icons").diagnostics) do
 	local hl = "DiagnosticSign" .. type
 	fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
 end
