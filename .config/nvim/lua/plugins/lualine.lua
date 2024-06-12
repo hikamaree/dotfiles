@@ -1,7 +1,7 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
-		local icons = require("config.icons").lualine
+		local icons = require("config.icon").lualine
 		require("lualine").setup {
 			options = {
 				component_separators = icons.component_separators,

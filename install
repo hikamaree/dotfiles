@@ -12,11 +12,9 @@ mkdir -p ~/Pictures/screenshots
 mkdir -p ~/.local/share/zsh
 mkdir -p ~/.local/share/mpd
 
-cp ./icons ~/.local/share/
-cp ./themes ~/.local/share/
+cp -rf ./icons ~/.local/share/
+cp -rf ./themes ~/.local/share/
 
-# system setting
-sudo ./system.sh $USER
 sudo pacman --noconfirm -Syu
 
 # hyprland
@@ -31,6 +29,7 @@ stow --no-folding --ignore="icons|themes|rules|install|system" --adopt .
 
 # flatpaks
 sudo flatpak override --filesystem=xdg-data/themes
+sudo flatpak override --filesystem=xdg-data/icons
 sudo flatpak override --env=GTK_THEME=Tokyonight
 
 sudo systemctl enable seatd.service
@@ -43,7 +42,7 @@ cd yay
 makepkg -si --noconfirm
 cd ..
 
-yay -S --noconfirm hyprshot ttf-exo-2
+yay -S --noconfirm hyprshot ttf-exo-2 ttf-sourcecodepro-nerd
 
 #theme
 gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-Dark'
@@ -51,6 +50,7 @@ gsettings set org.gnome.desktop.interface font-name 'Exo 2 11'
 gsettings set org.gnome.desktop.interface cursor-theme 'Future-dark-cursors'
 
 # shell
+sudo ./system.sh $USER
 chsh -s /bin/zsh
 
 reboot

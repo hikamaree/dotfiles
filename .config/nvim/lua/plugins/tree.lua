@@ -3,7 +3,7 @@ return {
 	config = function()
 		require("nvim-tree").setup {
 			renderer = {
-				icons = require("config.icons").tree
+				icons = require("config.icon").tree
 			},
 		}
 	end

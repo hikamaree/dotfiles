@@ -34,6 +34,10 @@ return {
 					item.abbr = string.sub(item.abbr, 1, 25)
 					return item
 				end
+			},
+			window = {
+				completion = cmp.config.window.bordered(),
+				documentation = cmp.config.window.bordered(),
 			}
 		}
 	end
