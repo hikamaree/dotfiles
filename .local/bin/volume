@@ -1,0 +1,17 @@
+#!/bin/sh
+getopts "dims:" FLAG
+case "$FLAG" in
+	d)
+		pactl set-sink-volume @DEFAULT_SINK@ -5%;;
+	i)
+		(( $[ $(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1) + 5 ] > 100 )) && \
+		pactl set-sink-volume @DEFAULT_SINK@ 100% || \
+		pactl set-sink-volume @DEFAULT_SINK@ +5%;;
+	m)
+		pactl set-sink-mute @DEFAULT_SINK@ toggle;;
+	s)
+		VOLUME=$2
+		(( VOLUME < 0 )) && VOLUME=0
+		(( VOLUME > 100 )) && VOLUME=100
+		pactl set-sink-volume @DEFAULT_SINK@ $VOLUME%;;
+esac

@@ -1,32 +1,37 @@
-#!/bin/zsh
+#!/bin/sh
 
 # copy config files
 mv ~/.config ~/.old_config
-cp -rf config ~/.config
 mv ~/.local ~/.old_local
-cp -rf local ~/.local
 mv ~/.mozilla ~/.old_mozilla
-cp -rf mozilla ~/.mozilla
 
 mkdir -p ~/Documents
 mkdir -p ~/Downloads
 mkdir -p ~/Music
 mkdir -p ~/Pictures/screenshots
+mkdir -p ~/.local/share/zsh
+mkdir -p ~/.local/share/mpd
+
+cp ./icons ~/.local/share/
+cp ./themes ~/.local/share/
 
 # system setting
 sudo ./system.sh $USER
 sudo pacman --noconfirm -Syu
 
 # hyprland
-sudo pacman -S --noconfirm hyprland grim slurp wl-clipboard xdg-utils xdg-user-dirs xdg-desktop-portal-gtk xdg-desktop-portal-wlr vulkan-radeon libva-mesa-driver
-
+sudo pacman -S --noconfirm hyprland hyprpaper hypridle hyprlock wl-clipboard \
+	xdg-desktop-portal-gtk xdg-desktop-portal-wlr vulkan-radeon libva-mesa-driver
 # apps
-sudo pacman -S --noconfirm zsh alacritty neovim valgrind htop lf zip unzip rustup waybar swaybg swayimg ncmpcpp mpd mpc mpv wine fuzzel flatpak firefox xournalpp
+sudo pacman -S --noconfirm zsh alacritty neovim valgrind htop lf fzf zip unzip stow \
+	rustup waybar dunst swayimg ncmpcpp mpd mpc mpv man-db fuzzel flatpak firefox
+
+#link config
+stow --no-folding --ignore="icons|themes|rules|install|system" --adopt .
 
 # flatpaks
 sudo flatpak override --filesystem=xdg-data/themes
 sudo flatpak override --env=GTK_THEME=Tokyonight
-
 
 sudo systemctl enable seatd.service
 sudo systemctl mask backlight@.service
@@ -38,11 +43,10 @@ cd yay
 makepkg -si --noconfirm
 cd ..
 
-yay -S --noconfirm fluent-icon-theme-git tokyonight-gtk-theme-git ttf-exo-2
+yay -S --noconfirm hyprshot ttf-exo-2
 
 #theme
-gsettings set org.gnome.desktop.interface gtk-theme 'Tokyonight-Dark-BL'
-gsettings set org.gnome.desktop.interface icon-theme 'Fluent-dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-Dark'
 gsettings set org.gnome.desktop.interface font-name 'Exo 2 11'
 gsettings set org.gnome.desktop.interface cursor-theme 'Future-dark-cursors'
 

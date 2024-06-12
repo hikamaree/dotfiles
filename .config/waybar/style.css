@@ -1,0 +1,35 @@
+window#waybar {
+    font-family: "Exo 2";
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#workspaces {
+    padding: 0px 2px;
+    margin: 0px 2px;
+}
+
+#workspaces button {
+    color: #80c0d0;
+    padding: 0px;
+    margin: 2px 0px;
+}
+
+#workspaces button.active {
+    color: #61afef;
+    background: #000000;
+    padding: 0px 3px;
+}
+
+#mpd,
+#custom-guvernor,
+#network,
+#battery,
+#backlight,
+#pulseaudio,
+#clock,
+#tray {
+    color: #80c0d0;
+    padding: 0px 8px;
+    margin: 0px 2px;
+}
