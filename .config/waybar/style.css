@@ -1,7 +1,7 @@
 window#waybar {
     font-family: "Exo 2";
     font-size: 16px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 1);
 }
 
 #workspaces {
@@ -10,6 +10,7 @@ window#waybar {
 }
 
 #workspaces button {
+	font-weight: 700;
     color: #80c0d0;
     padding: 0px;
     margin: 2px 0px;
@@ -17,7 +18,7 @@ window#waybar {
 
 #workspaces button.active {
     color: #61afef;
-    background: #000000;
+    background: #101515;
     padding: 0px 3px;
 }
 

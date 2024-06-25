@@ -44,8 +44,3 @@
     background = "#00000080"
     foreground = "#C0CAF5"
     timeout = 5
-
-[urgency_critical]
-    background = "#ffffff"
-    foreground = "#db0101"
-    timeout = 0

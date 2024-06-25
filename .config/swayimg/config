@@ -90,7 +90,6 @@ F1 = help
 Home = first_file
 End = last_file
 Prior = prev_file
-Nextq = next_file
 space = next_file
 D = prev_dir
 d = next_dir

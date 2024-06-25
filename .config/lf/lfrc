@@ -16,6 +16,8 @@ map <delete> delete
 map <tab> shell
 map x $$f
 map X !$f
+map <enter> $$EDITOR "$f"
+map e extract
 
 cmd open &{{
 	case $(file --mime-type -Lb $f) in
@@ -23,16 +25,6 @@ cmd open &{{
 		*) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
 	esac
 }}
-
-cmd openf &{{
-	case $(file --mime-type -Lb $f) in
-		text/*) lf -remote "send $id \$$EDITOR \$fx";;
-		inode/directory) lf -remote "send $id \$$EDITOR \$fx";;
-		*) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
-	esac
-}}
-
-map <enter> openf
 
 cmd extract ${{
 set -f
@@ -45,24 +37,3 @@ case $f in
 	*.7z) 7z x $f;;
 	esac
 }}
-
-cmd tar ${{
-	set -f
-	mkdir $1
-	cp -r $fx $1
-	tar czf $1.tar.gz $1
-	rm -rf $1
-}}
-
-cmd zip ${{
-	mkdir zip;
-	cp -rf $fx zip
-	zip -r zip.zip zip
-	rm -rf zip
-}}
-
-map c zip
-map u extract
-
-map <f-11> $htop
-map <f-12> $ncmpcpp

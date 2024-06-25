@@ -24,7 +24,7 @@
 		"format-alt": "<span color=\"#7aa2f7\">{icon} </span>{bandwidthDownBits}",
 		"format-wifi": "<span color=\"#7aa2f7\">{icon} </span>{essid}",
 		"format-ethernet": "<span color=\"#7aa2f7\">󰈀  </span> {bandwidthDownBits}",
-		"format-disconnected": "<span color=\"#f7768e\">󰤮 </span>",
+		"format-disconnected": "<span color=\"#f7768e\">󰤮</span>",
 		"format-icons": ["󰤯  ", "󰤟  ", "󰤢  ", "󰤥  ", "󰤨  "],
 		"interval": 2
 	},
@@ -32,7 +32,7 @@
 	"battery": {
 		"tooltip": false,
 		"format":"<span color=\"#7aa2f7\">{icon} </span>{capacity}",
-		"format-charging": "<span color=\"#f7768e\"> </span>{capacity}",
+		"format-charging": "<span color=\"#f7768e\">  </span>{capacity}",
 		"format-icons": ["   ", "   ", "   ", "   ", "   "],
 		"interval": 2
 	},

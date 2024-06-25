@@ -1,0 +1,23 @@
+#!/bin/sh
+TRANSPARENCY_DIR=$HOME/.cache
+TRANSPARENCY_FILE=$TRANSPARENCY_DIR/transparency
+
+[[ -d $TRANSPARENCY_DIR ]] || mkdir -p $TRANSPARENCY_DIR
+[[ -e $TRANSPARENCY_FILE ]] || echo 0 > $TRANSPARENCY_FILE
+
+TRANSPARENCY=$(cat $TRANSPARENCY_FILE)
+[[ $TRANSPARENCY = 0 ]] && TRANSPARENCY=1 || TRANSPARENCY=0
+echo $TRANSPARENCY > $TRANSPARENCY_FILE
+
+[[ $TRANSPARENCY = 0 ]] && \
+	sed -i "s/\(opacity *= *\).*/\11/" ~/.dotfiles/.config/alacritty/alacritty.toml && \
+	sed -i "s/\(blur:enabled *= *\).*/\1false/" ~/.dotfiles/.config/hypr/hyprland.conf && \
+	sed -i "s/\(background *= *\).*/\1000000F0/" ~/.dotfiles/.config/fuzzel/fuzzel.ini && \
+	sed -i -e 's/rgba(0, 0, 0, 0.5)/rgba(0, 0, 0, 1)/g' ~/.dotfiles/.config/waybar/style.css
+[[ $TRANSPARENCY = 1 ]] && \
+	sed -i "s/\(opacity *= *\).*/\10.5/" ~/.dotfiles/.config/alacritty/alacritty.toml && \
+	sed -i "s/\(blur:enabled *= *\).*/\1true/" ~/.dotfiles/.config/hypr/hyprland.conf && \
+	sed -i "s/\(background *= *\).*/\100000080/" ~/.dotfiles/.config/fuzzel/fuzzel.ini && \
+	sed -i -e 's/rgba(0, 0, 0, 1)/rgba(0, 0, 0, 0.5)/g' ~/.dotfiles/.config/waybar/style.css
+
+pkill waybar && waybar &

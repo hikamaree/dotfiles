@@ -15,7 +15,9 @@ alias nv='nvim'
 alias snv='sudo nvim'
 alias slf='sudo lf'
 alias pac='sudo pacman'
-alias deb='sudo arch-chroot /debian /bin/zsh -c "cd /home/marko && /bin/su marko"'
+alias deb='sudo arch-chroot ~/.roots/debian /bin/zsh -c "cd /home/marko && /bin/su marko"'
+alias dot='nvim ~/.dotfiles'
+alias open='$OPENER'
 
 ex() {
 	if [ -f $1 ] ; then
