@@ -1,11 +1,11 @@
 #!/bin/zsh
 
-show_lf() {
-	lf < $TTY
+show_fm() {
+	yazi < $TTY
 	zle redisplay
 }
-zle -N show_lf
-bindkey '^[1' show_lf
+zle -N show_fm
+bindkey '^[1' show_fm
 
 show_nvim() {
 	nvim . < $TTY

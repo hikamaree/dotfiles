@@ -21,6 +21,7 @@ export MANPAGER='nvim +Man!'
 export TERM=xterm
 export EDITOR=nvim
 export TERMINAL=alacritty
+export FM=yazi
 export BROWSER=firefox
 export OPENER=xdg-open
 

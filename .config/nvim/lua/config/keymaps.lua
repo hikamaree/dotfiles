@@ -3,8 +3,8 @@ local keymap = vim.keymap.set
 ---@diagnostic enable
 
 keymap("n", "<C-q>", ":wa!<CR>:qa!<CR>", {})
-
 keymap("n", "<C-s>", ":wa!<CR>", {})
+keymap("n", "<C-c>", ":w<CR>:bd<CR>:bnext<CR>", {})
 
 keymap("n", "<C-n>", ":NvimTreeToggle<CR>", {})
 

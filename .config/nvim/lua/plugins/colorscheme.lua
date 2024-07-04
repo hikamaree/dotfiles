@@ -4,8 +4,8 @@ return {
 	opts = {
 		transparent = true,
 		styles = {
-			sidebars = "transparent", -- style for sidebars, see below
-			floats = "transparent", -- style for floating windows
+			sidebars = "transparent",
+			floats = "transparent",
 		},
 		on_colors = function(colors)
 			colors.border = "#414868"

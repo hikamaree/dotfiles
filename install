@@ -27,13 +27,13 @@ sudo pacman -S --noconfirm zsh alacritty neovim \
 sudo pacman -S --noconfirm swayimg mpv fuzzel flatpak firefox
 
 #aur
-git clone http://aur.archlinux.org/yay.git
-cd yay
+git clone http://aur.archlinux.org/paru-bin.git
+cd paru-bin
 makepkg -si --noconfirm
 cd ..
 rm -rf yay
 
-yay -S --noconfirm hyprshot ttf-exo-2 ttf-sourcecodepro-nerd
+paru -S --noconfirm hyprshot ttf-exo-2 ttf-sourcecodepro-nerd
 
 #link config
 stow --no-folding --ignore="yay|rules|install|system" --adopt .

@@ -1,5 +1,5 @@
 [Default Applications]
-inode/directory=lf.desktop
+inode/directory=fm.desktop
 text/plain=nvim.desktop
 text/*=nvim.desktop
 application/pdf=firefox.desktop

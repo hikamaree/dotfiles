@@ -25,6 +25,7 @@ opt.cursorline = true
 opt.laststatus = 2
 opt.lazyredraw = true
 opt.list = true
+opt.relativenumber = true
 opt.listchars = {
 	tab = "  ",
 	trail = "·",
@@ -67,6 +68,7 @@ diagnostic.config {
 	virtual_text = {
 		prefix = require("config.icons").misc.error,
 	},
+	update_in_insert = true,
 }
 for type, icon in pairs(require("config.icons").diagnostics) do
 	local hl = "DiagnosticSign" .. type

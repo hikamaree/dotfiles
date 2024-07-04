@@ -12,7 +12,7 @@ echo $TRANSPARENCY > $TRANSPARENCY_FILE
 [[ $TRANSPARENCY = 0 ]] && \
 	sed -i "s/\(opacity *= *\).*/\11/" ~/.dotfiles/.config/alacritty/alacritty.toml && \
 	sed -i "s/\(blur:enabled *= *\).*/\1false/" ~/.dotfiles/.config/hypr/hyprland.conf && \
-	sed -i "s/\(background *= *\).*/\1000000F0/" ~/.dotfiles/.config/fuzzel/fuzzel.ini && \
+	sed -i "s/\(background *= *\).*/\1000000FF/" ~/.dotfiles/.config/fuzzel/fuzzel.ini && \
 	sed -i -e 's/rgba(0, 0, 0, 0.5)/rgba(0, 0, 0, 1)/g' ~/.dotfiles/.config/waybar/style.css
 [[ $TRANSPARENCY = 1 ]] && \
 	sed -i "s/\(opacity *= *\).*/\10.5/" ~/.dotfiles/.config/alacritty/alacritty.toml && \
@@ -20,4 +20,5 @@ echo $TRANSPARENCY > $TRANSPARENCY_FILE
 	sed -i "s/\(background *= *\).*/\100000080/" ~/.dotfiles/.config/fuzzel/fuzzel.ini && \
 	sed -i -e 's/rgba(0, 0, 0, 1)/rgba(0, 0, 0, 0.5)/g' ~/.dotfiles/.config/waybar/style.css
 
-pkill waybar && waybar &
+pkill waybar
+waybar &

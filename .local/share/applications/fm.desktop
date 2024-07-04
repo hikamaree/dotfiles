@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=fm
+Terminal=false
+Exec=alacritty -e yazi %u
+Type=Application
+MimeType=inode/directory
+Categories=Utility;Core;System;FileTools;FileManager;ConsoleOnly
