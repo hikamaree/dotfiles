@@ -13,7 +13,7 @@
 }
 
 browser {
-    background-color: var(--sfsecondary) !important;
+    background-color: var(--sfwindow) !important;
 }
 
 menupopup {

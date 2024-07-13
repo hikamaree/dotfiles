@@ -1,0 +1,23 @@
+#!/bin/sh
+GUVERNOR=$(</sys/devices/system/cpu/cpu0/cpufreq/energy_performance_preference)
+
+set_guvernor() {
+	sudo echo $NEXT | sudo tee /sys/devices/system/cpu/*/cpufreq/energy_performance_preference
+	GUVERNOR=$NEXT
+}
+
+getopts "stn:" FLAG
+case "$FLAG" in
+	s)
+		NEXT=$2
+		set_guvernor;;
+	t)
+		[[ "$GUVERNOR" == "performance" ]] && NEXT=power || NEXT=performance
+		set_guvernor;;
+	\?)
+		echo $GUVERNOR;;
+esac
+
+[[ "$GUVERNOR" == "power" ]] && GUVERNOR=powersave
+notify-send $(tr a-z- A-Z_ <<< $GUVERNOR)
+

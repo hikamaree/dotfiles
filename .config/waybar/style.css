@@ -10,6 +10,7 @@ window#waybar {
 }
 
 #workspaces button {
+	border-radius: 5px;
 	font-weight: 900;
     color: #80c0d0;
     padding: 0px;
@@ -23,7 +24,6 @@ window#waybar {
 }
 
 #mpd,
-#custom-guvernor,
 #network,
 #battery,
 #backlight,

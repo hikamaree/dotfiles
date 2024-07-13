@@ -15,7 +15,7 @@
     # Markup parsing
     markup = full
 	offset = 20x20
-    format = "<b>%a</b>\n<i>%s</i>\n%b"
+    format = "<b>%s</b>\n%b"
     alignment = center
     vertical_alignment = center
     show_age_threshold = -1
@@ -26,6 +26,7 @@
     hide_duplicate_count = true
     show_indicators = no
     icon_position = left
+	icon_corner_radius = 5
     history_length = 20
 
     dmenu = /usr/bin/dmenu -p dunst:
@@ -40,7 +41,28 @@
     mouse_middle_click = do_action
     mouse_right_click = do_action
 
+[krunker]
+	body="https://krunker\.io*"
+	urgency = critical
+
+[PERFORMANCE]
+	summary="PERFORMANCE"
+	format = "<b><span foreground='#F7768E'>%s</span></b>\n"
+	history_ignore = true
+	icon_position = off
+
+[POWERSAVE]
+	summary="POWERSAVE"
+	format = "<b><span foreground='#7AA2F7'>%s</span></b>\n"
+	history_ignore = true
+	icon_position = off
+
 [urgency_normal]
-    background = "#00000080"
+    background = "#000000FF"
     foreground = "#C0CAF5"
     timeout = 5
+
+[urgency_critical]
+    background = "#ff0000FF"
+    foreground = "#000000"
+    timeout = 10

@@ -20,8 +20,8 @@ sudo pacman -S --noconfirm hyprland hyprpaper hypridle hyprlock \
 	xdg-desktop-portal-wlr vulkan-radeon libva-mesa-driver mesa-vdpau
 
 # terminal apps
-sudo pacman -S --noconfirm zsh alacritty neovim \
-	htop lf fzf zip unzip stow ncmpcpp mpd mpc man-db
+sudo pacman -S --noconfirm zsh alacritty neovim yazi \
+	htop fzf zip unarchiver stow ncmpcpp mpd mpc man-db
 
 # other
 sudo pacman -S --noconfirm swayimg mpv fuzzel flatpak firefox
@@ -31,12 +31,12 @@ git clone http://aur.archlinux.org/paru-bin.git
 cd paru-bin
 makepkg -si --noconfirm
 cd ..
-rm -rf yay
+rm -rf paru-bin
 
-paru -S --noconfirm hyprshot ttf-exo-2 ttf-sourcecodepro-nerd
+paru -S --noconfirm hyprshot ttf-exo-2 ttf-sourcecodepro-nerd tokyonight-gtk-theme-git
 
 #link config
-stow --no-folding --ignore="yay|rules|install|system" --adopt .
+stow --no-folding --ignore="paru-bin|rules|install|system" --adopt .
 ln -s /usr/share/themes ~/.local/share/themes
 ln -s /usr/share/icons ~/.local/share/icons
 

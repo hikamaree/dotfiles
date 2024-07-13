@@ -1,8 +1,19 @@
 {
 	"layer": "top",
-	"modules-left": ["hyprland/workspaces"],
-	"modules-center": ["mpd"],
-	"modules-right": ["tray", "custom/guvernor", "network", "battery", "backlight","pulseaudio", "clock", "custom/notification"],
+	"modules-left": [
+		"hyprland/workspaces"
+	],
+	"modules-center": [
+		"mpd"
+	],
+	"modules-right": [
+		"tray",
+		"network",
+		"battery",
+		"backlight",
+		"pulseaudio",
+		"clock"
+	],
 
 	"mpd": {
 		"tooltip": false,
@@ -21,39 +32,59 @@
 
 	"network": {
 		"tooltip": false,
-		"format-alt": "<span color=\"#7aa2f7\">{icon} </span>{bandwidthDownBits}",
-		"format-wifi": "<span color=\"#7aa2f7\">{icon} </span>{essid}",
+		"format-alt": "<span color=\"#7aa2f7\">{icon}</span>{bandwidthDownBits}",
+		"format-wifi": "<span color=\"#7aa2f7\">{icon}</span>{essid}",
 		"format-ethernet": "<span color=\"#7aa2f7\">󰈀  </span> {bandwidthDownBits}",
 		"format-disconnected": "<span color=\"#f7768e\">󰤮</span>",
-		"format-icons": ["󰤯  ", "󰤟  ", "󰤢  ", "󰤥  ", "󰤨  "],
+		"format-icons": [
+			"󰤯   ",
+			"󰤟   ",
+			"󰤢   ",
+			"󰤥   ",
+			"󰤨   "
+		],
 		"interval": 2
 	},
 
 	"battery": {
 		"tooltip": false,
-		"format":"<span color=\"#7aa2f7\">{icon}</span>    {capacity}",
+		"format":"<span color=\"#7aa2f7\">{icon}</span>{capacity}",
 		"format-charging": "<span color=\"#f7768e\">  </span>{capacity}",
-		"format-icons": ["", "", "", "", ""],
+		"format-icons": [
+			"    ",
+			"    ",
+			"    ",
+			"    ",
+			"    "
+		],
 		"interval": 2
 	},
 
 	"backlight": {
 		"tooltip": false,
-		"format": "<span color=\"#7aa2f7\">{icon} </span>{percent}",
-		"format-icons": ["  ", "  ", "  "],
+		"format": "<span color=\"#7aa2f7\">{icon}</span>{percent}",
 		"on-scroll-up": "brightness -i &",
 		"on-scroll-down": "brightness -d &",
-		"smooth-scrolling-threshold": 3.0
+		"smooth-scrolling-threshold": 3.0,
+		"format-icons": [
+			"   ",
+			"   ",
+			"   "
+		]
 	},
 
 	"pulseaudio": {
 		"tooltip": false,
 		"format": "<span color=\"#7aa2f7\">{icon}</span>{volume}",
 		"format-muted": "<span color=\"#f7768e\"> </span>",
-		"format-icons": ["  ", "   ", "    "],
 		"on-click": "volume -m",
 		"scroll-step": 5,
-		"smooth-scrolling-threshold": 3.0
+		"smooth-scrolling-threshold": 3.0,
+		"format-icons": [
+			"  ",
+			"   ",
+			"    "
+		]
 	},
 
 	"custom/guvernor": {
