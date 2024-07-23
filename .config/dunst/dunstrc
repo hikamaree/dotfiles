@@ -27,6 +27,7 @@
     show_indicators = no
     icon_position = left
 	icon_corner_radius = 5
+	icon_path="/usr/share/icons/Fluent-dark/16/status/:/usr/share/icons/Fluent-dark/16/devices/"
     history_length = 20
 
     dmenu = /usr/bin/dmenu -p dunst:
@@ -49,13 +50,11 @@
 	summary="PERFORMANCE"
 	format = "<b><span foreground='#F7768E'>%s</span></b>\n"
 	history_ignore = true
-	icon_position = off
 
 [POWERSAVE]
 	summary="POWERSAVE"
 	format = "<b><span foreground='#7AA2F7'>%s</span></b>\n"
 	history_ignore = true
-	icon_position = off
 
 [urgency_normal]
     background = "#000000FF"

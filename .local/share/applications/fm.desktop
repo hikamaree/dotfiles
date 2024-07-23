@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=fm
 Terminal=false
+Icon=system-file-manager
 Exec=alacritty -e yazi %u
 Type=Application
 MimeType=inode/directory

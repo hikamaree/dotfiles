@@ -22,7 +22,7 @@ export TERM=xterm
 export EDITOR=nvim
 export TERMINAL=alacritty
 export FM=yazi
-export BROWSER=firefox
+export BROWSER=org.mozilla.firefox
 export OPENER=xdg-open
 
 export GTK_USE_PORTAL=1
@@ -39,7 +39,7 @@ FZF_DEFAULT_OPTS='
 	--layout reverse --border rounded --color "border:#414868" --info inline-right
 	--bind "ctrl-e:become($EDITOR $(echo $(pwd)/$(echo {})) > /dev/tty)"
 	--bind "ctrl-o:become($OPENER $(echo $(pwd)/$(echo {})))"
-	--walker-skip=Music,.git,.gitignore,.roots,.var,.cache'
+	--walker-skip=Music,.git,.gitignore,.roots,.var,.cache,.local,.config,.ssh'
 FZF_COMPLETION_OPTS='--preview "LC_COLLATE=C ls -A --group-directories-first $(echo $(pwd)/$(echo {})); cat {} 2>/dev/null"'
 FZF_ALT_C_OPTS='--preview "LC_COLLATE=C ls -A --group-directories-first $(echo $(pwd)/$(echo {})); cat {} 2>/dev/null"'
 

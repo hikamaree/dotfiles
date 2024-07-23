@@ -23,6 +23,9 @@ add_plugin "zsh-users/zsh-autosuggestions"
 add_plugin "zsh-users/zsh-syntax-highlighting"
 
 setopt appendhistory
+setopt inc_append_history
+setopt share_history
+
 stty stop undef
 
 source <(fzf --zsh)

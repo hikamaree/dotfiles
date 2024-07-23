@@ -11,6 +11,7 @@ mkdir -p ~/Music
 mkdir -p ~/Pictures/screenshots
 mkdir -p ~/.local/share/zsh
 mkdir -p ~/.local/share/mpd
+mkdir -p ~/.var/app/org.mozilla.firefox
 
 sudo pacman --noconfirm -Syu
 
@@ -19,12 +20,12 @@ sudo pacman -S --noconfirm hyprland hyprpaper hypridle hyprlock \
 	waybar dunst wl-clipboard xdg-desktop-portal-gtk \
 	xdg-desktop-portal-wlr vulkan-radeon libva-mesa-driver mesa-vdpau
 
-# terminal apps
+# terminal
 sudo pacman -S --noconfirm zsh alacritty neovim yazi \
-	htop fzf zip unarchiver stow ncmpcpp mpd mpc man-db
+	htop fzf zip unzip unarchiver stow ncmpcpp mpd mpc man-db
 
 # other
-sudo pacman -S --noconfirm swayimg mpv fuzzel flatpak firefox
+sudo pacman -S --noconfirm swayimg mpv fuzzel flatpak
 
 #aur
 git clone http://aur.archlinux.org/paru-bin.git
@@ -33,10 +34,11 @@ makepkg -si --noconfirm
 cd ..
 rm -rf paru-bin
 
-paru -S --noconfirm hyprshot ttf-exo-2 ttf-sourcecodepro-nerd tokyonight-gtk-theme-git
+paru -S --noconfirm hyprshot ttf-exo-2 ttf-sourcecodepro-nerd
 
 #link config
-stow --no-folding --ignore="paru-bin|rules|install|system" --adopt .
+stow --no-folding --ignore="paru-bin|rules|install|system|.mozilla" --adopt .
+cp -r .mozilla ~/.var/app/org.mozilla.firefox/.mozilla
 ln -s /usr/share/themes ~/.local/share/themes
 ln -s /usr/share/icons ~/.local/share/icons
 

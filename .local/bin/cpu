@@ -19,5 +19,5 @@ case "$FLAG" in
 esac
 
 [[ "$GUVERNOR" == "power" ]] && GUVERNOR=powersave
-notify-send $(tr a-z- A-Z_ <<< $GUVERNOR)
+notify-send $(tr a-z- A-Z_ <<< $GUVERNOR) -i "cpu"
 
