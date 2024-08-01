@@ -25,6 +25,10 @@ add_plugin "zsh-users/zsh-syntax-highlighting"
 setopt appendhistory
 setopt inc_append_history
 setopt share_history
+setopt hist_reduce_blanks
+setopt hist_ignore_all_dups
+setopt auto_cd
+setopt chase_links
 
 stty stop undef
 

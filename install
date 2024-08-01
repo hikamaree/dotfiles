@@ -34,7 +34,7 @@ makepkg -si --noconfirm
 cd ..
 rm -rf paru-bin
 
-paru -S --noconfirm hyprshot ttf-exo-2 ttf-sourcecodepro-nerd
+paru -S --noconfirm hyprshot ttf-exo-2 adobe-source-code-pro-fonts ttf-nerd-fonts-symbols
 
 #link config
 stow --no-folding --ignore="paru-bin|rules|install|system|.mozilla" --adopt .

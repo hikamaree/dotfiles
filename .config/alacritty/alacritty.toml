@@ -26,19 +26,19 @@ foreground = "#c0caf5"
 size = 12.0
 
 [font.bold]
-family = "SauceCodePro Nerd Font"
+family = "SourceCodePro"
 style = "Bold"
 
 [font.bold_italic]
-family = "SauceCodePro Nerd Font"
+family = "SourceCodePro"
 style = "Bold Italic"
 
 [font.italic]
-family = "SauceCodePro Nerd Font"
+family = "SourceCodePro"
 style = "Italic"
 
 [font.normal]
-family = "SauceCodePro Nerd Font"
+family = "SourceCodePro"
 style = "Regular"
 
 [cursor.style]
@@ -105,11 +105,15 @@ chars = "\f"
 key = "L"
 mods = "Control"
 
+[[keyboard.bindings]]
+action = "None"
+key = "Z"
+mods = "Control"
+
 [scrolling]
 history = 10000
 multiplier = 3
 
-#startup modes:Windowed, Maximized, Fullscreen
 [window]
 dynamic_padding = false
 opacity = 1

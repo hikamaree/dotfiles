@@ -9,6 +9,7 @@
 	"modules-right": [
 		"tray",
 		"network",
+		"bluetooth",
 		"battery",
 		"backlight",
 		"pulseaudio",
@@ -17,17 +18,17 @@
 
 	"mpd": {
 		"tooltip": false,
-		"format": "<span color=\"#7aa2f7\">  </span> {artist} - {title}",
+		"format": "<span color=\"#7aa2f7\"> </span> {artist} - {title}",
 		"format-disconnected": "",
 		"format-stopped": "",
 		"unknown-tag": "N/A",
 		"on-click": "mpc toggle"
 	},
 
-	"clock": {
-		"format": "<span color=\"#7aa2f7\">   </span>{:%H:%M}",
-		"format-alt": "<span color=\"#7aa2f7\">   </span>{:%A, %d %B}",
-		"interval": 10
+	"tray": {
+		"tooltip": false,
+		"icon-size": 20,
+		"spacing": 8
 	},
 
 	"network": {
@@ -37,13 +38,20 @@
 		"format-ethernet": "<span color=\"#7aa2f7\">󰈀  </span> {bandwidthDownBits}",
 		"format-disconnected": "<span color=\"#f7768e\">󰤮</span>",
 		"format-icons": [
-			"󰤯   ",
-			"󰤟   ",
-			"󰤢   ",
-			"󰤥   ",
-			"󰤨   "
+			"󰤯  ",
+			"󰤟  ",
+			"󰤢  ",
+			"󰤥  ",
+			"󰤨  "
 		],
 		"interval": 2
+	},
+
+	"bluetooth": {
+		"format": "<span color=\"#7aa2f7\">  </span>{status}",
+		"format-disabled": "<span color=\"#f7768e\">  </span>off",
+		"format-connected": "<span color=\"#7aa2f7\">  </span>{device_alias}",
+		"on-click": "rfkill toggle bluetooth"
 	},
 
 	"battery": {
@@ -51,11 +59,11 @@
 		"format":"<span color=\"#7aa2f7\">{icon}</span>{capacity}",
 		"format-charging": "<span color=\"#f7768e\">  </span>{capacity}",
 		"format-icons": [
-			"    ",
-			"    ",
-			"    ",
-			"    ",
-			"    "
+			"  ",
+			"  ",
+			"  ",
+			"  ",
+			"  "
 		],
 		"interval": 2
 	},
@@ -67,9 +75,9 @@
 		"on-scroll-down": "brightness -d &",
 		"smooth-scrolling-threshold": 3.0,
 		"format-icons": [
-			"   ",
-			"   ",
-			"   "
+			"  ",
+			"  ",
+			"  "
 		]
 	},
 
@@ -82,28 +90,15 @@
 		"smooth-scrolling-threshold": 3.0,
 		"format-icons": [
 			"  ",
-			"   ",
-			"    "
+			"  ",
+			"  "
 		]
 	},
 
-	"custom/guvernor": {
+	"clock": {
 		"tooltip": false,
-		"format": "{icon}",
-		"return-type": "json",
-		"exec": "~/.config/waybar/modules/cpuget",
-		"on-click": "sudo cpuset; pkill -RTMIN+1 waybar",
-		"exec-on-event": true,
-		"signal": 1,
-		"format-icons": {
-			"power": "<span color=\"#7aa2f7\">󰾆</span>",
-			"performance": "<span color=\"#f7768e\">󰓅</span>"
-		}
-	},
-
-	"tray": {
-		"tooltip": false,
-		"icon-size": 20,
-		"spacing": 8
+		"format": "<span color=\"#7aa2f7\">  </span>{:%H:%M}",
+		"format-alt": "<span color=\"#7aa2f7\">  </span>{:%A, %d %B}",
+		"interval": 10
 	}
 }

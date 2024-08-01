@@ -5,27 +5,29 @@ show_fm() {
 	zle redisplay
 }
 zle -N show_fm
-bindkey '^[1' show_fm
 
 show_nvim() {
 	nvim . < $TTY
 	zle redisplay
 }
 zle -N show_nvim
-bindkey '^[2' show_nvim
 
 show_htop() {
 	htop < $TTY
 	zle redisplay
 }
 zle -N show_htop
-bindkey '^[3' show_htop
 
 show_ncmpcpp() {
 	ncmpcpp --quiet < $TTY
 	zle redisplay
 }
 zle -N show_ncmpcpp
-bindkey '^[4' show_ncmpcpp
+
+bindkey -v
 
 bindkey '^ ' fzf-cd-widget
+bindkey '^[1' show_fm
+bindkey '^[2' show_nvim
+bindkey '^[3' show_htop
+bindkey '^[4' show_ncmpcpp

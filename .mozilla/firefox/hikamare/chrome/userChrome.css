@@ -44,8 +44,6 @@ menupopup {
 .urlbarView,
 #star-button-box,
 #alltabs-button,
-#forward-button,
-#back-button,
 #statuspanel[type="overLink"] {
     display: none !important;
 }
