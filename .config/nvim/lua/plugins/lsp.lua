@@ -1,7 +1,3 @@
----@diagnostic disable
-local vim = vim
----@diagnostic enable
-
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
@@ -12,10 +8,18 @@ return {
 		local servers = { "clangd", "rust_analyzer", "lua_ls" }
 		local lspconfig = require("lspconfig")
 		local mason_lspconfig = require("mason-lspconfig")
+		local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 		require("mason").setup {
 			ui = {
-				icons = require("config.icons").mason,
-				border = "rounded"
+				icons = {
+					package_installed = "",
+					package_pending = "",
+					package_uninstalled = "",
+				},
+				border = "rounded",
+				width = 0.8,
+				height = 0.8,
 			},
 		}
 		mason_lspconfig.setup {
@@ -26,16 +30,11 @@ return {
 			function(server)
 				local ok, _ = pcall(require, "servers." .. server)
 				if not ok then
-					lspconfig[server].setup{}
+					lspconfig[server].setup{
+						capabilities = capabilities,
+					}
 				end
 			end,
 		}
-		vim.keymap.set("n", "<C-f>", function()
-			vim.lsp.buf.code_action({
-				filter = function(a) return a.isPreferred end,
-				apply = true
-			})
-		end)
-		vim.keymap.set("n", "<C-r>", vim.lsp.buf.rename)
 	end
 }

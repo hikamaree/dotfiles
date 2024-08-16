@@ -7,7 +7,7 @@ show_fm() {
 zle -N show_fm
 
 show_nvim() {
-	nvim . < $TTY
+	nvim < $TTY
 	zle redisplay
 }
 zle -N show_nvim

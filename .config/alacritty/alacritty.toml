@@ -20,6 +20,7 @@ white= "#a9b1d6"
 
 [colors.primary]
 background = "#000000"
+#background = "#1a1b26"
 foreground = "#c0caf5"
 
 [font]

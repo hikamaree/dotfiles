@@ -2,6 +2,7 @@
 local cmd = vim.cmd
 local opt = vim.opt
 local fn = vim.fn
+local api = vim.api
 local diagnostic = vim.diagnostic
 ---@diagnostic enable
 
@@ -61,16 +62,18 @@ opt.undoreload = 10000
 opt.foldmethod = "marker"
 opt.foldlevel = 99
 opt.guicursor = "n-v-i-c:iCursor,i:ver100-iCursor,n-v-c:hor20-iCursor"
+opt.shortmess:append("I")
 
 cmd "colorscheme tokyonight-night"
 
 diagnostic.config {
 	virtual_text = {
-		prefix = require("config.icons").misc.error,
+		prefix = "",
 	},
 	update_in_insert = true,
 }
-for type, icon in pairs(require("config.icons").diagnostics) do
-	local hl = "DiagnosticSign" .. type
-	fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
-end
+
+fn.sign_define("DiagnosticSignError", {text = "󰅚 "})
+fn.sign_define("DiagnosticSignWarn", {text = "󰀪 "})
+fn.sign_define("DiagnosticSignHint", {text = " "})
+fn.sign_define("DiagnosticSignInfo", {text = " "})
