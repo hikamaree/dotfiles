@@ -4,6 +4,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
+		"onsails/lspkind.nvim"
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -23,10 +24,16 @@ return {
 				{ name = "buffer" },
 			},
 			formatting = {
-				format = function(_, item)
-					item.abbr = string.sub(item.abbr, 1, 25)
-					return item
-				end
+				format = require("lspkind").cmp_format {
+					mode = 'symbol',
+					maxwidth = 25,
+					before = function(_, vim_item)
+						if vim_item.menu ~= nil and string.len(vim_item.menu) > 0 then
+							vim_item.menu = string.sub(vim_item.menu, 1, 0) .. ""
+						end
+						return vim_item
+					end,
+				}
 			},
 			window = {
 				completion = cmp.config.window.bordered(),

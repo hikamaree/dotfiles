@@ -71,6 +71,14 @@ diagnostic.config {
 		prefix = "",
 	},
 	update_in_insert = true,
+	float = {
+		focusable = false,
+		style = "minimal",
+		border = "rounded",
+		source = "always",
+		header = "",
+		prefix = "",
+	},
 }
 
 fn.sign_define("DiagnosticSignError", {text = "󰅚 "})
