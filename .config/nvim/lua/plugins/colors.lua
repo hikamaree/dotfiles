@@ -1,7 +1,8 @@
 return {
 	"folke/tokyonight.nvim",
-	priority = 1000,
+	lazy = true,
 	opts = {
+		style = "night",
 		transparent = true,
 		styles = {
 			sidebars = "transparent",
@@ -11,5 +12,5 @@ return {
 			colors.border = "#414868"
 			colors.bg_statusline = colors.none
 		end
-	}
+	},
 }

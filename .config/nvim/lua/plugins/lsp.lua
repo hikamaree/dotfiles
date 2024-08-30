@@ -1,5 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
+	event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"williamboman/mason.nvim",
@@ -13,9 +14,9 @@ return {
 		require("mason").setup {
 			ui = {
 				icons = {
-					package_installed = "",
-					package_pending = "",
-					package_uninstalled = "",
+					package_installed = "I",
+					package_pending = "P",
+					package_uninstalled = "X",
 				},
 				border = "rounded",
 				width = 0.8,

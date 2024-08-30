@@ -1,5 +1,8 @@
 return {
 	"numToStr/FTerm.nvim",
+	keys = {
+		{ "<C-Enter>", function() require("FTerm").toggle() end}
+	},
 	opts = {
 		border = 'rounded',
 		dimensions  = {

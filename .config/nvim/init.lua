@@ -8,6 +8,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local Event = require("lazy.core.handler.event")
+Event.mappings.LazyFile = { id = "LazyFile", event = { "BufReadPost", "BufNewFile", "BufWritePre" } }
+Event.mappings["User LazyFile"] = Event.mappings.LazyFile
+
 require("lazy").setup({
 	root = vim.fn.stdpath("data") .. "/lazy",
 	spec = { import = "plugins" } ,
@@ -33,8 +37,9 @@ require("lazy").setup({
 	},
 	ui = {
 		border = "rounded"
-	}
+	},
 })
 
+require("tokyonight").load()
 require("config.options")
 require("config.keymaps")
