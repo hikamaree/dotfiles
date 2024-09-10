@@ -1,31 +1,26 @@
 #!/bin/sh
 
-# copy config files
 mv ~/.config ~/.old_config
 mv ~/.local ~/.old_local
-mv ~/.mozilla ~/.old_mozilla
 
-mkdir -p ~/Documents
-mkdir -p ~/Downloads
-mkdir -p ~/Music
-mkdir -p ~/Pictures/screenshots
+mkdir -p ~/documents
+mkdir -p ~/downloads
+mkdir -p ~/music
+mkdir -p ~/pictures/screenshots
+mkdir -p ~/.config
 mkdir -p ~/.local/share/zsh
 mkdir -p ~/.local/share/mpd
-mkdir -p ~/.var/app/org.mozilla.firefox
 
 sudo pacman --noconfirm -Syu
 
 # hyprland
 sudo pacman -S --noconfirm hyprland hyprpaper hypridle hyprlock \
 	waybar dunst wl-clipboard xdg-desktop-portal-gtk \
-	xdg-desktop-portal-wlr vulkan-radeon libva-mesa-driver mesa-vdpau
+	xdg-desktop-portal-wlr vulkan-radeon libva-mesa-driver mesa-vdpau mpv
 
 # terminal
 sudo pacman -S --noconfirm zsh alacritty neovim yazi \
 	htop fzf zip unzip unarchiver stow ncmpcpp mpd mpc man-db
-
-# other
-sudo pacman -S --noconfirm swayimg mpv fuzzel flatpak
 
 #aur
 git clone http://aur.archlinux.org/paru-bin.git
@@ -37,8 +32,8 @@ rm -rf paru-bin
 paru -S --noconfirm hyprshot ttf-exo-2 adobe-source-code-pro-fonts ttf-nerd-fonts-symbols
 
 #link config
-stow --no-folding --ignore="paru-bin|rules|install|system|.mozilla" --adopt .
-cp -r .mozilla ~/.var/app/org.mozilla.firefox/.mozilla
+stow --no-folding --adopt --target=$HOME/.config config
+stow --no-folding --adopt --target=$HOME/.local local
 ln -s /usr/share/themes ~/.local/share/themes
 ln -s /usr/share/icons ~/.local/share/icons
 

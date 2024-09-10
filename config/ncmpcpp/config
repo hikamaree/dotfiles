@@ -1,0 +1,52 @@
+mpd_music_dir = ~/Music
+lyrics_directory = ~/.local/share/lyrics
+
+visualizer_data_source = /tmp/mpd.fifo
+visualizer_output_name = visualizer
+visualizer_in_stereo = yes
+visualizer_type = spectrum
+visualizer_fps = 90
+visualizer_autoscale = no
+visualizer_color = green
+visualizer_spectrum_smooth_look = yes
+
+song_list_format = {%a - }{%t}|{$8%f$9}$R{$3(%l)$9}
+song_status_format = {{%a{ "%b"{ (%y)}} - }{%t}}|{%f}
+song_library_format = {%n - }{%t}|{%f}
+alternative_header_first_line_format = $b$1$aqqu$/a$9 {%t}|{%f} $1$atqq$/a$9$/b
+alternative_header_second_line_format = {{$3$b%a$/b$9}{ - $7%b$9}{ ($3%y$9)}}|{%D}
+song_window_title_format = {%a - }{%t}|{%f}
+
+progressbar_look = "▃▃▃"
+progressbar_color = black:b
+progressbar_elapsed_color = green:b
+
+now_playing_prefix = "$b$3 > "
+now_playing_suffix = "$5$/b"
+
+browser_sort_mode = name
+browser_sort_format = {%a - }{%t}|{%f} {(%l)}
+song_columns_list_format = (40)[blue]{a} (55)[blue]{t|f:Title} (5f)[blue]{l}
+
+user_interface = alternative
+header_visibility = no
+titles_visibility = no
+centered_cursor = yes
+screen_switcher_mode = browser, media_library, visualizer
+startup_slave_screen = "visualizer"
+
+colors_enabled = yes
+empty_tag_color = blue
+header_window_color = blue
+volume_color = blue:b
+state_line_color = green
+state_flags_color = green:b
+main_window_color = white
+color1 = blue
+color2 = green
+statusbar_color = white
+statusbar_time_color = default:b
+player_state_color = default:b
+alternative_ui_separator_color = white
+window_border_color = green
+active_window_border = blue
