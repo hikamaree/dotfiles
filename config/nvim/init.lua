@@ -7,14 +7,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	root = vim.fn.stdpath("data") .. "/lazy",
-	spec = { import = "plugins" },
-	lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
-	defaults = {
-		lazy = false,
-		version = false
-	},
-	rocks = { hererocks = true },
+	spec = "plugins",
 	performance = {
 		rtp = {
 			disabled_plugins = {
@@ -31,9 +24,8 @@ require("lazy").setup({
 		},
 	},
 	ui = { border = "single" },
-	checker = { enabled = false },
-	change_detection = { enabled = false },
 })
 
 require("options")
 require("keymaps")
+require("autocmd")

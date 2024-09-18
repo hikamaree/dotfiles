@@ -5,7 +5,6 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
-		"onsails/lspkind.nvim"
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -15,8 +14,8 @@ return {
 			},
 			mapping = {
 				["<CR>"] = cmp.mapping.confirm { select = true },
-				["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
-				["<Down>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+				["<Up>"] = cmp.mapping.select_prev_item(),
+				["<Down>"] = cmp.mapping.select_next_item(),
 				["<ESC>"] = cmp.mapping.close(),
 			},
 			sources = {
@@ -25,21 +24,17 @@ return {
 				{ name = "buffer" },
 			},
 			formatting = {
-				format = require("lspkind").cmp_format {
-					mode = 'text',
-					maxwidth = 25,
-					before = function(_, vim_item)
-						if vim_item.menu ~= nil and string.len(vim_item.menu) > 0 then
-							vim_item.menu = string.sub(vim_item.menu, 1, 0) .. ""
-						end
-						return vim_item
-					end
-				}
+				format = function(_, vim_item)
+					vim_item.abbr = vim_item.abbr:sub(1, 25) .. " "
+					vim_item.kind = vim_item.kind:sub(1, 1)
+					vim_item.menu = nil
+					return vim_item
+				end,
 			},
 			window = {
 				completion = cmp.config.window.bordered({ border = "single" }),
 				documentation = cmp.config.window.bordered({ border = "single" }),
-			}
+			},
 		}
 	end
 }

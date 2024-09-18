@@ -24,8 +24,6 @@ show_ncmpcpp() {
 }
 zle -N show_ncmpcpp
 
-bindkey -v
-
 bindkey '^@' fzf-cd-widget
 bindkey '^[1' show_fm
 bindkey '^[2' show_nvim

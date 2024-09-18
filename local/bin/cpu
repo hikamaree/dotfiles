@@ -6,4 +6,5 @@ CURRENT_INDEX=$(printf "%s\n" "${PROFILES[@]}" | grep -n "^$CURRENT$" | cut -d: 
 NEXT=${PROFILES[$(( $(( (CURRENT_INDEX % ${#PROFILES[@]}) + 1 )) -1 ))]}
 
 powerprofilesctl set $NEXT
+echo $NEXT
 notify-send $(tr a-z- A-Z_ <<< $NEXT) -i "cpu"

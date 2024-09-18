@@ -29,7 +29,6 @@ setopt hist_reduce_blanks
 setopt hist_ignore_all_dups
 setopt auto_cd
 setopt chase_links
-
 stty stop undef
 
 source <(fzf --zsh)

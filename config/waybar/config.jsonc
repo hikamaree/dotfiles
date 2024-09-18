@@ -1,20 +1,7 @@
 {
-	"layer": "top",
-	"modules-left": [
-		"hyprland/workspaces"
-	],
-	"modules-center": [
-		"mpd"
-	],
-	"modules-right": [
-		"tray",
-		"network",
-		"bluetooth",
-		"battery",
-		"backlight",
-		"pulseaudio",
-		"clock"
-	],
+	"modules-left": [ "hyprland/workspaces" ],
+	"modules-center": [ "mpd" ],
+	"modules-right": [ "tray", "network", "bluetooth", "battery", "backlight", "pulseaudio", "clock" ],
 
 	"mpd": {
 		"tooltip": false,
@@ -37,13 +24,7 @@
 		"format-wifi": "<span color=\"#7aa2f7\">{icon}</span>{essid}",
 		"format-ethernet": "<span color=\"#7aa2f7\">󰈀  </span> {bandwidthDownBits}",
 		"format-disconnected": "<span color=\"#f7768e\">󰤮</span>",
-		"format-icons": [
-			"󰤯  ",
-			"󰤟  ",
-			"󰤢  ",
-			"󰤥  ",
-			"󰤨  "
-		],
+		"format-icons": [ "󰤯  ", "󰤟  ", "󰤢  ", "󰤥  ", "󰤨  " ],
 		"interval": 2
 	},
 
@@ -58,13 +39,7 @@
 		"tooltip": false,
 		"format":"<span color=\"#7aa2f7\">{icon}</span>{capacity}",
 		"format-charging": "<span color=\"#f7768e\">  </span>{capacity}",
-		"format-icons": [
-			"  ",
-			"  ",
-			"  ",
-			"  ",
-			"  "
-		],
+		"format-icons": [ "  ", "  ", "  ", "  ", "  " ],
 		"interval": 2
 	},
 
@@ -74,11 +49,7 @@
 		"on-scroll-up": "brightness -i &",
 		"on-scroll-down": "brightness -d &",
 		"smooth-scrolling-threshold": 3.0,
-		"format-icons": [
-			"  ",
-			"  ",
-			"  "
-		]
+		"format-icons": [ "  ", "  ", "  " ]
 	},
 
 	"pulseaudio": {
@@ -88,11 +59,7 @@
 		"on-click": "volume -m",
 		"scroll-step": 5,
 		"smooth-scrolling-threshold": 3.0,
-		"format-icons": [
-			"  ",
-			"  ",
-			"  "
-		]
+		"format-icons": [ "  ", "  ", "  " ]
 	},
 
 	"clock": {

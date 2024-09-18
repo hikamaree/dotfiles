@@ -1,8 +1,7 @@
 #!/bin/zsh
 
-PROMPT='%B%F{blue}󰣇 %F{green}%1~%f > %b'
-
 export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -10,37 +9,31 @@ export XDG_RUNTIME_DIR=/run/user/$UID
 
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export MANPAGER='nvim +Man!'
 
 export WINEPREFIX=$HOME/.local/wine
-export WINEDEBUG=-all
-
-export XINITRC=$HOME/.config/x/xinitrc
-
-export MANPAGER='nvim +Man!'
 
 export TERM=xterm
 export EDITOR=nvim
 export TERMINAL=alacritty
-export FM=yazi
 export BROWSER=org.mozilla.firefox
 export OPENER=xdg-open
 
-export GTK_USE_PORTAL=1
-export NO_AT_BRIDGE=1
-export GTK_A11Y=none
-
+PROMPT='%B%F{blue}󰣇 %F{green}%1~%f > %b'
 HISTFILE=$XDG_DATA_HOME/zsh/histfile
 HISTSIZE=1000000
 SAVEHIST=1000000
 
 FZF_CTRL_T_COMMAND=
 FZF_COMPLETION_TRIGGER=
+FZF_DEFAULT_COMMAND='rg --files'
 FZF_DEFAULT_OPTS='
-	--layout reverse --border sharp --preview-window border-left --color "border:#414868" --info inline-right
+	--border sharp --preview-window border-left --color "border:#414868" --info inline-right
 	--bind "ctrl-e:become($EDITOR $(echo $(pwd)/$(echo {})) > /dev/tty)"
 	--bind "ctrl-o:become($OPENER $(echo $(pwd)/$(echo {})))"
-	--walker-skip=Music,.git,.gitignore,.roots,.var,.cache,.local,.config,.ssh'
+	--walker-skip=music,.git,.gitignore,.roots,.var,.cache,.local,.config,.ssh'
 FZF_COMPLETION_OPTS='--preview "LC_COLLATE=C ls -A --group-directories-first $(echo $(pwd)/$(echo {})); bat -p {} 2>/dev/null"'
+FZF_ALT_C_COMMAND='fd -t d'
 FZF_ALT_C_OPTS='--preview "LC_COLLATE=C ls -A --group-directories-first $(echo $(pwd)/$(echo {})); bat -p {} 2>/dev/null"'
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#414868'

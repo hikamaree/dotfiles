@@ -1,67 +1,35 @@
 [global]
-    follow = mouse
-    indicate_hidden = yes
-    shrink = no
-    transparency = 0
-    separator_height = 2
-    padding = 8
-    horizontal_padding = 8
-    frame_width = 1
-    frame_color = "#61AFEF"
-    sort = yes
-    idle_threshold = 0
-
-    font = Exo 2 11
-    # Markup parsing
-    markup = full
-	offset = 20x20
-    format = "<b>%s</b>\n%b"
-    alignment = center
-    vertical_alignment = center
-    show_age_threshold = -1
-    word_wrap = no
-    ellipsize = middle
-    ignore_newline = no
-    stack_duplicates = true
-    hide_duplicate_count = true
-    show_indicators = no
-    icon_position = left
-	icon_corner_radius = 5
-	icon_path="/usr/share/icons/Fluent-dark/16/status/:/usr/share/icons/Fluent-dark/16/devices/"
-    history_length = 20
-
-    dmenu = /usr/bin/dmenu -p dunst:
-    browser = /usr/bin/firefox -new-tab
-    always_run_script = true
-    title = Dunst
-    class = Dunst
-    corner_radius = 5
-    ignore_dbusclose = false
-
-    mouse_left_click = close_current
-    mouse_middle_click = do_action
-    mouse_right_click = do_action
+frame_width = 1
+frame_color = "#61AFEF"
+font = Exo 2 11
+offset = 20x20
+format = "<b>%s</b>\n%b"
+alignment = center
 
 [krunker]
-	body="https://krunker\.io*"
-	urgency = critical
+body="https://krunker\.io*"
+urgency = critical
+
+[BALANCED]
+summary="BALANCED"
+history_ignore = true
 
 [PERFORMANCE]
-	summary="PERFORMANCE"
-	format = "<b><span foreground='#F7768E'>%s</span></b>\n"
-	history_ignore = true
+summary="PERFORMANCE"
+format = "<b><span foreground='#F7768E'>%s</span></b>\n"
+history_ignore = true
 
 [POWERSAVE]
-	summary="POWER_SAVER"
-	format = "<b><span foreground='#7AA2F7'>%s</span></b>\n"
-	history_ignore = true
+summary="POWER_SAVER"
+format = "<b><span foreground='#7AA2F7'>%s</span></b>\n"
+history_ignore = true
 
 [urgency_normal]
-    background = "#000000FF"
-    foreground = "#C0CAF5"
-    timeout = 5
+background = "#1a1b26"
+foreground = "#C0CAF5"
+timeout = 5
 
 [urgency_critical]
-    background = "#ff0000FF"
-    foreground = "#000000"
-    timeout = 10
+background = "#ff0000FF"
+foreground = "#000000"
+timeout = 10

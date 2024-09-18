@@ -3,46 +3,35 @@
 mv ~/.config ~/.old_config
 mv ~/.local ~/.old_local
 
-mkdir -p ~/documents
-mkdir -p ~/downloads
-mkdir -p ~/music
 mkdir -p ~/pictures/screenshots
 mkdir -p ~/.config
 mkdir -p ~/.local/share/zsh
 mkdir -p ~/.local/share/mpd
 
-sudo pacman --noconfirm -Syu
-
-# hyprland
-sudo pacman -S --noconfirm hyprland hyprpaper hypridle hyprlock \
-	waybar dunst wl-clipboard xdg-desktop-portal-gtk \
-	xdg-desktop-portal-wlr vulkan-radeon libva-mesa-driver mesa-vdpau mpv
-
-# terminal
-sudo pacman -S --noconfirm zsh alacritty neovim yazi \
-	htop fzf zip unzip unarchiver stow ncmpcpp mpd mpc man-db
-
-#aur
 git clone http://aur.archlinux.org/paru-bin.git
 cd paru-bin
 makepkg -si --noconfirm
 cd ..
 rm -rf paru-bin
 
-paru -S --noconfirm hyprshot ttf-exo-2 adobe-source-code-pro-fonts ttf-nerd-fonts-symbols
+paru --noconfirm -Syu
 
-#link config
+paru -S --noconfirm hyprland hyprlock hyprshot waybar dunst wl-clipboard mpv fuzzel \
+	xdg-desktop-portal-gtk xdg-desktop-portal-wlr vulkan-radeon libva-mesa-driver mesa-vdpau
+
+paru -S --noconfirm zsh alacritty htop neovim yazi ripgrep fd \
+	fzf zip unzip unarchiver stow ncmpcpp mpd mpc man-db wget 
+
+paru -S --noconfirm ttf-exo-2 adobe-source-code-pro-fonts ttf-nerd-fonts-symbols
+
 stow --no-folding --adopt --target=$HOME/.config config
 stow --no-folding --adopt --target=$HOME/.local local
 ln -s /usr/share/themes ~/.local/share/themes
 ln -s /usr/share/icons ~/.local/share/icons
 
-#services
 sudo systemctl enable seatd.service
 sudo systemctl mask backlight@.service
-sudo systemctl mask --global at-spi-dbus-bus.service
 
-# flatpaks
 flatpak override --user --filesystem=xdg-data/themes
 flatpak override --user --filesystem=xdg-data/icons
 flatpak override --user --env=GTK_THEME=Adwaita
@@ -50,8 +39,5 @@ flatpak override --user --env=XCURSOR_THEME=Adwaita
 flatpak override --user --env=XCURSOR_SIZE=24
 flatpak override --user --socket=wayland
 
-# shell
 sudo ./system $USER
 chsh -s /bin/zsh
-
-exit

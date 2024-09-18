@@ -1,5 +1,4 @@
 [Default Applications]
-inode/directory=fm.desktop
 text/plain=nvim.desktop
 text/*=nvim.desktop
 application/pdf=firefox.desktop
@@ -9,8 +8,6 @@ x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
 x-scheme-handler/about=firefox.desktop
 x-scheme-handler/unknown=firefox.desktop
-application/x-ms-dos-executable=wine.desktop
-application/exe=wine.desktop
 
 [Added Associations]
 application/pdf=firefox.desktop;

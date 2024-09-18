@@ -1,5 +1,4 @@
 [manager]
-border_symbol = "│"
 border_style  = { fg = "#414868" }
 
 [status]
