@@ -24,8 +24,15 @@ show_ncmpcpp() {
 }
 zle -N show_ncmpcpp
 
+show_zellij() {
+	zellij attach --create "$USER" < $TTY
+	zle redisplay
+}
+zle -N show_zellij
+
 bindkey '^@' fzf-cd-widget
 bindkey '^[1' show_fm
 bindkey '^[2' show_nvim
 bindkey '^[3' show_htop
 bindkey '^[4' show_ncmpcpp
+bindkey '^y' show_zellij

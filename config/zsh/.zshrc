@@ -19,6 +19,7 @@ function add_plugin() {
 add_file "alias"
 add_file "variables"
 add_file "keymaps"
+add_file "zellij"
 add_plugin "zsh-users/zsh-autosuggestions"
 add_plugin "zsh-users/zsh-syntax-highlighting"
 
@@ -33,4 +34,4 @@ stty stop undef
 
 source <(fzf --zsh)
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland > /dev/null
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && DISPLAY=wayland exec Hyprland > /dev/null

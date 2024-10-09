@@ -10,7 +10,6 @@ return {
 		},
 		on_colors = function(colors)
 			colors.border = "#414868"
-			colors.bg_statusline = colors.none
 		end
 	},
 }

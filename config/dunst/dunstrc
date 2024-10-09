@@ -5,6 +5,8 @@ font = Exo 2 11
 offset = 20x20
 format = "<b>%s</b>\n%b"
 alignment = center
+gaps = true
+gap_size = 4
 
 [krunker]
 body="https://krunker\.io*"

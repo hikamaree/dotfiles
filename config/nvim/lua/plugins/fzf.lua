@@ -1,10 +1,9 @@
 return {
 	"ibhagwan/fzf-lua",
 	keys = {
-		{"<C-l>", [[<CMD>FzfLua<CR>]] },
+		{"<C-F>", [[<CMD>FzfLua<CR>]] },
 		{"<C- >", [[<CMD>FzfLua files resume=true header=false<CR>]] },
-		{"<C-g>", [[<CMD>FzfLua live_grep resume=true header=false<CR>]] },
-		{"<C-S-g>", [[<CMD>FzfLua git_status resume=true header=false<CR>]] },
+		{"<C-G>", [[<CMD>FzfLua live_grep resume=true header=false<CR>]] },
 	},
 	opts = {
 		winopts = {

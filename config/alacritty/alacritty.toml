@@ -9,7 +9,7 @@ cyan= "#7dcfff"
 white= "#c0caf5"
 
 [colors.normal]
-black= "#15161e"
+black= "#16161e"
 red= "#f7768e"
 green= "#9ece6a"
 yellow= "#e0af68"
@@ -23,19 +23,11 @@ background = "#1a1b26"
 foreground = "#c0caf5"
 
 [font]
-size = 12
 normal.family = "SourceCodePro"
-bold.family = "SourceCodePro"
-italic.family = "SourceCodePro"
-bold_italic.family = "SourceCodePro"
 
 [cursor.style]
 blinking = "Always"
 shape = "Underline"
-
-[window]
-opacity = 1
-decorations = "None"
 
 [window.padding]
 x = 3

@@ -1,33 +1,43 @@
-vim.keymap.set({"n", "v", "i", "t"}, "<C-q>", [[<CMD>wa!<CR><CMD>qa!<CR>]])
-vim.keymap.set("n", "<C-s>", "<CMD>wa!<CR>")
-vim.keymap.set('n', '<Esc>', '<CMD>nohlsearch<CR>')
+vim.keymap.set({"n", "v", "i", "t"}, "<C-Q>",function() vim.cmd([[wa!]]) vim.cmd([[qa!]]) end)
+vim.keymap.set('n', "<Esc>", function() vim.cmd([[nohlsearch]]) end)
 vim.keymap.set("x", "p", [["_dP]])
 
-vim.keymap.set("n", "<C-c>", [[<CMD>w!<CR><CMD>bd<CR><CMD>bnext<CR>]])
-vim.keymap.set({"n", "t"}, "<C-TAB>", [[<CMD>bnext<CR>]])
-vim.keymap.set({"n", "t"}, "<C-S-TAB>", [[<CMD>bprev<CR>]])
-vim.keymap.set("n", "<C-,>", [[<CMD>cprev<CR>]])
-vim.keymap.set("n", "<C-.>", [[<CMD>cnext<CR>]])
+vim.keymap.set("n", "<C-c>", function() vim.cmd([[w!]]) vim.cmd([[bd!]]) vim.cmd([[bnext]]) end)
+vim.keymap.set({"n", "t"}, "<C-H>", function() vim.cmd([[bprev]]) end)
+vim.keymap.set({"n", "t"}, "<C-L>", function() vim.cmd([[bnext]]) end)
+vim.keymap.set("n", "<C-J>", function() pcall(vim.cmd, [[cprev]]) end)
+vim.keymap.set("n", "<C-K>", function() pcall(vim.cmd, [[cnext]]) end)
 
-vim.keymap.set({"n", "t"}, "<C-Left>", [[<CMD>wincmd h<CR>]])
-vim.keymap.set({"n", "t"}, "<C-Right>", [[<CMD>wincmd l<CR>]])
-vim.keymap.set({"n", "t"}, "<C-Down>", [[<CMD>wincmd j<CR>]])
-vim.keymap.set({"n", "t"}, "<C-Up>", [[<CMD>wincmd k<CR>]])
-vim.keymap.set({"n", "t"}, "<C-S-Left>", [[<CMD>vertical resize -2<CR>]])
-vim.keymap.set({"n", "t"}, "<C-S-Right>", [[<CMD>vertical resize +2<CR>]])
-vim.keymap.set({"n", "t"}, "<C-S-Up>", [[<CMD>horizontal resize -1<CR>]])
-vim.keymap.set({"n", "t"}, "<C-S-Down>", [[<CMD>horizontal resize +1<CR>]])
+vim.keymap.set({"n", "t"}, "<C-Left>", function() vim.cmd([[wincmd h]]) end)
+vim.keymap.set({"n", "t"}, "<C-Right>", function() vim.cmd([[wincmd l]]) end)
+vim.keymap.set({"n", "t"}, "<C-Down>", function() vim.cmd([[wincmd j]]) end)
+vim.keymap.set({"n", "t"}, "<C-Up>", function() vim.cmd([[wincmd k]]) end)
+
+vim.keymap.set({"n", "t"}, "<C-S-Left>", function() vim.cmd([[vert res -2]]) end)
+vim.keymap.set({"n", "t"}, "<C-S-Right>", function() vim.cmd([[vert res +2]]) end)
+vim.keymap.set({"n", "t"}, "<C-S-Up>", function() vim.cmd([[hor res -1]]) end)
+vim.keymap.set({"n", "t"}, "<C-S-Down>", function() vim.cmd([[hor res +1]]) end)
 
 vim.keymap.set("x", "<A-Up>", [[:move '<-2<CR>gv-gv]])
 vim.keymap.set("x", "<A-Down>", [[:move '>+1<CR>gv-gv]])
 
-vim.keymap.set("n", "<C-p>", [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("v", "<C-p>", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<C-P>", [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("v", "<C-P>", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]])
 
-vim.keymap.set("n", "<C-/>", vim.diagnostic.open_float)
+vim.keymap.set("n", "<C-\\>", vim.diagnostic.open_float)
 vim.keymap.set("n", "<C-[>", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "<C-]>", vim.diagnostic.goto_next)
 
-vim.keymap.set("n", "<C-Enter>", [[<CMD>bo sp | res 15 | term<CR><CMD>set nonu nornu<CR>i]])
-vim.keymap.set("t", "<C-Enter>", [[<CMD>bd!<CR>]])
-vim.keymap.set('t', '<Esc>', '<C-\\><C-N>')
+vim.keymap.set("t", "<C-T>", function() vim.cmd([[bd!]]) end)
+vim.keymap.set("t", "<Esc>",function() vim.cmd([[stopinsert]]) end)
+vim.keymap.set("n", "<C-T>", function()
+	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+		if vim.bo[buf].buftype == "terminal" then
+			vim.api.nvim_buf_delete(buf, {force = true})
+			return
+		end
+	end
+	vim.cmd([[bo sp | res 15 | term]])
+	vim.cmd([[set nonu nornu signcolumn=no]])
+	vim.cmd([[startinsert]])
+end)
