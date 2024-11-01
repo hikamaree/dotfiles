@@ -16,12 +16,5 @@ return {
 		fzf_opts = {
 			["--info"] = "hidden",
 		},
-		fzf_colors = {
-			["fg+"]     = { "fg", "CursorLine"},
-			["bg+"]     = { "bg", "CursorLine"},
-			["border"]  = { "fg", "CursorLine" },
-			["pointer"] = { "fg", "Normal" },
-			["marker"] = { "fg", "Normal" },
-		},
 	}
 }

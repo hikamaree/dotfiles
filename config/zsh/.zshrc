@@ -17,6 +17,7 @@ function add_plugin() {
 }
 
 add_file "alias"
+add_file "fzf"
 add_file "variables"
 add_file "keymaps"
 add_file "zellij"
@@ -32,6 +33,5 @@ setopt auto_cd
 setopt chase_links
 stty stop undef
 
-source <(fzf --zsh)
-
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && DISPLAY=wayland exec Hyprland > /dev/null
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland > /dev/null
+[[ -z $DISPLAY && $XDG_VTNR -eq 2 ]] && exec startx > /dev/null

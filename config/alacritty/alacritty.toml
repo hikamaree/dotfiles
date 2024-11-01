@@ -20,6 +20,7 @@ white= "#a9b1d6"
 
 [colors.primary]
 background = "#1a1b26"
+#background = "#000000"
 foreground = "#c0caf5"
 
 [font]
@@ -28,6 +29,9 @@ normal.family = "SourceCodePro"
 [cursor.style]
 blinking = "Always"
 shape = "Underline"
+
+[window]
+opacity = 1
 
 [window.padding]
 x = 3

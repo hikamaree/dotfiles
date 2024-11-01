@@ -36,3 +36,6 @@ bindkey '^[2' show_nvim
 bindkey '^[3' show_htop
 bindkey '^[4' show_ncmpcpp
 bindkey '^y' show_zellij
+
+bindkey -r '\e'
+bindkey '^e' vi-cmd-mode

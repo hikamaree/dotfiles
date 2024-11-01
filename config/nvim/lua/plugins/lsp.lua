@@ -4,7 +4,6 @@ return {
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"williamboman/mason.nvim",
-		"numToStr/Comment.nvim",
 	},
 	config = function()
 		local opts = {

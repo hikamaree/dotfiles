@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+source <(fzf --zsh)
+
+export FZF_DEFAULT_COMMAND='rg --files'
+
+export FZF_DEFAULT_OPTS='
+	--border sharp --preview-window border-left --color "border:#414868" --info inline-right --ansi --layout=reverse
+	--bind "ctrl-e:become($EDITOR $(echo $(pwd)/$(echo {})) > /dev/tty)"
+	--bind "ctrl-o:become($OPENER $(echo $(pwd)/$(echo {})))"
+	--walker-skip=music,.git,.gitignore,.roots,.var,.cache,.local,.config,.ssh
+	--color=fg:#c0caf5,hl:#bb9af7
+	--color=fg+:#c0caf5,bg+:#292E42,hl+:#7dcfff
+	--color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff
+	--color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
+
+FZF_COMPLETION_OPTS='--preview "lsd -A --group-directories-first --color=always $(echo $(pwd)/$(echo {})); bat --style=numbers --color=always --theme=base16 {} 2>/dev/null"'
+
+FZF_ALT_C_COMMAND='fd -t d'
+
+FZF_ALT_C_OPTS='--preview "lsd -A --group-directories-first --color=always $(echo $(pwd)/$(echo {})) 2>/dev/null; bat --style=numbers --color=always --theme=base16 {} 2>/dev/null"'
+
+FZF_COMPLETION_TRIGGER=
+
+FZF_CTRL_T_COMMAND=

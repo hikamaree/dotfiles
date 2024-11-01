@@ -26,7 +26,7 @@ return {
 			formatting = {
 				format = function(_, vim_item)
 					vim_item.abbr = vim_item.abbr:sub(1, 25) .. " "
-					vim_item.kind = vim_item.kind:sub(1, 1)
+					-- vim_item.kind = vim_item.kind:sub(1, 1)
 					vim_item.menu = nil
 					return vim_item
 				end,

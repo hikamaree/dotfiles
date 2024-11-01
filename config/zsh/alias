@@ -1,13 +1,18 @@
 #!/bin/zsh
 
-alias ls='ls --color=auto'
-alias ll='LC_COLLATE=C ls -Alh --group-directories-first'
-alias grep='grep --color=auto'
+alias ls="lsd -A --icon never --group-directories-first"
+alias ll="lsd -Alh --icon never --group-directories-first"
+alias grep="grep --color=auto"
 alias diff="diff --color=auto"
-alias cp='cp -rfv'
-alias mv='mv -fv'
-alias rm='rm -rfv'
-alias mkdir='mkdir -pv'
-alias pac='paru'
-alias open='$OPENER'
-alias ex='unar'
+alias cat="bat --style=numbers --color=always --theme=base16"
+alias cp="cp -rfv"
+alias mv="mv -fv"
+alias rm="rm -rfv"
+alias mkdir="mkdir -pv"
+alias pac="paru"
+alias open="$OPENER"
+alias ex="unar"
+
+function chpwd() {
+	lsd -Alh --icon never --group-directories-first
+}

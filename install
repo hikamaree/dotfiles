@@ -19,7 +19,7 @@ paru --noconfirm -Syu
 paru -S --noconfirm hyprland hyprlock hyprshot waybar dunst wl-clipboard mpv fuzzel \
 	xdg-desktop-portal-gtk xdg-desktop-portal-wlr vulkan-radeon libva-mesa-driver mesa-vdpau
 
-paru -S --noconfirm zsh alacritty htop neovim yazi ripgrep fd \
+paru -S --noconfirm zsh alacritty htop neovim yazi ripgrep fd lsd \
 	fzf zip unzip unarchiver stow ncmpcpp mpd mpc man-db wget flatpak 
 
 paru -S --noconfirm ttf-exo-2 adobe-source-code-pro-fonts ttf-nerd-fonts-symbols
