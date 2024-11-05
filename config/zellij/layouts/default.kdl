@@ -21,13 +21,13 @@ layout {
 			mode_prompt        "#[bg=2,fg=0] PROMPT "
 			mode_tmux          "#[bg=3,fg=0] TMUX "
 
-			tab_normal              "#[bg=0,fg=8] {name} "
-			tab_normal_fullscreen   "#[bg=0,fg=8] {name} "
-			tab_normal_sync         "#[bg=0,fg=8] {name} "
+			tab_normal              "#[bg=8,fg=0] {index} #[bg=0,fg=8] {name} "
+			tab_normal_fullscreen   "#[bg=8,fg=0] {index} #[bg=0,fg=8] {name} "
+			tab_normal_sync         "#[bg=8,fg=0] {index} #[bg=0,fg=8] {name} "
 
-			tab_active              "#[bg=0,fg=7] {name} "
-			tab_active_fullscreen   "#[bg=0,fg=7] {name} "
-			tab_active_sync         "#[bg=0,fg=7] {name} "
+			tab_active              "#[bg=7,fg=0] {index} #[bg=0,fg=7] {name} "
+			tab_active_fullscreen   "#[bg=7,fg=0] {index} #[bg=0,fg=7] {name} "
+			tab_active_sync         "#[bg=7,fg=0] {index} #[bg=0,fg=7] {name} "
 		}
 	}
 	pane

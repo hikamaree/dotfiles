@@ -1,0 +1,7 @@
+#!/bin/bash
+
+PAGE=$(man -k . | fzf | awk '{print $1}')
+
+if [[ -n $PAGE ]]; then
+    man "$PAGE"
+fi
