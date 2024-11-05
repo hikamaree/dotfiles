@@ -1,6 +1,34 @@
 layout {
-    pane size=1 borderless=true {
-        plugin location="compact-bar"
-    }
-    pane
+	pane size=1 borderless=true {
+		plugin location="file:/home/marko/.config/zellij/layouts/zjstatus.wasm" {
+			format_left   "{mode}#[bg=0] {tabs}"
+			format_center "#[bg=0]"
+			format_right  "#[bg=4,fg=0] {session} "
+			format_space  "#[bg=0]"
+
+			mode_normal        "#[bg=4,fg=0] NORMAL "
+			mode_locked        "#[bg=1,fg=0] LOCKED "
+			mode_resize        "#[bg=2,fg=0] RESIZE "
+			mode_pane          "#[bg=3,fg=0] PANE "
+			mode_tab           "#[bg=3,fg=0] TAB "
+			mode_scroll        "#[bg=2,fg=0] SCROLL "
+			mode_enter_search  "#[bg=2,fg=0] ENT-SEARCH "
+			mode_search        "#[bg=2,fg=0] SEARCHARCH "
+			mode_rename_tab    "#[bg=3,fg=0] RENAME-TAB "
+			mode_rename_pane   "#[bg=3,fg=0] RENAME-PANE "
+			mode_session       "#[bg=3,fg=0] SESSION "
+			mode_move          "#[bg=2,fg=0] MOVE "
+			mode_prompt        "#[bg=2,fg=0] PROMPT "
+			mode_tmux          "#[bg=3,fg=0] TMUX "
+
+			tab_normal              "#[bg=0,fg=8] {name} "
+			tab_normal_fullscreen   "#[bg=0,fg=8] {name} "
+			tab_normal_sync         "#[bg=0,fg=8] {name} "
+
+			tab_active              "#[bg=0,fg=7] {name} "
+			tab_active_fullscreen   "#[bg=0,fg=7] {name} "
+			tab_active_sync         "#[bg=0,fg=7] {name} "
+		}
+	}
+	pane
 }
