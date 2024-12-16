@@ -1,7 +1,7 @@
 layout {
 	pane size=1 borderless=true {
 		plugin location="file:/home/marko/.config/zellij/layouts/zjstatus.wasm" {
-			format_left   "{mode}#[bg=0] {tabs}"
+			format_left   "{tabs}"
 			format_center "#[bg=0]"
 			format_right  "#[bg=4,fg=0] {session} "
 			format_space  "#[bg=0]"
@@ -25,9 +25,9 @@ layout {
 			tab_normal_fullscreen   "#[bg=8,fg=0] {index} #[bg=0,fg=8] {name} "
 			tab_normal_sync         "#[bg=8,fg=0] {index} #[bg=0,fg=8] {name} "
 
-			tab_active              "#[bg=7,fg=0] {index} #[bg=0,fg=7] {name} "
-			tab_active_fullscreen   "#[bg=7,fg=0] {index} #[bg=0,fg=7] {name} "
-			tab_active_sync         "#[bg=7,fg=0] {index} #[bg=0,fg=7] {name} "
+			tab_active              "#[bg=6,fg=0] {index} #[bg=0,fg=7] {name} "
+			tab_active_fullscreen   "#[bg=6,fg=0] {index} #[bg=0,fg=7] {name} "
+			tab_active_sync         "#[bg=6,fg=0] {index} #[bg=0,fg=7] {name} "
 		}
 	}
 	pane

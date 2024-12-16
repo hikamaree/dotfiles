@@ -31,10 +31,10 @@ show_zellij() {
 zle -N show_zellij
 
 bindkey '^@' fzf-cd-widget
-bindkey '^[1' show_fm
-bindkey '^[2' show_nvim
-bindkey '^[3' show_htop
-bindkey '^[4' show_ncmpcpp
+bindkey '^[f' show_fm
+bindkey '^[v' show_nvim
+bindkey '^[h' show_htop
+bindkey '^[m' show_ncmpcpp
 bindkey '^y' show_zellij
 
 bindkey -r '\e'

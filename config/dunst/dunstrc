@@ -27,7 +27,8 @@ format = "<b><span foreground='#7AA2F7'>%s</span></b>\n"
 history_ignore = true
 
 [urgency_normal]
-background = "#1a1b26"
+#background = "#1a1b26"
+background = "#000000"
 foreground = "#C0CAF5"
 timeout = 5
 

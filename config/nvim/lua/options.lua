@@ -18,6 +18,7 @@ vim.opt.splitright = true
 vim.opt.laststatus = 3
 vim.opt.clipboard = "unnamedplus"
 vim.opt.undofile = true
+vim.opt.swapfile = false
 vim.opt.guicursor = "n-v-i-c:iCursor,i:ver100-iCursor,n-v-c:hor20-iCursor"
 vim.opt.shortmess:append("I")
 vim.cmd.colorscheme "tokyonight"

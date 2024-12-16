@@ -9,7 +9,8 @@ cyan= "#7dcfff"
 white= "#c0caf5"
 
 [colors.normal]
-black= "#16161e"
+#black= "#16161e"
+black= "#000000"
 red= "#f7768e"
 green= "#9ece6a"
 yellow= "#e0af68"
@@ -19,12 +20,13 @@ cyan= "#7dcfff"
 white= "#a9b1d6"
 
 [colors.primary]
-background = "#1a1b26"
-#background = "#000000"
+#background = "#1a1b26"
+background = "#000000"
 foreground = "#c0caf5"
 
 [font]
-normal.family = "SourceCodePro"
+normal.family = "SourceCodePro Medium"
+size = 10
 
 [cursor.style]
 blinking = "Always"
@@ -32,6 +34,7 @@ shape = "Underline"
 
 [window]
 opacity = 1
+decorations = "None"
 
 [window.padding]
 x = 3

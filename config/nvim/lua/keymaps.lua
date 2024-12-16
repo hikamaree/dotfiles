@@ -28,16 +28,5 @@ vim.keymap.set("n", "<C-\\>", vim.diagnostic.open_float)
 vim.keymap.set("n", "<C-[>", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "<C-]>", vim.diagnostic.goto_next)
 
-vim.keymap.set("t", "<C-Enter>", function() vim.cmd([[bd!]]) end)
 vim.keymap.set("t", "<Esc>", function() vim.cmd([[stopinsert]]) end)
-vim.keymap.set("n", "<C-Enter>", function()
-	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-		if vim.bo[buf].buftype == "terminal" then
-			vim.api.nvim_buf_delete(buf, {force = true})
-			return
-		end
-	end
-	vim.cmd([[bo sp | res 15 | term]])
-	vim.cmd([[set nonu nornu signcolumn=no]])
-	vim.cmd([[startinsert]])
-end)
+vim.keymap.set({"n", "t"}, "<C-Enter>", require("terminal").toggle)

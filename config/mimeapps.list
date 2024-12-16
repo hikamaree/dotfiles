@@ -1,8 +1,12 @@
 [Default Applications]
 text/plain=nvim.desktop
-text/*=nvim.desktop
-image/plain=swayimg.desktop
+
+image/jpeg=swayimg.desktop
 image/png=swayimg.desktop
+image/gif=swayimg.desktop
+image/bmp=swayimg.desktop
+image/webp=swayimg.desktop
+image/tiff=swayimg.desktop
 
 text/html=org.mozilla.firefox.desktop
 application/pdf=org.mozilla.firefox.desktop

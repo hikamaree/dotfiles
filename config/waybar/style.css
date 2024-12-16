@@ -1,10 +1,12 @@
 window#waybar {
     font-family: "Exo 2";
     font-size: 16px;
-    background: #1a1b26;
+/*    background: #1a1b26;*/
+    background: #000000;
 }
 
 #workspaces button {
+	min-height: 0;
 	border-radius: 0px;
 	font-weight: 900;
     color: #80c0d0;
@@ -13,7 +15,8 @@ window#waybar {
 
 #workspaces button.active {
     color: #61afef;
-    background: #16161e;
+/*    background: #16161e;*/
+    background: #111111;
     padding: 0px 4px;
     margin: 0px;
 }

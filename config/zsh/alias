@@ -4,7 +4,7 @@ alias ls="lsd -A --icon never --group-directories-first"
 alias ll="lsd -Alh --icon never --group-directories-first"
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
-alias cat="bat --style=numbers --color=always --theme=base16"
+alias cat="bat --style=numbers --color=always"
 alias cp="cp -rfv"
 alias mv="mv -fv"
 alias rm="rm -rfv"
@@ -14,5 +14,5 @@ alias open="$OPENER"
 alias ex="unar"
 
 function chpwd() {
-	lsd -Alh --icon never --group-directories-first
+	lsd -A --icon never --group-directories-first
 }

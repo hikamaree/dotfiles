@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PAGE=$(man -k . | fzf | awk '{print $1}')
+PAGE=$(man -k . | fzf --height=40% | awk '{print $1}')
 
 if [[ -n $PAGE ]]; then
     man "$PAGE"
