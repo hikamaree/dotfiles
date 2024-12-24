@@ -18,9 +18,6 @@ vim.keymap.set({"n", "t"}, "<C-S-Right>", function() vim.cmd([[vert res +2]]) en
 vim.keymap.set({"n", "t"}, "<C-S-Up>", function() vim.cmd([[hor res -1]]) end)
 vim.keymap.set({"n", "t"}, "<C-S-Down>", function() vim.cmd([[hor res +1]]) end)
 
-vim.keymap.set("x", "<A-Up>", [[:move '<-2<CR>gv-gv]])
-vim.keymap.set("x", "<A-Down>", [[:move '>+1<CR>gv-gv]])
-
 vim.keymap.set("n", "<C-P>", [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("v", "<C-P>", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]])
 

@@ -7,7 +7,7 @@ return {
 	},
 	config = function()
 		local opts = {
-			capabilities = require("cmp_nvim_lsp").default_capabilities(),
+			capabilities = require('blink.cmp').get_lsp_capabilities(),
 			on_attach = function ()
 				vim.keymap.set("n", "gr", [[<CMD>FzfLua lsp_references resume=true header=false<CR>]])
 				vim.keymap.set("n", "wd", [[<CMD>FzfLua lsp_workspace_diagnostics resume=true header=false<CR>]])
@@ -18,20 +18,14 @@ return {
 				vim.keymap.set("n", "<C-r>", vim.lsp.buf.rename)
 			end
 		}
-		require("mason").setup {
-			ui = { border = "single" },
-		}
+		require("mason").setup { ui = { border = "single" } }
 		require("mason-lspconfig").setup {
 			ensure_installed = { "clangd", "rust_analyzer", "lua_ls" },
 			automatic_installation = true,
 		}
 		require("mason-lspconfig").setup_handlers {
-			function(server)
-				require("lspconfig")[server].setup(opts)
-			end,
+			function(server) require("lspconfig")[server].setup(opts) end,
 		}
-		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-			border = "single"
-		})
+		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
 	end
 }

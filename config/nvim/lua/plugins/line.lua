@@ -10,7 +10,7 @@ return {
 			lualine_a = {"mode"},
 			lualine_b = {{
 				"diagnostics",
-				symbols = { error = "E ", warn = "W ", info = "I ", hint = "H " },
+				symbols = { error = "E ", warn = "W ", info = "I ", hint = "H " }
 			}},
 			lualine_c = {{
 				"buffers",

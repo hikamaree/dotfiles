@@ -22,6 +22,7 @@ vim.opt.swapfile = false
 vim.opt.guicursor = "n-v-i-c:iCursor,i:ver100-iCursor,n-v-c:hor20-iCursor"
 vim.opt.shortmess:append("I")
 vim.cmd.colorscheme "tokyonight"
+vim.api.nvim_set_hl(0, "Pmenu", { bg = "#000000" })
 vim.diagnostic.config {
 	update_in_insert = true,
 	float = {

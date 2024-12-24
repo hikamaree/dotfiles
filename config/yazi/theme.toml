@@ -6,6 +6,10 @@ separator_open  = ""
 separator_close = ""
 separator_style = { fg = "black", bg = "#3B4261" }
 
-mode_normal = { bg = "blue", fg = "#000000" }
-mode_select = { bg = "green", fg = "#000000" }
-mode_unset  = { bg = "green", fg = "#000000" }
+[mode]
+normal_main = { bg = "blue", fg = "#000000" }
+normal_alt = { bg = "#292E42", fg = "blue" }
+select_main = { bg = "green", fg = "#000000" }
+select_alt = { bg = "#292E42", fg = "green" }
+unset_main  = { bg = "green", fg = "#000000" }
+unset_alt  = { bg = "#292E42", fg = "green" }
