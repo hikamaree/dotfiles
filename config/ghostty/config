@@ -1,0 +1,13 @@
+theme = tokyonight
+selection-invert-fg-bg = true
+background = 000000
+palette = 0=000000
+cursor-style = underline
+font-size = 10
+
+window-theme = ghostty
+window-decoration = false
+confirm-close-surface = false
+resize-overlay = never
+
+keybind = ctrl+enter=unbind

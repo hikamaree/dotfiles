@@ -32,6 +32,8 @@ ln -s /usr/share/icons ~/.local/share/icons
 sudo systemctl enable seatd.service
 sudo systemctl mask backlight@.service
 
+update-desktop-database ~/.local/share/applications/
+
 flatpak override --user --filesystem=xdg-data/themes
 flatpak override --user --filesystem=xdg-data/icons
 flatpak override --user --env=GTK_THEME=Adwaita
