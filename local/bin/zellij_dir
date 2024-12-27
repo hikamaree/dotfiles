@@ -3,7 +3,7 @@
 hyprctl dispatch workspace 2
 
 if ! hyprctl clients | grep -q "workspace: 2"; then
-    sleep 1
+    sleep 0.5
 fi
 
-zellij --session $USER action new-tab --layout default --cwd $1
+zellij --session $USER action new-tab --layout default --cwd "$1"

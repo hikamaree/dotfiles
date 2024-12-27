@@ -1,7 +1,7 @@
 layout {
 	pane size=1 borderless=true {
 		plugin location="file:/home/marko/.config/zellij/layouts/zjstatus.wasm" {
-			format_left   "{tabs}"
+			format_left   "{mode} {tabs}"
 			format_center "#[bg=0]"
 			format_right  "#[bg=4,fg=0] {session} "
 			format_space  "#[bg=0]"
