@@ -68,6 +68,7 @@ keybinds clear-defaults=true {
     }
 }
 
+//default_layout "compact"
 simplified_ui true
 pane_frames false
 session_serialization false

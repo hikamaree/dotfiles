@@ -4,6 +4,9 @@ mv ~/.config ~/.old_config
 mv ~/.local ~/.old_local
 
 mkdir -p ~/pictures/screenshots
+mkdir -p ~/documents
+mkdir -p ~/downloads
+
 mkdir -p ~/.config
 mkdir -p ~/.local/share/zsh
 mkdir -p ~/.local/share/mpd
@@ -16,13 +19,13 @@ rm -rf paru-bin
 
 paru --noconfirm -Syu
 
-paru -S --noconfirm hyprland hyprlock hyprshot waybar dunst wl-clipboard mpv fuzzel \
-	xdg-desktop-portal-gtk xdg-desktop-portal-wlr vulkan-radeon libva-mesa-driver mesa-vdpau
+paru -S --noconfirm hyprland hypridle hyprlock hyprshot hyprpicker waybar dunst wl-clipboard mpv fuzzel \
+	xdg-desktop-portal-gtk xdg-desktop-portal-wlr vulkan-radeon libva-mesa-driver mesa-vdpau bluez bluez-utils
 
-paru -S --noconfirm zsh ghostty htop neovim yazi ripgrep fd lsd \
-	fzf zip unzip unarchiver stow ncmpcpp mpd mpc man-db wget flatpak 
+paru -S --noconfirm zsh ghostty zellij htop neovim yazi ripgrep fd lsd \
+	fzf bat zip unzip unarchiver stow ncmpcpp mpd mpc man-db flatpak 
 
-paru -S --noconfirm ttf-exo-2 adobe-source-code-pro-fonts ttf-nerd-fonts-symbols
+paru -S --noconfirm ttf-exo-2 ttf-nerd-fonts-symbols
 
 stow --no-folding --adopt --target=$HOME/.config config
 stow --no-folding --adopt --target=$HOME/.local local
@@ -31,6 +34,7 @@ ln -s /usr/share/icons ~/.local/share/icons
 
 sudo systemctl enable seatd.service
 sudo systemctl mask backlight@.service
+sudo systemctl enable bluetooth.service
 
 update-desktop-database ~/.local/share/applications/
 
