@@ -1,13 +1,11 @@
 [Default Applications]
 text/plain=nvim.desktop
-
-image/jpeg=swayimg.desktop
-image/png=swayimg.desktop
-image/gif=swayimg.desktop
-image/bmp=swayimg.desktop
-image/webp=swayimg.desktop
-image/tiff=swayimg.desktop
-
+image/jpeg=imv-dir.desktop
+image/png=imv-dir.desktop
+image/gif=imv-dir.desktop
+image/bmp=imv-dir.desktop
+image/webp=imv-dir.desktop
+image/tiff=imv-dir.desktop
 text/html=org.mozilla.firefox.desktop
 application/pdf=org.mozilla.firefox.desktop
 x-scheme-handler/http=org.mozilla.firefox.desktop

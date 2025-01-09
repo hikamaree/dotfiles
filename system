@@ -7,4 +7,4 @@ usermod -a -G seat $1
 
 cp rules/90-backlight.rules /etc/udev/rules.d/90-backlight.rules
 
-ln -s /home/$USER/.config /root/.config
+ln -s /home/$1/.config /root/.config

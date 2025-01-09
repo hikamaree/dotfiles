@@ -1,27 +1,25 @@
 window#waybar {
-    font-family: "Exo 2";
-    font-size: 16px;
-/*    background: #1a1b26;*/
-    background: #000000;
+	font-family: "JetBrains Mono";
+	font-size: 14px;
+	background: #000000;
 }
 
 #workspaces button {
-	min-height: 21px;
+	font-family: "JetBrains Mono Bold";
+	font-size: 16px;
 	border-radius: 0px;
 	font-weight: 900;
-    color: #80c0d0;
-    padding: 0px 4px;
+	color: #80c0d0;
+	padding: 0px 4px;
 }
 
 #workspaces button.active {
-    color: #61afef;
-/*    background: #16161e;*/
-    background: #111111;
-    padding: 0px 4px;
-    margin: 0px;
+	color: #61afef;
+	background: #111111;
 }
 
 #mpd,
+#power-profiles-daemon,
 #network,
 #bluetooth,
 #battery,
@@ -29,7 +27,6 @@ window#waybar {
 #pulseaudio,
 #clock,
 #tray {
-    color: #80c0d0;
-    padding: 0px 8px;
-    margin: 0px 2px;
+	color: #80c0d0;
+	padding: 0px 10px;
 }

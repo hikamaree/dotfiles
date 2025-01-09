@@ -1,33 +1,20 @@
 [global]
 frame_width = 1
 frame_color = "#61AFEF"
-font = Exo 2 11
+font = JetBrains Mono 11
 offset = 20x20
 format = "<b>%s</b>\n%b"
 alignment = center
 gaps = true
 gap_size = 4
 
-[krunker]
-body="https://krunker\.io*"
-urgency = critical
-
-[BALANCED]
-summary="BALANCED"
+[urgency_low]
+background = "#000000"
+foreground = "#C0CAF5"
 history_ignore = true
-
-[PERFORMANCE]
-summary="PERFORMANCE"
-format = "<b><span foreground='#F7768E'>%s</span></b>\n"
-history_ignore = true
-
-[POWERSAVE]
-summary="POWER_SAVER"
-format = "<b><span foreground='#7AA2F7'>%s</span></b>\n"
-history_ignore = true
+timeout = 1
 
 [urgency_normal]
-#background = "#1a1b26"
 background = "#000000"
 foreground = "#C0CAF5"
 timeout = 5

@@ -1,17 +1,16 @@
 #!/bin/zsh
 
 alias ls="lsd -A --icon never --group-directories-first"
-alias ll="lsd -Alh --icon never --group-directories-first"
+alias ll="lsd -Alh --blocks permission,user,size,name --icon never --group-directories-first"
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
-alias cat="bat --style=numbers --color=always"
+alias cat="bat --style=numbers --color=always --theme=base16"
 alias cp="cp -rfv"
 alias mv="mv -fv"
 alias rm="rm -rfv"
 alias mkdir="mkdir -pv"
 alias pac="paru"
 alias open="$OPENER"
-alias ex="unar"
 
 function chpwd() {
 	lsd -A --icon never --group-directories-first

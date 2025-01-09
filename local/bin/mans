@@ -3,5 +3,5 @@
 PAGE=$(man -k . | fzf --height=40% | awk '{print $1}')
 
 if [[ -n $PAGE ]]; then
-    man "$PAGE"
+	man "$PAGE"
 fi
