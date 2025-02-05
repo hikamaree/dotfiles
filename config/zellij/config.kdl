@@ -1,0 +1,46 @@
+keybinds clear-defaults=true {
+	shared_except "locked" {
+		bind "Alt n" { NewPane; }
+		bind "Alt t" { NewTab; }
+		bind "Alt x" { CloseFocus; }
+		bind "Alt i" { MoveTab "Left"; }
+		bind "Alt o" { MoveTab "Right"; }
+		bind "Alt e" { EditScrollback; }
+		bind "Alt Left" { MoveFocusOrTab "Left"; }
+		bind "Alt Right" { MoveFocusOrTab "Right"; }
+		bind "Alt Down" { MoveFocus "Down"; }
+		bind "Alt Up" { MoveFocus "Up"; }
+		bind "Alt =" "Alt +" { Resize "Increase"; }
+		bind "Alt -" { Resize "Decrease"; }
+		bind "Alt w" { ToggleFloatingPanes; }
+		bind "Alt 1" { GoToTab 1; }
+		bind "Alt 2" { GoToTab 2; }
+		bind "Alt 3" { GoToTab 3; }
+		bind "Alt 4" { GoToTab 4; }
+		bind "Alt 5" { GoToTab 5; }
+		bind "Alt 6" { GoToTab 6; }
+		bind "Alt 7" { GoToTab 7; }
+		bind "Alt 8" { GoToTab 8; }
+		bind "Alt 9" { GoToTab 9; }
+		bind "Alt 0" { GoToTab 10; }
+	}
+}
+
+pane_frames false
+session_serialization false
+
+themes {
+	default {
+		fg 4
+		bg 7
+		black 0
+		red 1
+		green 4
+		yellow 3
+		blue 4
+		magenta 5
+		orange 3
+		cyan 6
+		white 7
+	}
+}

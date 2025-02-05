@@ -1,0 +1,73 @@
+{
+	"modules-left": [ "hyprland/workspaces" ],
+	"modules-center": [ "mpd" ],
+	"modules-right": [ "tray", "power-profiles-daemon", "network", "bluetooth", "battery", "backlight", "pulseaudio", "clock" ],
+	"mpd": {
+		"tooltip": false,
+		"format": "{artist} - {title}",
+		"format-disconnected": "",
+		"format-stopped": "",
+		"unknown-tag": "N/A",
+		"on-click": "mpc toggle"
+	},
+	"tray": {
+		"tooltip": false,
+		"icon-size": 18,
+		"spacing": 8
+	},
+	"power-profiles-daemon": {
+		"format": "{icon}{profile}",
+		"tooltip": false,
+		"format-icons": {
+			"performance": "<span color=\"#f7768e\" font='12'>󰓅 </span>",
+			"balanced": "<span color=\"#7aa2f7\" font='12'>󰗑 </span>",
+			"power-saver": "<span color=\"#9ece6a\" font='12'> </span>"
+		},
+		"on-click": "cpu -t"
+	},
+	"network": {
+		"tooltip": false,
+		"format-alt": "<span color=\"#7aa2f7\" font='12'>{icon}</span>{bandwidthDownBits}",
+		"format-wifi": "<span color=\"#7aa2f7\" font='12'>{icon}</span>{essid}",
+		"format-ethernet": "<span color=\"#7aa2f7\" font='12'>󰈀 </span> {bandwidthDownBits}",
+		"format-disconnected": "<span color=\"#f7768e\" font='12'>󰤮</span>",
+		"format-icons": [ "󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 " ],
+		"interval": 2
+	},
+	"bluetooth": {
+		"format": "<span color=\"#7aa2f7\" font='12'> </span>{status}",
+		"format-disabled": "<span color=\"#f7768e\" font='12'> </span>off",
+		"format-connected": "<span color=\"#7aa2f7\" font='12'> </span>{device_alias}",
+		"on-click": "rfkill toggle bluetooth"
+	},
+	"battery": {
+		"tooltip": false,
+		"format":"<span color=\"#7aa2f7\" font='12'>{icon}</span>{capacity}",
+		"format-charging": "<span color=\"#f7768e\" font='12'> </span>{capacity}",
+		"format-icons": [ " ", " ", " ", " ", " " ],
+		"interval": 2
+	},
+	"backlight": {
+		"tooltip": false,
+		"format": "<span color=\"#7aa2f7\" font='12'>{icon}</span>{percent}",
+		"on-scroll-up": "brightness -i &",
+		"on-scroll-down": "brightness -d &",
+		"smooth-scrolling-threshold": 3.0,
+		"format-icons": [ " ", " ", " " ]
+	},
+	"pulseaudio": {
+		"tooltip": false,
+		"format": "<span color=\"#7aa2f7\" font='12'>{icon}</span>{volume}",
+		"format-muted": "<span color=\"#f7768e\" font='12'></span>",
+		"on-click": "volume -m",
+		"scroll-step": 5,
+		"smooth-scrolling-threshold": 3.0,
+		"format-icons": [ " ", " ", " " ]
+	},
+	"clock": {
+		"tooltip": false,
+		"format": "<span color=\"#7aa2f7\" font='12'> </span>{:%H:%M}",
+		"format-alt": "<span color=\"#7aa2f7\" font='12'> </span>{:%A, %d %B}",
+		"interval": 10
+	}
+}

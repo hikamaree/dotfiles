@@ -1,0 +1,15 @@
+[Default Applications]
+text/plain=nvim.desktop
+image/jpeg=imv-dir.desktop
+image/png=imv-dir.desktop
+image/gif=imv-dir.desktop
+image/bmp=imv-dir.desktop
+image/webp=imv-dir.desktop
+image/tiff=imv-dir.desktop
+text/html=org.mozilla.firefox.desktop
+application/pdf=org.mozilla.firefox.desktop
+x-scheme-handler/http=org.mozilla.firefox.desktop
+x-scheme-handler/https=org.mozilla.firefox.desktop
+x-scheme-handler/about=org.mozilla.firefox.desktop
+x-scheme-handler/unknown=org.mozilla.firefox.desktop
+inode/directory=zellij_dir.desktop

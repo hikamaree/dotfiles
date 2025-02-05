@@ -1,0 +1,13 @@
+layout {
+	default_tab_template {
+		pane size=1 borderless=true {
+			plugin location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
+				format_left   "{tabs} {command_git_branch}"
+				format_right  "#[bg=4,fg=0] {session} "
+				tab_normal              "#[bg=8,fg=0] {index} #[bg=0,fg=8] {name} "
+				tab_active              "#[bg=6,fg=0] {index} #[bg=0,fg=7] {name} "
+			}
+		}
+		children
+	}
+}

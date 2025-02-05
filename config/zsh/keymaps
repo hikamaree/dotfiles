@@ -1,0 +1,41 @@
+#!/bin/zsh
+
+show_fm() {
+	yazi < $TTY
+	zle redisplay
+}
+zle -N show_fm
+
+show_nvim() {
+	nvim < $TTY
+	zle redisplay
+}
+zle -N show_nvim
+
+show_htop() {
+	htop < $TTY
+	zle redisplay
+}
+zle -N show_htop
+
+show_ncmpcpp() {
+	ncmpcpp --quiet < $TTY
+	zle redisplay
+}
+zle -N show_ncmpcpp
+
+show_zellij() {
+	zellij attach --create "$USER" < $TTY
+	zle redisplay
+}
+zle -N show_zellij
+
+bindkey '^@' fzf-cd-widget
+bindkey '^[f' show_fm
+bindkey '^[v' show_nvim
+bindkey '^[h' show_htop
+bindkey '^[m' show_ncmpcpp
+bindkey '^y' show_zellij
+
+bindkey -r '\e'
+bindkey '^e' vi-cmd-mode
