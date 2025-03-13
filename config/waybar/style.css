@@ -1,0 +1,31 @@
+window#waybar {
+	font-family: "JetBrains Mono";
+	font-size: 14px;
+	background: rgba(0, 0, 0, 0.75);
+}
+
+#workspaces button {
+	font-family: "JetBrains Mono";
+	border-radius: 0px;
+	font-weight: 900;
+	color: #414868;
+	padding: 0px 4px;
+}
+
+#workspaces button.active {
+	color: #7DCFFF;
+	background: #111111;
+}
+
+#mpd,
+#power-profiles-daemon,
+#network,
+#bluetooth,
+#battery,
+#backlight,
+#pulseaudio,
+#clock,
+#tray {
+	color: #80c0d0;
+	padding: 0px 10px;
+}

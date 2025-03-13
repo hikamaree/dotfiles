@@ -1,0 +1,34 @@
+#!/bin/sh
+
+BRT_DIR=$HOME/.cache
+BRT_FILE=$BRT_DIR/brightness
+BRT_SETTINGS=/sys/class/backlight/*/brightness
+
+[[ -d $BRT_DIR ]] || mkdir -p $BRT_DIR
+[[ -e $BRT_FILE ]] || echo 50 > $BRT_FILE
+
+BRIGHTNESS=$(cat $BRT_FILE)
+
+set_brightness() {
+	(( BRIGHTNESS < 0 )) && BRIGHTNESS=0
+	(( BRIGHTNESS > 100 )) && BRIGHTNESS=100
+	echo $BRIGHTNESS > $BRT_FILE
+	for FILE in $BRT_SETTINGS; do
+		echo $[ $BRIGHTNESS * 255 / 100 ] > $FILE
+	done
+}
+
+getopts "dis:" FLAG
+case "$FLAG" in
+	d)
+		BRIGHTNESS=$[ $BRIGHTNESS - 5 ]
+		set_brightness;;
+	i)
+		BRIGHTNESS=$[ $BRIGHTNESS + 5 ]
+		set_brightness;;
+	s)
+		BRIGHTNESS=$2
+		set_brightness;;
+	\?)
+		echo $BRIGHTNESS;;
+esac
