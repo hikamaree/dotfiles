@@ -1,0 +1,31 @@
+lyrics_directory = ~/.local/share/lyrics
+ncmpcpp_directory = ~/.cache/ncmpcpp
+
+visualizer_data_source = /tmp/mpd.fifo
+visualizer_output_name = visualizer
+visualizer_type = spectrum
+visualizer_fps = 90
+visualizer_color = green
+visualizer_spectrum_smooth_look = no
+visualizer_look = "█┇"
+
+progressbar_look = "▃▃▃"
+progressbar_color = black:b
+progressbar_elapsed_color = green:b
+
+now_playing_prefix = "$b$3 > "
+now_playing_suffix = "$5$/b"
+
+browser_sort_mode = name
+browser_sort_format = {%a - }{%t}|{%f} {(%l)}
+song_columns_list_format = (40)[cyan]{a} (55)[cyan]{t|f:Title} (5f)[cyan]{l}
+
+user_interface = alternative
+header_visibility = no
+titles_visibility = no
+centered_cursor = yes
+startup_slave_screen = "visualizer"
+
+colors_enabled = yes
+main_window_color = white
+alternative_ui_separator_color = white

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+getopts "dimts:" FLAG
+case "$FLAG" in
+	d)
+		pactl set-sink-volume @DEFAULT_SINK@ -5%;;
+	i)
+		(( $[ $(pactl get-sink-volume @DEFAULT_SINK@ | grep -Po '\d+(?=%)' | head -n 1) + 5 ] > 100 )) && \
+		pactl set-sink-volume @DEFAULT_SINK@ 100% || \
+		pactl set-sink-volume @DEFAULT_SINK@ +5%;;
+	m)
+		pactl set-sink-mute @DEFAULT_SINK@ toggle;;
+	t)
+		sources=$(pactl list short sources | awk '{print $1}')
+		pactl get-source-mute $sources | grep -q "no" && mute_state=1 || mute_state=0
+		echo "$sources" | xargs -I{} pactl set-source-mute {} "$mute_state";;
+	s)
+		VOLUME=$2
+		(( VOLUME < 0 )) && VOLUME=0
+		(( VOLUME > 100 )) && VOLUME=100
+		pactl set-sink-volume @DEFAULT_SINK@ $VOLUME%;;
+esac
