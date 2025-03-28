@@ -14,7 +14,7 @@ export XDG_RUNTIME_DIR=/run/user/$UID
 
 export EDITOR=nvim
 export TERMINAL=alacritty
-export BROWSER=org.mozilla.firefox
+export BROWSER=app.zen_browser.zen
 export OPENER=xdg-open
 
 export XINITRC=$HOME/.config/x/xinitrc

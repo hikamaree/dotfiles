@@ -15,5 +15,19 @@ require("lazy").setup({
 	ui = { border = "single" },
 })
 
+vim.lsp.enable({ "clangd", "rust_analyzer", "lua_ls" })
+vim.lsp.config('*', {
+	capabilities = require('blink.cmp').get_lsp_capabilities(),
+	on_attach = function()
+		vim.keymap.set("n", "gr", [[<CMD>FzfLua lsp_references resume=true header=false<CR>]])
+		vim.keymap.set("n", "wd", [[<CMD>FzfLua lsp_workspace_diagnostics resume=true header=false<CR>]])
+		vim.keymap.set("n", "ca", [[<CMD>FzfLua lsp_code_actions resume=true header=false<CR>]])
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+		vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
+		vim.keymap.set("n", "<C-r>", vim.lsp.buf.rename)
+	end,
+	root_markers = { '.git' },
+})
+
 require("options")
 require("keymaps")

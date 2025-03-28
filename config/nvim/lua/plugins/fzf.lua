@@ -6,7 +6,9 @@ return {
 		{"<C-G>", [[<CMD>FzfLua live_grep resume=true header=false<CR>]] },
 	},
 	opts = {
-		winopts = { border = "none", preview = { border = "single" } },
-		fzf_opts = { ["--info"] = "hidden" },
+		winopts = {
+			border = "none",
+			preview = { border = "single" }
+		},
 	}
 }

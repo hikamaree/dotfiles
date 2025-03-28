@@ -3,10 +3,7 @@ return {
 	version = '*',
 	event = { "InsertEnter" },
 	opts = {
-		keymap = {
-			preset = "enter",
-			['<ESC>'] = { 'hide', 'fallback' },
-		},
+		keymap = { preset = "enter" },
 		completion = {
 			menu = { border = "single", winhighlight = "Normal:Normal,FloatBorder:FloatBorder" },
 			documentation = {
