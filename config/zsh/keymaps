@@ -1,0 +1,40 @@
+#!/bin/zsh
+
+show_fm() {
+	fm < $TTY
+	zle redisplay
+}
+zle -N show_fm
+bindkey '^[f' show_fm
+
+show_nvim() {
+	nvim < $TTY
+	zle redisplay
+}
+zle -N show_nvim
+bindkey '^[v' show_nvim
+
+show_btop() {
+	btop < $TTY
+	zle redisplay
+}
+zle -N show_btop
+bindkey '^[i' show_btop
+
+show_bluetui() {
+	bluetui < $TTY
+	zle redisplay
+}
+zle -N show_bluetui
+bindkey '^[b' show_bluetui
+
+show_ncmpcpp() {
+	ncmpcpp --quiet < $TTY
+	zle redisplay
+}
+zle -N show_ncmpcpp
+bindkey '^[m' show_ncmpcpp
+
+bindkey '^@' fzf-cd-widget
+bindkey -r '\e'
+bindkey '^e' vi-cmd-mode

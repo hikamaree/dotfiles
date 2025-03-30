@@ -1,0 +1,15 @@
+[Default Applications]
+text/plain=nvim.desktop
+image/jpeg=imv-dir.desktop
+image/png=imv-dir.desktop
+image/gif=imv-dir.desktop
+image/bmp=imv-dir.desktop
+image/webp=imv-dir.desktop
+image/tiff=imv-dir.desktop
+text/html=app.zen_browser.zen.desktop
+application/pdf=app.zen_browser.zen.desktop
+x-scheme-handler/http=app.zen_browser.zen.desktop
+x-scheme-handler/https=app.zen_browser.zen.desktop
+x-scheme-handler/about=app.zen_browser.zen.desktop
+x-scheme-handler/unknown=app.zen_browser.zen.desktop
+inode/directory=tmux_dir.desktop

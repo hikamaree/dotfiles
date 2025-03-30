@@ -1,0 +1,4 @@
+#!/bin/sh
+
+hyprctl dispatch workspace 2
+tmux new-window -t "$USER" -c "$1" "sleep 0.1; yazi; exec $SHELL"

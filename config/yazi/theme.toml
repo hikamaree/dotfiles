@@ -1,0 +1,15 @@
+[manager]
+border_style  = { fg = "#414868" }
+
+[status]
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+separator_style = { fg = "black", bg = "#3B4261" }
+
+[mode]
+normal_main = { bg = "blue", fg = "black" }
+normal_alt = { bg = "darkgrey", fg = "blue" }
+select_main = { bg = "green", fg = "black" }
+select_alt = { bg = "darkgrey", fg = "green" }
+unset_main  = { bg = "green", fg = "black" }
+unset_alt  = { bg = "darkgrey", fg = "green" }

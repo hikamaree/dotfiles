@@ -1,0 +1,53 @@
+#!/bin/sh
+
+mv ~/.config ~/.old_config
+mv ~/.local ~/.old_local
+
+mkdir -p ~/pictures/screenshots
+mkdir -p ~/pictures/videos
+mkdir -p ~/documents
+mkdir -p ~/downloads
+
+mkdir -p ~/.config
+mkdir -p ~/.local/share/zsh
+mkdir -p ~/.local/share/mpd
+
+git clone http://aur.archlinux.org/paru-bin.git
+cd paru-bin
+makepkg -si --noconfirm
+cd ..
+rm -rf paru-bin
+
+paru --noconfirm -Syu
+
+paru -S --noconfirm hyprland hypridle hyprlock hyprshot hyprpicker \ 
+	waybar dunst wl-clipboard mpv imv fuzzel power-profiles-daemon \
+	xdg-desktop-portal-gtk xdg-desktop-portal-hyprland mesa-vdpau \
+	libva-mesa-driver vulkan-radeon bluez bluez-utils \
+	swaybg ttf-jetbrains-mono ttf-nerd-fonts-symbols
+
+paru -S --noconfirm zsh alacritty tmux btop neovim yazi ripgrep fd \
+	fzf zip unzip 7zip stow bluetui ncmpcpp mpd mpc man-db flatpak 
+
+stow --no-folding --adopt --target=$HOME/.config config
+stow --no-folding --adopt --target=$HOME/.local local
+ln -s /usr/share/themes ~/.local/share/themes
+ln -s /usr/share/icons ~/.local/share/icons
+
+sudo systemctl --user mask backlight@.service
+sudo systemctl enable seatd.service
+sudo systemctl enable bluetooth.service
+sudo systemctl enable power-profiles-daemon.service
+
+update-desktop-database ~/.local/share/applications/
+
+flatpak override --user --filesystem=xdg-data/themes
+flatpak override --user --filesystem=xdg-data/icons
+flatpak override --user --env=GTK_THEME=Adwaita
+flatpak override --user --env=ICON_THEME=Adwaita
+flatpak override --user --env=XCURSOR_THEME=Adwaita
+flatpak override --user --env=XCURSOR_SIZE=24
+flatpak override --user --socket=wayland
+
+sudo ./system $USER
+chsh -s /bin/zsh

@@ -1,0 +1,40 @@
+#!/bin/zsh
+
+export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
+
+PROMPT='%B%F{blue}󰣇 %F{green}%1~%f > %b'
+HISTFILE=$XDG_DATA_HOME/zsh/histfile
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_RUNTIME_DIR=/run/user/$UID
+
+export EDITOR=nvim
+export TERMINAL=alacritty
+export BROWSER=app.zen_browser.zen
+export OPENER=xdg-open
+
+export XINITRC=$HOME/.config/x/xinitrc
+export XAUTHORITY=$HOME/.cache/Xauthority
+
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+
+export MANPAGER='nvim +Man!'
+
+export PYTHON_HISTORY=$XDG_STATE_HOME/python/history
+
+export WINEPREFIX=$HOME/.local/wine
+
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME=gtk3
+
+export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_DEFAULT_OPTS='--color=16 --style full:sharp --info inline-right --layout=reverse --walker-skip=music,.git,.gitignore,.roots,.var,.cache,.local,.config,.ssh'
+FZF_COMPLETION_OPTS='--preview "ls -A --group-directories-first --color=always $(echo $(pwd)/$(echo {})); cat {} 2>/dev/null"'
+FZF_COMPLETION_TRIGGER=
+FZF_ALT_C_COMMAND='fd -t d'
+FZF_ALT_C_OPTS='--preview "ls -A --group-directories-first --color=always $(echo $(pwd)/$(echo {})) 2>/dev/null; cat {} 2>/dev/null"'

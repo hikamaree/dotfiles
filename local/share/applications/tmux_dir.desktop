@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Tmux Open Directory
+Exec=tmux_dir %U
+Type=Application
+Terminal=false
+MimeType=inode/directory;
+NoDisplay=true

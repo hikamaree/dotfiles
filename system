@@ -1,0 +1,10 @@
+#! /bin/sh
+echo "export ZDOTDIR=\"\$HOME\"/.config/zsh" > /etc/zsh/zshenv
+echo "$1 ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+usermod -a -G video $1
+usermod -a -G seat $1
+
+cp rules/90-backlight.rules /etc/udev/rules.d/90-backlight.rules
+
+ln -s /home/$1/.config /root/.config
