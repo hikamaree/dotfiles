@@ -1,0 +1,52 @@
+ARCH=(
+	hyprland
+	hypridle
+	hyprlock
+	hyprshot
+	hyprpicker
+	wl-clipboard
+	xdg-desktop-portal-gtk
+	xdg-desktop-portal-hyprland
+	waybar
+	dunst
+	fuzzel
+	swaybg
+	ttf-jetbrains-mono
+	ttf-nerd-fonts-symbols
+	alacritty
+	tmux
+	zsh
+	neovim
+	yazi
+	fzf
+	ripgrep
+	fd
+	man-db
+	git
+	btop
+	stow
+	zip
+	unzip
+	7zip
+	power-profiles-daemon
+	mesa-vdpau
+	libva-mesa-driver
+	vulkan-radeon
+	gpu-screen-recorder
+	bluez
+	bluez-utils
+	bluetui
+	flatpak
+	mpv
+	imv
+	ncmpcpp
+	mpd
+	mpc
+)
+
+FLATPAKS=(
+	app.zen_browser.zen
+	com.valvesoftware.Steam
+	com.github.flxzt.rnote
+	dev.vencord.Vesktop
+)

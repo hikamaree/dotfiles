@@ -1,0 +1,34 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+	echo "USAGE: btbattery XX:XX:XX:XX:XX:XX"
+	exit 1
+fi
+
+DEVICE_PATH="/org/bluez/hci0/dev_$(echo "$1" | tr ':' '_')"
+BATTERY_LEVEL_UUID="00002a19-0000-1000-8000-00805f9b34fb"
+
+CHAR_PATHS=$(busctl tree org.bluez | grep -o "$DEVICE_PATH/service[0-9a-f]*/char[0-9a-f]*$")
+
+BATTERY_INFO=""
+CNT=0
+
+for CHAR in $CHAR_PATHS; do
+	UUID=$(busctl --system get-property org.bluez "$CHAR" org.bluez.GattCharacteristic1 UUID 2>/dev/null | sed -n 's/.*"\(.*\)".*/\1/p' )
+
+	if [[ "$UUID" == "$BATTERY_LEVEL_UUID" ]]; then
+		CNT=$((CNT+1))
+		VALUE=$(busctl --system call org.bluez $CHAR org.bluez.GattCharacteristic1 ReadValue a{sv} 0 | awk '{print $3}')
+		BATTERY_INFO+="Battery$CNT: ${VALUE}%\n"
+	fi
+done
+
+if [[ $CNT -eq 0 ]]; then
+	BATTERY=$(busctl --system get-property org.bluez "$DEVICE_PATH" org.bluez.Battery1 Percentage 2>/dev/null)
+	if [[ "$BATTERY" =~ ^y ]]; then
+		echo "Battery1: ${BATTERY#* }%"
+		found=1
+	fi
+else 
+	echo -e "$BATTERY_INFO" | sed '${/^$/d;}'
+fi

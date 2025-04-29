@@ -1,6 +1,6 @@
 [global]
 frame_width = 1
-frame_color = "#7DCFFF"
+frame_color = "#A1DBF8"
 font = JetBrains Mono 11
 offset = 20x20
 format = "<b>%s</b>\n%b"
@@ -11,13 +11,13 @@ corner_radius = 4
 
 [urgency_low]
 background = "#000000C0"
-foreground = "#C0CAF5"
+foreground = "#E0E2EA"
 history_ignore = true
 timeout = 1
 
 [urgency_normal]
 background = "#000000C0"
-foreground = "#C0CAF5"
+foreground = "#E0E2EA"
 timeout = 5
 
 [urgency_critical]

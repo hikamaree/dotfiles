@@ -6,6 +6,7 @@ image/gif=imv-dir.desktop
 image/bmp=imv-dir.desktop
 image/webp=imv-dir.desktop
 image/tiff=imv-dir.desktop
+image/svg=imv-dir.desktop
 text/html=app.zen_browser.zen.desktop
 application/pdf=app.zen_browser.zen.desktop
 x-scheme-handler/http=app.zen_browser.zen.desktop

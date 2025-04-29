@@ -1,0 +1,48 @@
+#!/bin/sh
+
+is_installed() {
+	pacman -Qi "$1" &> /dev/null || pacman -Qg "$1" &> /dev/null
+}
+
+install_packages() {
+	local packages=("$@")
+	local to_install=()
+
+	for pkg in "${packages[@]}"; do
+		if ! is_installed "$pkg"; then
+			to_install+=("$pkg")
+		fi
+	done
+
+	if [ ${#to_install[@]} -ne 0 ]; then
+		echo "Installing: ${to_install[*]}"
+		paru -S --noconfirm --quiet --skipreview --cleanafter "${to_install[@]}" >/dev/null 2>&1
+	fi
+} 
+
+install_flatpaks() {
+	local packages=("$@")
+
+	for pkg in "${packages[@]}"; do
+		if ! flatpak list | grep -i "$pkg" &> /dev/null; then
+			echo "Installing Flatpak: $pkg"
+			flatpak install --noninteractive "$pkg" >/dev/null 2>&1
+		else
+			echo "Flatpak already installed: $pkg"
+		fi
+	done
+}
+
+root_setup() {
+	if [[ "$EUID" -ne 0 ]]; then
+		sudo bash -c "source $(realpath "${BASH_SOURCE[0]}") && root_setup $1"
+		return
+	fi
+
+	echo "export ZDOTDIR=\"\$HOME\"/.config/zsh" > /etc/zsh/zshenv
+	echo "$1 ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
+	usermod -a -G video $1
+	usermod -a -G seat $1
+	cp rules/90-backlight.rules /etc/udev/rules.d/90-backlight.rules
+	ln -s /home/$1/.config /root/.config
+}

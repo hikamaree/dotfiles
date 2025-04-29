@@ -8,12 +8,12 @@ window#waybar {
 	font-family: "JetBrains Mono";
 	border-radius: 0px;
 	font-weight: 900;
-	color: #414868;
+	color: #4F5258;
 	padding: 0px 4px;
 }
 
 #workspaces button.active {
-	color: #7DCFFF;
+	color: #A1DBF8;
 	background: #111111;
 }
 
@@ -25,7 +25,8 @@ window#waybar {
 #backlight,
 #pulseaudio,
 #clock,
+#custom-recording,
 #tray {
-	color: #80c0d0;
+	color: #E0E2EA;
 	padding: 0px 10px;
 }
