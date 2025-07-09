@@ -1,7 +1,7 @@
 window#waybar {
 	font-family: "JetBrains Mono";
 	font-size: 14px;
-	background: rgba(0, 0, 0, 0.75);
+	background: rgba(0, 0, 0, 1.0);
 }
 
 #workspaces button {

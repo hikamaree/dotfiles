@@ -11,7 +11,6 @@ alias mkdir="mkdir -pv"
 alias pac="paru"
 alias fm="yazi"
 alias o="$OPENER"
-alias wg="ssh student@student-vm-0074.ec.gw.tc -t bash --login"
 
 function chpwd() {
 	ls

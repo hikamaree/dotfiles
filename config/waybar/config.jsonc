@@ -1,7 +1,7 @@
 {
 	"modules-left": [ "hyprland/workspaces" ],
 	"modules-center": [ "mpd" ],
-	"modules-right": [ "tray", "custom/recording", "power-profiles-daemon", "network", "bluetooth", "battery", "backlight", "pulseaudio", "clock" ],
+	"modules-right": [ "custom/battery_notify", "tray", "custom/recording", "power-profiles-daemon", "network", "bluetooth", "battery", "backlight", "pulseaudio", "clock" ],
 	"mpd": {
 		"tooltip": false,
 		"format": "{artist} - {title}",
@@ -14,6 +14,12 @@
 		"tooltip": false,
 		"icon-size": 18,
 		"spacing": 8
+	},
+	"custom/battery_notify": {
+		"exec": "~/.local/bin/battery_notify",
+		"interval": 10,
+		"format": "",
+		"tooltip": false
 	},
 	"custom/recording": {
 		"exec": "pidof gpu-screen-recorder >/dev/null && echo '{\"text\": \"<span color=\\\"#FFC0B9\\\"></span> rec\"}' || echo '{\"text\": \"\"}'",
@@ -51,6 +57,7 @@
 		"format":"<span color=\"#A1DBF8\" font='13'>{icon}</span>{capacity}",
 		"format-charging": "<span color=\"#FFC0B9\" font='12'> </span>{capacity}",
 		"format-icons": [ " ", " ", " ", " ", " " ],
+    	"exec": "~/.local/bin/battery_notify",
 		"interval": 2
 	},
 	"backlight": {

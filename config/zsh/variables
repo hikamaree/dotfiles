@@ -32,9 +32,8 @@ export WINEPREFIX=$HOME/.local/wine
 export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORMTHEME=gtk3
 
-export FZF_DEFAULT_COMMAND='rg --files --glob "!{music,games,.git,.gitignore,.roots,.var,.cache,.local,.config,.ssh}/*"'
-export FZF_DEFAULT_OPTS='--ansi --color=16 --style full:sharp --info inline-right --layout=reverse --walker-skip=music,games,.git,.gitignore,.roots,.var,.cache,.local,.config,.ssh'
-FZF_COMPLETION_OPTS='--preview "ls -A --group-directories-first --color=always $(echo $(pwd)/$(echo {})); cat {} 2>/dev/null"'
-FZF_COMPLETION_TRIGGER=
-FZF_ALT_C_COMMAND='fd -t d -H --exclude 'music' --exclude 'games' --exclude '.git' --exclude '.gitignore' --exclude '.roots' --exclude '.var' --exclude '.cache' --exclude '.local' --exclude '.config' --exclude '.ssh''
-FZF_ALT_C_OPTS='--preview "ls -A --group-directories-first --color=always $(echo $(pwd)/$(echo {})) 2>/dev/null; cat {} 2>/dev/null"'
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export FZF_DEFAULT_OPTS='--ansi --color=16 --style full:sharp --info inline-right --layout=reverse --height=40% --walker-skip=music,games,.git,.gitignore,.roots,.var,.cache,.local,.config,.ssh'
+FZF_COMPLETION_OPTS='--preview "ls -A --group-directories-first --color=always {}/ 2>/dev/null; cat {} 2>/dev/null"'
+FZF_ALT_C_COMMAND='fd -t d -H --exclude 'music' --exclude 'games' --exclude '.git' --exclude '.gitignore' --exclude '.var' --exclude '.cache' --exclude '.local' --exclude '.config' --exclude '.ssh''
+FZF_ALT_C_OPTS="--preview 'ls -A --group-directories-first --color=always {}/ 2>/dev/null; cat {} 2>/dev/null'"

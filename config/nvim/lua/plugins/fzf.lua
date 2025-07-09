@@ -6,7 +6,8 @@ return {
 		{ "<C-G>", [[<CMD>FzfLua live_grep resume=true header=false<CR>]] },
 		{ "grr", [[<CMD>FzfLua lsp_references resume=true header=false<CR>]] },
 		{ "wd", [[<CMD>FzfLua lsp_workspace_diagnostics resume=true header=false<CR>]] },
-		{ "gra", [[<CMD>FzfLua lsp_code_actions resume=true header=false<CR>]] },
+		{ "gra", [[<CMD>FzfLua lsp_code_actions silent=true header=false<CR>]] },
+		{ "gd", [[<CMD>FzfLua lsp_definitions<CR>]] },
 	},
 	opts = {
 		winopts = {

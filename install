@@ -42,6 +42,7 @@ ln -s /usr/share/icons ~/.local/share/icons
 sudo systemctl enable seatd.service
 sudo systemctl enable bluetooth.service
 sudo systemctl enable power-profiles-daemon.service
+systemctl enable --user mpd
 
 update-desktop-database ~/.local/share/applications/
 

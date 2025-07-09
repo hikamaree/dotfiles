@@ -1,6 +1,5 @@
 ARCH=(
 	hyprland
-	hypridle
 	hyprlock
 	hyprshot
 	hyprpicker
@@ -23,7 +22,7 @@ ARCH=(
 	fd
 	man-db
 	git
-	btop
+	htop
 	stow
 	zip
 	unzip

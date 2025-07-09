@@ -14,12 +14,12 @@ show_nvim() {
 zle -N show_nvim
 bindkey '^[v' show_nvim
 
-show_btop() {
-	btop < $TTY
+show_htop() {
+	htop < $TTY
 	zle redisplay
 }
-zle -N show_btop
-bindkey '^[i' show_btop
+zle -N show_htop
+bindkey '^[i' show_htop
 
 show_bluetui() {
 	bluetui < $TTY
@@ -37,4 +37,5 @@ bindkey '^[m' show_ncmpcpp
 
 bindkey '^@' fzf-cd-widget
 bindkey -r '\e'
+bindkey -r '^[c'
 bindkey '^e' vi-cmd-mode

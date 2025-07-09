@@ -1,0 +1,14 @@
+#!/bin/bash
+
+capacity=$(cat /sys/class/power_supply/BAT0/capacity)
+status=$(cat /sys/class/power_supply/BAT0/status)
+
+notify_file="/tmp/.battery_notify_sent"
+if [ "$capacity" -le 10 ] && [ "$status" != "Charging" ]; then
+    if [ ! -f "$notify_file" ]; then
+        notify-send -u critical "Battery low" "Only $capacity% remaining!"
+        touch "$notify_file"
+    fi
+else
+    rm -f "$notify_file" 2>/dev/null
+fi
