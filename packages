@@ -47,5 +47,5 @@ FLATPAKS=(
 	app.zen_browser.zen
 	com.valvesoftware.Steam
 	com.github.flxzt.rnote
-	dev.vencord.Vesktop
+	com.doscordapp.Discord
 )

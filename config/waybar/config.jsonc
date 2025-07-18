@@ -1,7 +1,7 @@
 {
 	"modules-left": [ "hyprland/workspaces" ],
 	"modules-center": [ "mpd" ],
-	"modules-right": [ "custom/battery_notify", "tray", "custom/recording", "power-profiles-daemon", "network", "bluetooth", "battery", "backlight", "pulseaudio", "clock" ],
+	"modules-right": [ "custom/battery_notify", "tray", "custom/recording", "power-profiles-daemon", "network", "bluetooth", "pulseaudio", "backlight", "hyprland/language", "battery", "clock" ],
 	"mpd": {
 		"tooltip": false,
 		"format": "{artist} - {title}",
@@ -14,6 +14,11 @@
 		"tooltip": false,
 		"icon-size": 18,
 		"spacing": 8
+	},
+	"hyprland/language": {
+    	"format": "<span color=\"#A1DBF8\" font='11.5'> </span>{short} {variant}",
+    	"keyboard-name": "at-translated-set-2-keyboard",
+		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
 	},
 	"custom/battery_notify": {
 		"exec": "~/.local/bin/battery_notify",
@@ -29,7 +34,7 @@
 		"tooltip": false
 	},
 	"power-profiles-daemon": {
-		"format": "{icon}{profile}",
+		"format": "{icon}",
 		"tooltip": false,
 		"format-icons": {
 			"performance": "<span color=\"#FFC0B9\" font='12'>󰓅 </span>",
@@ -39,34 +44,26 @@
 	},
 	"network": {
 		"tooltip": false,
-		"format-alt": "<span color=\"#A1DBF8\" font='12'>{icon}</span>{bandwidthDownBits}",
-		"format-wifi": "<span color=\"#A1DBF8\" font='12'>{icon}</span>{essid}",
-		"format-ethernet": "<span color=\"#A1DBF8\" font='12'>󰈀 </span> {bandwidthDownBits}",
+		"format-alt": "<span color=\"#A1DBF8\" font='12'>{icon}</span> {essid} {bandwidthDownBits} ",
+		"format-wifi": "<span color=\"#A1DBF8\" font='12'>{icon}</span>",
+		"format-ethernet": "<span color=\"#A1DBF8\" font='12'>󰈀</span>",
 		"format-disconnected": "<span color=\"#FFC0B9\" font='12'>󰤮</span>",
-		"format-icons": [ "󰤯 ", "󰤟 ", "󰤢 ", "󰤥 ", "󰤨 " ],
+		"format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ],
 		"interval": 2
 	},
 	"bluetooth": {
-		"format": "<span color=\"#A1DBF8\" font='12'> </span>{status}",
-		"format-disabled": "<span color=\"#FFC0B9\" font='12'> </span>off",
-		"format-connected": "<span color=\"#A1DBF8\" font='12'> </span>{device_alias}",
+		"format": "<span color=\"#A1DBF8\" font='13'>󰂯</span>",
+		"format-disabled": "<span color=\"#FFC0B9\" font='13'>󰂲</span>",
+		"format-connected": "<span color=\"#A1DBF8\" font='13'>󰂱</span>",
 		"on-click": "rfkill toggle bluetooth"
-	},
-	"battery": {
-		"tooltip": false,
-		"format":"<span color=\"#A1DBF8\" font='13'>{icon}</span>{capacity}",
-		"format-charging": "<span color=\"#FFC0B9\" font='12'> </span>{capacity}",
-		"format-icons": [ " ", " ", " ", " ", " " ],
-    	"exec": "~/.local/bin/battery_notify",
-		"interval": 2
 	},
 	"backlight": {
 		"tooltip": false,
-		"format": "<span color=\"#A1DBF8\" font='12'>{icon}</span>{percent}",
+		"format": "<span color=\"#A1DBF8\" font='13'>{icon} </span>{percent}",
 		"on-scroll-up": "brightness -i &",
 		"on-scroll-down": "brightness -d &",
 		"smooth-scrolling-threshold": 3.0,
-		"format-icons": [ " ", " ", " " ]
+		"format-icons": [ "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨" ]
 	},
 	"pulseaudio": {
 		"tooltip": false,
@@ -77,12 +74,20 @@
 		"scroll-step": 5,
 		"smooth-scrolling-threshold": 3.0,
 		"format-icons": [ " ", " ", " " ],
-		"format-source": "<span color=\"#A1DBF8\" font='12'></span>",
-		"format-source-muted": "<span color=\"#FFC0B9\" font='12'></span>"
+		"format-source": "<span color=\"#A1DBF8\" font='12'> </span>",
+		"format-source-muted": "<span color=\"#FFC0B9\" font='12'> </span>"
+	},
+	"battery": {
+		"tooltip": false,
+		"format":"<span color=\"#A1DBF8\" font='12.5'>{icon}</span>{capacity}",
+		"format-charging": "<span color=\"#FFC0B9\" font='12'> </span>{capacity}",
+		"format-icons": [ " ", " ", " ", " ", " " ],
+    	"exec": "~/.local/bin/battery_notify",
+		"interval": 2
 	},
 	"clock": {
 		"tooltip": false,
-		"format": "<span color=\"#A1DBF8\" font='12'> </span>{:%H:%M}",
+		"format": "<span color=\"#A1DBF8\" font='12'>󱑎 </span>{:%H:%M}",
 		"format-alt": "<span color=\"#A1DBF8\" font='12'> </span>{:%A, %d %B}",
 		"interval": 10
 	}

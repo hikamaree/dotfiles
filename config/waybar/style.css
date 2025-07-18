@@ -18,15 +18,27 @@ window#waybar {
 }
 
 #mpd,
-#power-profiles-daemon,
-#network,
-#bluetooth,
 #battery,
-#backlight,
 #pulseaudio,
 #clock,
-#custom-recording,
-#tray {
+#backlight,
+#language,
+#custom-recording {
 	color: #E0E2EA;
-	padding: 0px 10px;
+	padding: 0px 8px;
+}
+
+#power-profiles-daemon,
+#bluetooth {
+	color: #E0E2EA;
+	padding: 0px 4px;
+}
+
+#network {
+	color: #E0E2EA;
+	padding: 0px 6px 0px 4px;
+}
+
+#tray {
+	padding: 0px 16px;
 }
