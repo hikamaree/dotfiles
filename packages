@@ -8,13 +8,13 @@ ARCH=(
 	xdg-desktop-portal-hyprland
 	waybar
 	dunst
-	fuzzel
+	wofi
 	swaybg
 	ttf-jetbrains-mono
 	ttf-nerd-fonts-symbols
 	alacritty
 	tmux
-	zsh
+	bash-completion	
 	neovim
 	yazi
 	fzf

@@ -61,6 +61,3 @@ vim.api.nvim_set_hl(0, "Pmenu", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
-
-vim.api.nvim_create_autocmd({"WinEnter", "BufWinEnter"}, { callback = function() vim.opt_local.cursorline = true end })
-vim.api.nvim_create_autocmd("WinLeave", { callback = function() vim.opt_local.cursorline = false end })

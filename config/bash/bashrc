@@ -1,0 +1,107 @@
+[[ $- != *i* ]] && return
+[[ -t 0 ]] && stty stop undef
+set -o vi
+eval "$(fzf --bash)"
+
+add_plugin() {
+    local repo_path="$1"
+    local base_dir="$HOME/.local/share/bash"
+    local plugin_dir="$base_dir/${repo_path##*/}"
+
+    if [[ ! -d "$plugin_dir" ]]; then
+        mkdir -p "$base_dir"
+        git clone "https://github.com/$repo_path" "$plugin_dir"
+    fi
+
+    if [[ -f "$plugin_dir/${repo_path##*/}.sh" ]]; then
+        source "$plugin_dir/${repo_path##*/}.sh"
+    fi
+
+    if [[ -d "$plugin_dir/bash" ]]; then
+        for f in "$plugin_dir/bash/"*.sh; do
+            [[ -f "$f" ]] && source "$f"
+        done
+    fi
+}
+
+add_plugin lincheney/fzf-tab-completion
+
+export PATH="$PATH:$(find ~/.local/bin -type d -printf '%p:')"
+export PATH="${PATH%:}"
+
+PS1='\[\e[1;34m\]󰣇 \[\e[0;32m\]\w\[\e[0m\] > '
+
+HISTFILE="$XDG_DATA_HOME/bash/history"
+HISTSIZE=1000000
+HISTFILESIZE=1000000
+shopt -s histappend
+
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_RUNTIME_DIR="/run/user/$UID"
+
+export TERMINAL=alacritty
+export EDITOR=nvim
+export OPENER=xdg-open
+
+export XINITRC="$HOME/.config/x/xinitrc"
+export XAUTHORITY="$HOME/.cache/Xauthority"
+
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+
+export MANPAGER='nvim +Man!'
+
+export PYTHON_HISTORY="$XDG_STATE_HOME/python/history"
+
+export WINEPREFIX="$HOME/.local/wine"
+
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME=gtk3
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export TTY="$(tty)"
+
+export FZF_DEFAULT_COMMAND="rg --files --hidden"
+export FZF_DEFAULT_OPTS="--ansi --color=16 --style full:sharp --info inline-right --layout=reverse --height=40%"
+export FZF_COMPLETION_OPTS=""
+export FZF_ALT_C_COMMAND="fd -t d -H --exclude '.git' --exclude '.gitignore' --exclude '.var' --exclude '.cache' --exclude '.ssh'"
+export FZF_ALT_C_OPTS="--preview 'ls -A --group-directories-first --color=always {}/ 2>/dev/null; cat {} 2>/dev/null'"
+
+alias ls="LC_COLLATE=C ls -A --group-directories-first --color=auto"
+alias ll="ls -oh"
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+alias cp="cp -rfv"
+alias mv="mv -fv"
+alias rm="rm -rfv"
+alias mkdir="mkdir -pv"
+alias pac="paru"
+
+binds=(
+  	'\ef:yazi'
+	'\ev:nvim'
+	'\ei:htop'
+	'\eb:bluetui'
+	'\em:ncmpcpp --quiet'
+	'\t:fzf_bash_completion'
+)
+
+for b in "${binds[@]}"; do
+	IFS=: read -r key cmd <<< "$b"
+	bind -x "\"$key\":$cmd < \$TTY"
+done
+
+bind -m vi-command '"\C-@": "\C-z\ec\C-z"'
+bind -m vi-insert '"\C-@": "\C-z\ec\C-z"'
+bind -r '\ec'
+bind -m vi-insert '"\C-l": clear-screen'
+bind -m vi-command '"\C-l": clear-screen'
+bind -m vi-insert '"\C-e": vi-movement-mode'
+bind -m vi-insert '"\e": ""'
+
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland > /dev/null
+[[ -z $DISPLAY && $XDG_VTNR -eq 2 ]] && exec startx > /dev/null

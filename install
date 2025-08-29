@@ -60,5 +60,3 @@ flatpak override --user com.valvesoftware.Steam \
   --env=QT_SCALE_FACTOR=2
 
 root_setup "$USER"
-
-chsh -s /bin/zsh

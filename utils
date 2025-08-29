@@ -39,8 +39,12 @@ root_setup() {
 		return
 	fi
 
-	echo "export ZDOTDIR=\"\$HOME\"/.config/zsh" > /etc/zsh/zshenv
-	echo "$1 ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers
+    local sudo_line="$1 ALL=(ALL:ALL) NOPASSWD: ALL"
+    grep -qxF "$sudo_line" /etc/sudoers || echo "$sudo_line" >> /etc/sudoers
+
+    local bash_line='[ -f "$HOME/.config/bash/bashrc" ] && source "$HOME/.config/bash/bashrc"'
+    grep -qxF "$bash_line" /etc/bash.bashrc || echo "$bash_line" >> /etc/bash.bashrc
+
 	usermod -a -G video $1
 	usermod -a -G seat $1
 	cp rules/90-backlight.rules /etc/udev/rules.d/90-backlight.rules
