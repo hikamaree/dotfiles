@@ -28,17 +28,18 @@ window#waybar {
 	padding: 0px 8px;
 }
 
-#power-profiles-daemon,
 #bluetooth {
+	color: #E0E2EA;
+	padding: 0px 4px 0px 6px;
+}
+
+#power-profiles-daemon,
+#network {
 	color: #E0E2EA;
 	padding: 0px 4px;
 }
 
-#network {
-	color: #E0E2EA;
-	padding: 0px 6px 0px 4px;
-}
-
+#tray-expander,
 #tray {
 	padding: 0px 16px;
 }

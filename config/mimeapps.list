@@ -1,12 +1,12 @@
 [Default Applications]
 text/plain=nvim.desktop
-image/jpeg=imv-dir.desktop
-image/png=imv-dir.desktop
-image/gif=imv-dir.desktop
-image/bmp=imv-dir.desktop
-image/webp=imv-dir.desktop
-image/tiff=imv-dir.desktop
-image/svg+xml=imv-dir.desktop
+image/jpeg=pqiv.desktop
+image/png=pqiv.desktop
+image/gif=pqiv.desktop
+image/bmp=pqiv.desktop
+image/webp=pqiv.desktop
+image/tiff=pqiv.desktop
+image/svg+xml=pqiv.desktop
 text/html=app.zen_browser.zen.desktop
 application/pdf=app.zen_browser.zen.desktop
 x-scheme-handler/http=app.zen_browser.zen.desktop
@@ -15,3 +15,7 @@ x-scheme-handler/about=app.zen_browser.zen.desktop
 x-scheme-handler/unknown=app.zen_browser.zen.desktop
 inode/directory=tmux_dir.desktop
 x-scheme-handler/terminal=alacritty.desktop
+video/mp4=mpv.desktop
+video/x-matroska=mpv.desktop
+video/webm=mpv.desktop
+video/x-msvideo=mpv.desktop

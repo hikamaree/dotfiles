@@ -26,14 +26,14 @@ add_plugin() {
 
 add_plugin lincheney/fzf-tab-completion
 
-export PATH="$PATH:$(find ~/.local/bin -type d -printf '%p:')"
-export PATH="${PATH%:}"
+export PATH="$HOME/.local/bin:$PATH"
 
-PS1='\[\e[1;34m\]󰣇 \[\e[0;32m\]\w\[\e[0m\] > '
+PS1='\[\e[1;34m\]󰣇 \[\e[0;32m\]\W\[\e[0m\] > '
 
 HISTFILE="$XDG_DATA_HOME/bash/history"
 HISTSIZE=1000000
 HISTFILESIZE=1000000
+HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
 
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -60,6 +60,13 @@ export WINEPREFIX="$HOME/.local/wine"
 export QT_QPA_PLATFORM=wayland
 export QT_QPA_PLATFORMTHEME=gtk3
 
+export OZONE_PLATFORM=wayland
+export OZONE_PLATFORM_HINT=auto
+export ELECTRON_ENABLE_WAYLAND=1
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+export ELECTRON_OZONE_PLATFORM=wayland
+export ELECTRON_ENABLE_FEATURES=WaylandWindowDecorations
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
@@ -80,13 +87,15 @@ alias mv="mv -fv"
 alias rm="rm -rfv"
 alias mkdir="mkdir -pv"
 alias pac="paru"
+alias proton="proton-ge"
 
 binds=(
   	'\ef:yazi'
 	'\ev:nvim'
 	'\ei:htop'
+	'\ep:ncmpcpp --quiet'
+	'\ew:impala'
 	'\eb:bluetui'
-	'\em:ncmpcpp --quiet'
 	'\t:fzf_bash_completion'
 )
 
@@ -103,5 +112,5 @@ bind -m vi-command '"\C-l": clear-screen'
 bind -m vi-insert '"\C-e": vi-movement-mode'
 bind -m vi-insert '"\e": ""'
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland > /dev/null
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec start-hyprland > /dev/null
 [[ -z $DISPLAY && $XDG_VTNR -eq 2 ]] && exec startx > /dev/null

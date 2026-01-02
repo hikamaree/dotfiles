@@ -8,9 +8,11 @@ ARCH=(
 	xdg-desktop-portal-hyprland
 	waybar
 	dunst
-	wofi
+	fuzzel
 	swaybg
+	terminus-font
 	ttf-jetbrains-mono
+	noto-fonts-emoji
 	ttf-nerd-fonts-symbols
 	alacritty
 	tmux
@@ -37,15 +39,18 @@ ARCH=(
 	bluetui
 	flatpak
 	mpv
-	imv
+	pqiv
+	satty
 	ncmpcpp
 	mpd
 	mpc
+	iwd
+	impala
 )
 
 FLATPAKS=(
 	app.zen_browser.zen
 	com.valvesoftware.Steam
-	com.github.flxzt.rnote
+	md.obsidian.Obsidian
 	com.doscordapp.Discord
 )
