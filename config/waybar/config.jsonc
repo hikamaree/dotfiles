@@ -1,7 +1,7 @@
 {
 	"modules-left": [ "hyprland/workspaces" ],
 	"modules-center": [ "mpd" ],
-	"modules-right": [ "custom/battery_notify", "tray", "custom/recording", "power-profiles-daemon", "network", "bluetooth", "pulseaudio", "backlight", "hyprland/language", "battery", "clock" ],
+	"modules-right": [ "custom/battery_notify", "group/tray-expander", "custom/recording", "power-profiles-daemon", "network", "bluetooth", "pulseaudio", "backlight", "hyprland/language", "battery", "clock" ],
 	"mpd": {
 		"tooltip": false,
 		"format": "{artist} - {title}",
@@ -15,22 +15,37 @@
 		"icon-size": 18,
 		"spacing": 8
 	},
+	"custom/expand-icon": {
+		"format": "",
+		"tooltip": false
+	},
+	"group/tray-expander": {
+		"orientation": "inherit",
+		"drawer": {
+			"transition-duration": 100,
+			"transition-left-to-right": false,
+			"click-to-reveal": true
+		},
+		"modules": [
+			"custom/expand-icon",
+			"tray"
+		]
+	},
 	"hyprland/language": {
-    	"format": "<span color=\"#A1DBF8\" font='11.5'> </span>{short} {variant}",
-    	"keyboard-name": "at-translated-set-2-keyboard",
+		"format": "<span color=\"#A1DBF8\" font='11.5'> </span>{short} {variant}",
+		"keyboard-name": "at-translated-set-2-keyboard",
 		"on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
 	},
 	"custom/battery_notify": {
 		"exec": "~/.local/bin/battery_notify",
 		"interval": 10,
-		"format": "",
 		"tooltip": false
 	},
 	"custom/recording": {
 		"exec": "pidof gpu-screen-recorder >/dev/null && echo '{\"text\": \"<span color=\\\"#FFC0B9\\\"></span> rec\"}' || echo '{\"text\": \"\"}'",
 		"interval": 2,
 		"return-type": "json",
-		"on-click": "killall -SIGINT gpu-screen-recorder",
+		"on-click": "killall -SIGINT gpu-screen-recorder && notify-send \" Screen Recording\" \"Recording stopped\"",
 		"tooltip": false
 	},
 	"power-profiles-daemon": {
@@ -44,12 +59,13 @@
 	},
 	"network": {
 		"tooltip": false,
-		"format-alt": "<span color=\"#A1DBF8\" font='12'>{icon}</span> {essid} {bandwidthDownBits} ",
+		"format-alt": "<span color=\"#A1DBF8\" font='12'>{icon}</span> {essid} {bandwidthDownBits}",
 		"format-wifi": "<span color=\"#A1DBF8\" font='12'>{icon}</span>",
 		"format-ethernet": "<span color=\"#A1DBF8\" font='12'>󰈀</span>",
 		"format-disconnected": "<span color=\"#FFC0B9\" font='12'>󰤮</span>",
 		"format-icons": [ "󰤯", "󰤟", "󰤢", "󰤥", "󰤨" ],
-		"interval": 2
+		"interval": 2,
+		"on-click-right": "pgrep -x nm-applet >/dev/null && killall nm-applet || nm-applet --indicator &"
 	},
 	"bluetooth": {
 		"format": "<span color=\"#A1DBF8\" font='13'>󰂯</span>",
@@ -82,7 +98,7 @@
 		"format":"<span color=\"#A1DBF8\" font='12.5'>{icon}</span>{capacity}",
 		"format-charging": "<span color=\"#FFC0B9\" font='12'> </span>{capacity}",
 		"format-icons": [ " ", " ", " ", " ", " " ],
-    	"exec": "~/.local/bin/battery_notify",
+		"exec": "~/.local/bin/battery_notify",
 		"interval": 2
 	},
 	"clock": {

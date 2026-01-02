@@ -11,9 +11,10 @@ case "$FLAG" in
 	m)
 		pactl set-sink-mute @DEFAULT_SINK@ toggle;;
 	t)
-		sources=$(pactl list short sources | awk '{print $1}')
-		pactl get-source-mute $sources | grep -q "no" && mute_state=1 || mute_state=0
-		echo "$sources" | xargs -I{} pactl set-source-mute {} "$mute_state";;
+		state=$(pactl get-source-mute "$(pactl get-default-source)" | grep -q yes && echo 0 || echo 1)
+		for src in $(pactl list short sources | awk '{print $1}'); do
+			pactl set-source-mute "$src" "$state"
+		done;;
 	s)
 		VOLUME=$2
 		(( VOLUME < 0 )) && VOLUME=0

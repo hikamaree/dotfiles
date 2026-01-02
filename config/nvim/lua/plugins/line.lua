@@ -22,7 +22,7 @@ return {
 			}},
 			lualine_x = {
 				function()
-					local c = vim.lsp.get_active_clients({ bufnr = 0 })[1]
+					local c = vim.lsp.get_clients({ bufnr = 0 })[1]
 					return c and c.name .. (vim.lsp.status():match("%S") and "..." or "") or ""
 				end
 			},
