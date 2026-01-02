@@ -9,9 +9,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = "plugins",
 	ui = { border = "single" },
+	rocks = { enabled = false }
 })
 
-vim.lsp.enable({ "clangd", "rust_analyzer", "lua_ls" })
+vim.lsp.enable({ "clangd", "rust_analyzer", "lua_ls", "wgsl_analyzer" })
 vim.lsp.config( "*", { root_markers = { ".git" }})
 
 vim.keymap.set({"n", "v", "i", "t"}, "<C-Q>", function() vim.cmd([[wa!]]) vim.cmd([[qa!]]) end)
@@ -25,10 +26,13 @@ vim.keymap.set("n", "<C-l>", function() vim.cmd([[wincmd l]]) end)
 vim.keymap.set("n", "<C-P>", [[:%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("v", "<C-P>", [["hy:%s/<C-r>h/<C-r>h/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<C-\\>", vim.diagnostic.open_float)
+vim.keymap.set("n", "==", function() vim.lsp.buf.format({ async = true }) end)
 
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.smartindent = true
+vim.opt.cindent = true
+vim.opt.cino = "N-s,l1,g0,(0,W4,p0"
 vim.opt.shiftround = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -46,12 +50,9 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.undofile = true
 vim.opt.swapfile = false
 vim.opt.shortmess:append("I")
-vim.o.winborder = "single"
+vim.opt.winborder = "single"
 
-vim.diagnostic.config {
-	virtual_text = true,
-	update_in_insert = true,
-}
+vim.diagnostic.config { virtual_text = true, update_in_insert = true }
 
 vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#4F5258", bg = "NONE" })
 vim.api.nvim_set_hl(0, "FzfLuaBorder", { fg = "#4F5258", bg = "NONE" })

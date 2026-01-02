@@ -1,8 +1,11 @@
 [mgr]
 border_style  = { fg = "#414868" }
 
+[indicator]
+padding = { open = "█", close = "█" }
+
 [status]
-sep_left  = { open = "", close = "" }
+sep_left = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 separator_style = { fg = "black", bg = "#3B4261" }
 

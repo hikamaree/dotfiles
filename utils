@@ -47,6 +47,6 @@ root_setup() {
 
 	usermod -a -G video $1
 	usermod -a -G seat $1
-	cp rules/90-backlight.rules /etc/udev/rules.d/90-backlight.rules
+	cp rules/* /etc/udev/rules.d/
 	ln -s /home/$1/.config /root/.config
 }
