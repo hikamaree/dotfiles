@@ -24,7 +24,8 @@ foreground = "#E0E2EA"
 
 [font]
 normal.family = "JetBrains Mono"
-size = 10
+normal.style = "Bold"
+size = 8.5
 
 [cursor.style]
 blinking = "Always"
@@ -34,5 +35,5 @@ opacity = 0.9
 decorations = "None"
 
 [window.padding]
-x = 3
+x = 4
 y = 3

@@ -15,13 +15,7 @@ ARCH=(
 	noto-fonts-emoji
 	ttf-nerd-fonts-symbols
 	alacritty
-	tmux
 	bash-completion	
-	neovim
-	yazi
-	fzf
-	ripgrep
-	fd
 	man-db
 	git
 	htop
@@ -40,7 +34,7 @@ ARCH=(
 	flatpak
 	mpv
 	pqiv
-	satty
+	swappy
 	ncmpcpp
 	mpd
 	mpc

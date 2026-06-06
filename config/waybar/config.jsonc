@@ -90,7 +90,7 @@
 		"scroll-step": 5,
 		"smooth-scrolling-threshold": 3.0,
 		"format-icons": [ " ", " ", " " ],
-		"format-source": "<span color=\"#A1DBF8\" font='12'> </span>",
+		"format-source": "<span color=\"#A1DBF8\" font='12'>  </span>",
 		"format-source-muted": "<span color=\"#FFC0B9\" font='12'> </span>"
 	},
 	"battery": {
