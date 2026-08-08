@@ -1,12 +1,12 @@
 [Default Applications]
 text/plain=nvim.desktop
-image/jpeg=pqiv.desktop
-image/png=pqiv.desktop
-image/gif=pqiv.desktop
-image/bmp=pqiv.desktop
-image/webp=pqiv.desktop
-image/tiff=pqiv.desktop
-image/svg+xml=pqiv.desktop
+image/jpeg=satty.desktop
+image/png=satty.desktop
+image/gif=satty.desktop
+image/bmp=satty.desktop
+image/webp=satty.desktop
+image/tiff=satty.desktop
+image/svg+xml=satty.desktop
 text/html=app.zen_browser.zen.desktop
 application/pdf=app.zen_browser.zen.desktop
 x-scheme-handler/http=app.zen_browser.zen.desktop
@@ -19,3 +19,6 @@ video/mp4=mpv.desktop
 video/x-matroska=mpv.desktop
 video/webm=mpv.desktop
 video/x-msvideo=mpv.desktop
+audio/flac=mpv.desktop
+audio/x-flac=mpv.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop

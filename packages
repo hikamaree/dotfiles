@@ -1,16 +1,10 @@
 ARCH=(
 	hyprland
-	hyprlock
-	hyprshot
 	hyprpicker
 	wl-clipboard
 	xdg-desktop-portal-gtk
 	xdg-desktop-portal-hyprland
-	waybar
-	dunst
-	fuzzel
-	swaybg
-	terminus-font
+	noctalia
 	ttf-jetbrains-mono
 	noto-fonts-emoji
 	ttf-nerd-fonts-symbols
@@ -34,7 +28,9 @@ ARCH=(
 	flatpak
 	mpv
 	pqiv
-	swappy
+	grim
+	slurp
+	satty
 	ncmpcpp
 	mpd
 	mpc
@@ -47,5 +43,5 @@ FLATPAKS=(
 	com.valvesoftware.Steam
 	md.obsidian.Obsidian
 	com.doscordapp.Discord
-	io.github.victoralvesf.aonsoku
+	org.jeffvli.feishin
 )

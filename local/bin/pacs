@@ -1,7 +1,0 @@
-#!/bin/bash
-
-package=$(paru -Slq | fzf --preview 'paru -Sii {}' --height=40%)
-
-if [ -n "$package" ]; then
-    paru -S "$package"
-fi
